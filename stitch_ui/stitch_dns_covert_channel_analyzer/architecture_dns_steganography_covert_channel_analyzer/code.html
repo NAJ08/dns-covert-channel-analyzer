@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#001f28", "secondary-fixed": "#d8e2ff", "surface-container": "#1a1f2e", "inverse-on-surface": "#2b303f", "outline-variant": "#3c494e", "error": "#ffb4ab", "on-error-container": "#ffdad6", "inverse-surface": "#dee2f6", "on-background": "#dee2f6", "tertiary-container": "#6bccff", "tertiary-fixed": "#c4e7ff", "surface-bright": "#343948", "on-primary-fixed-variant": "#004e60", "tertiary-fixed-dim": "#7bd0ff", "secondary": "#aec6ff", "surface-container-lowest": "#090e1c", "on-tertiary": "#00354a", "on-tertiary-fixed-variant": "#004c69", "background": "#0e1321", "surface-container-low": "#161b2a", "on-tertiary-fixed": "#001e2c", "primary-fixed": "#b6ebff", "surface-variant": "#303444", "surface-container-highest": "#303444", "tertiary": "#b8e3ff", "on-secondary-container": "#00275e", "surface-container-high": "#252a39", "on-primary-container": "#00566a", "on-error": "#690005", "secondary-container": "#508eff", "on-surface": "#dee2f6", "primary-container": "#00d2ff", "inverse-primary": "#00677f", "on-tertiary-container": "#005575", "on-secondary-fixed": "#001a43", "secondary-fixed-dim": "#aec6ff", "on-secondary": "#002e6b", "primary-fixed-dim": "#47d6ff", "on-secondary-fixed-variant": "#004397", "on-surface-variant": "#bbc9cf", "surface": "#0e1321", "on-primary": "#003543", "error-container": "#93000a", "surface-tint": "#47d6ff", "outline": "#859399", "surface-dim": "#0e1321", "primary": "#a5e7ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "1.5rem", "space-xl": "1.5rem", "space-md": "0.75rem", "space-lg": "1rem", "gutter-desktop": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "0.75rem", "margin": "0.75rem" }, "fontFamily": { "label-sans-caps": [ "Inter" ], "body-sm": [ "Inter" ], "label-mono-sm": [ "JetBrains Mono" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Inter" ], "body-md": [ "Inter" ], "label-mono-lg": [ "JetBrains Mono" ], "label-mono-md": [ "JetBrains Mono" ] }, "fontSize": { "label-sans-caps": [ "10px", { "lineHeight": "12px", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-mono-sm": [ "10px", { "lineHeight": "14px", "fontWeight": "400" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "fontWeight": "600" } ], "headline-lg-mobile": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "display-lg": [ "36px", { "lineHeight": "44px", "fontWeight": "700" } ], "headline-md": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "headline-sm": [ "15px", { "lineHeight": "20px", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "fontWeight": "400" } ], "body-md": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "label-mono-lg": [ "13px", { "lineHeight": "18px", "fontWeight": "500" } ], "label-mono-md": [ "11px", { "lineHeight": "16px", "fontWeight": "500" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest/60 backdrop-blur-xl"><img alt="DNS COVERT Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQiuCo1Ac-ZWJhhAfvIoXn2NCz_-Kwpwd2zla3PBYvDF7EcTdaYl0xuIECtGEebuHpxDM_Y9HLB6lZl5ZsXHQfvbRfwL2hNwwROxw4zxLevA7s326cPvfvJqKxLUo582XJPVYhT7BHY6W5Unl0_uP7jNxN1CRKRzfs8VnBiHfALukBgqffanQ1Ubh9hPvp5lScwsCWouQlEkLHuv7RYGMyusumB5frFrYReYxB"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-wider uppercase leading-none">DNS COVERT</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant leading-tight tracking-tight">Channel Analyzer</span></div></div><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-widest">Forensic Modules</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="stego-simulator" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="font-body-md text-body-md">Stego Simulator</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="packet-inspector" href="#"><span class="material-symbols-outlined text-[18px]">manage_search</span><span class="font-body-md text-body-md">Packet Inspector</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="anomaly-detection" href="#"><span class="material-symbols-outlined text-[18px]">warning</span><span class="font-body-md text-body-md">Anomaly Detection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="traffic-comparison" href="#"><span class="material-symbols-outlined text-[18px]">compare_arrows</span><span class="font-body-md text-body-md">Traffic Comparison</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="packet-log" href="#"><span class="material-symbols-outlined text-[18px]">history</span><span class="font-body-md text-body-md">Packet Log</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="education" href="#"><span class="material-symbols-outlined text-[18px]">school</span><span class="font-body-md text-body-md">Education</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary-container font-bold rounded-lg" data-path="architecture" href="#"><span class="material-symbols-outlined text-[18px]">account_tree</span><span class="font-body-md text-body-md">Architecture</span></a></nav></div><div class="p-space-sm m-space-sm bg-surface-container-lowest rounded-lg flex flex-col gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-mono-sm text-label-mono-sm text-primary uppercase font-bold">Simulation Mode</span></div><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">v2.4</span></div><div class="flex items-center justify-between text-on-surface-variant pt-space-xs"><span class="font-label-mono-sm text-label-mono-sm flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-primary">dns</span> UDP:53 Bound</span><button class="text-on-surface-variant hover:text-primary transition-colors" title="Reset telemetry socket" type="button"><span class="material-symbols-outlined text-[14px]">restart_alt</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[20px]">radar</span><div class="flex items-center gap-space-xs font-label-mono-md text-label-mono-md"><span class="text-on-surface-variant">NET_OPS</span><span class="text-outline">/</span><span class="text-primary font-bold tracking-wide uppercase">LIVE TELEMETRY STREAM</span></div></div><div class="hidden xl:flex items-center gap-space-md px-space-md py-space-xs bg-surface-container-high rounded-full font-label-mono-sm text-label-mono-sm"><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Target:</span><span class="text-primary font-bold">google.com</span></div><span class="text-outline">•</span><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Buffer:</span><span class="text-secondary font-bold">1,248 pkts</span></div><span class="text-outline">•</span><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Engine:</span><span class="text-tertiary">Node.js / Express</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container rounded-lg font-label-mono-sm text-label-mono-sm"><span class="text-outline">LATENCY</span><span class="text-primary font-bold">0.4ms</span></div><div class="hidden sm:flex flex-col items-end"><span class="font-label-sans-caps text-label-sans-caps text-primary uppercase">Simulation Only</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Academic Defense Demo</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-lg"><div class="flex flex-col w-full pb-space-xl">
+<!-- Subtle Ambient Glow Canvas Decor -->
+<div class="relative w-full mb-space-lg overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-xl">
+<div class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-16 -bottom-16 h-64 w-64 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+<!-- Header Block -->
+<div class="relative flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-label-mono-sm text-label-mono-sm font-semibold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+            SYS_ARCH_V2.4 // PRODUCTION SPEC
+          </span>
+<span class="text-outline font-label-mono-sm text-label-mono-sm">RFC 1035 ADAPTATION</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+          System Software &amp; Network Architecture
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Modular Pipeline Design &amp; End-to-End Simulation Topology
+        </p>
+</div>
+<!-- Specs Capsule -->
+<div class="flex flex-col gap-space-xs bg-surface-container-high/80 backdrop-blur-md px-space-md py-space-sm rounded-lg shadow-md lg:text-right">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-wider">Engine Runtime Specifications</span>
+<div class="font-label-mono-sm text-label-mono-sm text-primary font-medium flex items-center lg:justify-end gap-space-xs">
+<span>Vanilla JS Frontend</span>
+<span class="text-outline">•</span>
+<span>Node.js / Express</span>
+<span class="text-outline">•</span>
+<span class="text-secondary">In-Memory UDP:53 Emulation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 1: END-TO-END PIPELINE (Interactive Stepper Canvas) -->
+<section class="flex flex-col gap-space-md mb-space-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">End-to-End Software Pipeline Flow</h2>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Deterministic covert channel ingestion, telemetry injection &amp; detection lifecycle</p>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded-lg font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[16px]">touch_app</span>
+<span>Select Node to Inspect Data Contract</span>
+</div>
+</div>
+<!-- Interactive Pipeline Nodes Track -->
+<div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-9 gap-space-sm relative">
+<!-- 01. USER INPUT -->
+<div class="pipeline-node cursor-pointer group flex flex-col justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md" id="pipeline-card-0" onclick="selectPipelineNode(0)">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">01</span>
+<span class="material-symbols-outlined text-[16px] text-primary">keyboard</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">USER INPUT</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Plaintext message injection buffer</p>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/60 rounded px-space-xs py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary truncate block">"NETWORKS PROJECT"</span>
+</div>
+</div>
+<!-- 02. WEB INTERFACE -->
+<div class="pipeline-node cursor-pointer group flex flex-col justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md" id="pipeline-card-1" onclick="selectPipelineNode(1)">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">02</span>
+<span class="material-symbols-outlined text-[16px] text-primary">desktop_windows</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">WEB UI</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Vanilla JS Glassmorphic views</p>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/60 rounded px-space-xs py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant truncate block">Client State Machine</span>
+</div>
+</div>
+<!-- 03. EXPRESS SERVER -->
+<div class="pipeline-node cursor-pointer group flex flex-col justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md" id="pipeline-card-2" onclick="selectPipelineNode(2)">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">03</span>
+<span class="material-symbols-outlined text-[16px] text-primary">router</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">EXPRESS API</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">REST micro-routing gateway</p>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/60 rounded px-space-xs py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary truncate block">/api/v1/tunnel</span>
+</div>
+</div>
+<!-- 04. ENCODER MODULE -->
+<div class="pipeline-node cursor-pointer group flex flex-col justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md" id="pipeline-card-3" onclick="selectPipelineNode(3)">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">04</span>
+<span class="material-symbols-outlined text-[16px] text-primary">code</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">ENCODER</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Base32/64 &amp; Hex serialization</p>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/60 rounded px-space-xs py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-primary truncate block">RFC 4648 Base32</span>
+</div>
+</div>
+<!-- 05. SIMULATOR ENGINE -->
+<div class="pipeline-node cursor-pointer group flex flex-col justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md" id="pipeline-card-4" onclick="selectPipelineNode(4)">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">05</span>
+<span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">SIM ENGINE</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Jitter, slicing, packet drop</p>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/60 rounded px-space-xs py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary truncate block">Delay: [2ms - 18ms]</span>
+</div>
+</div>
+<!-- 06. PACKET MODEL -->
+<div class="pipeline-node cursor-pointer group flex flex-col justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md" id="pipeline-card-5" onclick="selectPipelineNode(5)">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">06</span>
+<span class="material-symbols-outlined text-[16px] text-primary">dns</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">PACKET MODEL</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">RFC 1035 UDP/53 datagrams</p>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/60 rounded px-space-xs py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant truncate block">Synthetic Wire Frame</span>
+</div>
+</div>
+<!-- 07. DETECTOR HEURISTICS -->
+<div class="pipeline-node cursor-pointer group flex flex-col justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md" id="pipeline-card-6" onclick="selectPipelineNode(6)">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">07</span>
+<span class="material-symbols-outlined text-[16px] text-primary">query_stats</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">DETECTOR</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Shannon entropy &amp; length checks</p>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/60 rounded px-space-xs py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-primary truncate block">H(X) Threshold 3.8</span>
+</div>
+</div>
+<!-- 08. DECODER & REASSEMBLER -->
+<div class="pipeline-node cursor-pointer group flex flex-col justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md" id="pipeline-card-7" onclick="selectPipelineNode(7)">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">08</span>
+<span class="material-symbols-outlined text-[16px] text-primary">merge</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">DECODER</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sequence order &amp; SHA verify</p>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/60 rounded px-space-xs py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant truncate block">Integrity Check OK</span>
+</div>
+</div>
+<!-- 09. VISUALIZATION LAYER -->
+<div class="pipeline-node cursor-pointer group flex flex-col justify-between p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all shadow-md" id="pipeline-card-8" onclick="selectPipelineNode(8)">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">09</span>
+<span class="material-symbols-outlined text-[16px] text-primary">monitoring</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">UI TELEMETRY</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live waterfall &amp; hex dumps</p>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-lowest/60 rounded px-space-xs py-1">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary truncate block">Canvas Render</span>
+</div>
+</div>
+</div>
+<!-- Active Node Data Contract & Contract Breakdown -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col lg:flex-row gap-space-md justify-between shadow-lg" id="pipeline-detail">
+<div class="flex flex-col gap-space-xs lg:w-1/2">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm px-space-xs py-0.5 rounded bg-surface-container-highest text-primary" id="detail-stage-pill">STAGE 01 OF 09</span>
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-wider">Node Signature &amp; Context</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold" id="detail-title">
+          User Input Ingestion Buffer
+        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant" id="detail-desc">
+          Accepts arbitrary plaintext strings or byte payloads from researchers via the Steganography Simulator module. Configures transmission target subdomain, record type encapsulation strategy, and simulation network parameters.
+        </p>
+<div class="flex items-center gap-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">INPUT TYPE</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface font-medium" id="detail-input">UTF-8 String Buffer</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">OUTPUT TYPE</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-medium" id="detail-output">JSON Request Body</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">CONCURRENCY</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-medium">Asynchronous Client Thread</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs lg:w-1/2 bg-surface-container-lowest p-space-sm rounded-lg shadow-inner">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px] text-primary">data_object</span>
+            Simulated Wire Data Contract
+          </span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">payload_preview.json</span>
+</div>
+<pre class="font-label-mono-sm text-label-mono-sm text-secondary overflow-x-auto p-space-xs leading-relaxed" id="detail-code">{
+  "raw_message": "COMPUTER NETWORKS PROJECT",
+  "encoding": "base32",
+  "record_type": "TXT",
+  "chunk_size": 32,
+  "root_domain": "tunnel.lab.local",
+  "sim_params": { "latency_ms": 12, "drop_rate": 0.0 }
+}</pre>
+</div>
+</div>
+</section>
+<!-- SECTION 2: PROTOCOL STACK MAPPING & ENCAPSULATION (OSI Model Cross Section) -->
+<section class="flex flex-col gap-space-md mb-space-xl">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[18px]">layers</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Protocol Stack Mapping &amp; Encapsulation</h2>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Cross-sectional layer decomposition conforming to RFC 1035, RFC 768, and RFC 791</p>
+</div>
+</div>
+</div>
+<!-- 4-Tier Stack Cards Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-space-md">
+<!-- Application Layer -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sans-caps text-label-sans-caps px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container uppercase font-bold">Layer 7</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">PORT 53</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Application Layer</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">DNS Protocol Specification (RFC 1035)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Primary steganographic injection vector. Employs subdomain labeling (QNAME prepending up to 63 bytes per label) or covert answer payload packing via resource records.
+          </p>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col gap-space-xs mt-space-xs">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Active Injection Mechanisms</span>
+<div class="flex flex-wrap gap-1">
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-primary px-space-xs py-0.5 rounded">QNAME Prepend</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-secondary px-space-xs py-0.5 rounded">TXT String Data</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-tertiary px-space-xs py-0.5 rounded">NULL Record Binary</span>
+<span class="font-label-mono-sm text-label-mono-sm bg-surface-container-high text-outline px-space-xs py-0.5 rounded">CNAME Redirection</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span>Encapsulation</span>
+<span class="text-primary font-bold">Query / RDATA Payload</span>
+</div>
+</div>
+<!-- Transport Layer -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sans-caps text-label-sans-caps px-space-sm py-0.5 rounded bg-secondary-container text-on-secondary-container uppercase font-bold">Layer 4</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-bold">UDP / TCP</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Transport Layer</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">User Datagram Protocol (RFC 768)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Connectionless datagram delivery minimizing protocol overhead. Features 8-byte fixed headers with simulated sequence buffers to withstand out-of-order exfiltration arrivals.
+          </p>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col gap-space-xs mt-space-xs">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Frame Metrics</span>
+<div class="flex flex-col gap-1 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<div class="flex justify-between"><span>Source Port:</span><span class="text-secondary">Ephemeral (49152-65535)</span></div>
+<div class="flex justify-between"><span>Dest Port:</span><span class="text-primary font-bold">53 (Standard DNS)</span></div>
+<div class="flex justify-between"><span>Header Size:</span><span class="text-on-surface">8 Octets (64 bits)</span></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span>Encapsulation</span>
+<span class="text-secondary font-bold">Datagram Packet Frame</span>
+</div>
+</div>
+<!-- Internet Layer -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sans-caps text-label-sans-caps px-space-sm py-0.5 rounded bg-surface-container-highest text-tertiary uppercase font-bold">Layer 3</span>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary font-bold">IPv4 / IPv6</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Internet Layer</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Internet Protocol (RFC 791)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Virtual network addressing and packet routing mesh. Emulates source resolution via local CIDR subnets and authentic upstream recursive name resolver proxies.
+          </p>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col gap-space-xs mt-space-xs">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Topology Simulation</span>
+<div class="flex flex-col gap-1 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<div class="flex justify-between"><span>Sim Client IP:</span><span class="text-on-surface">192.168.1.104</span></div>
+<div class="flex justify-between"><span>Resolving Gateway:</span><span class="text-tertiary">192.168.1.1</span></div>
+<div class="flex justify-between"><span>Auth Nameserver:</span><span class="text-primary">198.51.100.53</span></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span>Encapsulation</span>
+<span class="text-tertiary font-bold">IP Packet Header (20B)</span>
+</div>
+</div>
+<!-- Network Access -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sans-caps text-label-sans-caps px-space-sm py-0.5 rounded bg-surface-container-high text-outline uppercase font-bold">Layer 1-2</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">IN-MEMORY</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Network Access</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Virtual Loopback Socket Binding</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Zero-privilege socket architecture. Uses Node.js in-memory buffers and synthetic raw stream interfaces, bypassing OS raw socket restrictions and elevated root requirements.
+          </p>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col gap-space-xs mt-space-xs">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Socket Binding Mode</span>
+<div class="flex flex-col gap-1 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<div class="flex justify-between"><span>Loopback:</span><span class="text-on-surface">127.0.0.1:53530</span></div>
+<div class="flex justify-between"><span>Raw Sockets:</span><span class="text-primary">Emulated (Non-Root)</span></div>
+<div class="flex justify-between"><span>MTU Emulation:</span><span class="text-secondary">512 Bytes (DNS Default)</span></div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span>Encapsulation</span>
+<span class="text-outline font-bold">Ethernet Frame (1518B)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: BACKEND API SPECIFICATIONS & ENDPOINTS (REST Gateway Grid) -->
+<section class="flex flex-col gap-space-md mb-space-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Backend API Specifications &amp; Endpoints</h2>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Modular Express.js endpoints exposing encoding, simulation, analysis, and benchmark controllers</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm px-space-sm py-0.5 rounded bg-surface-container-low text-primary font-bold">
+          BASE_URL: http://localhost:3000/api
+        </span>
+</div>
+</div>
+<!-- API Grid (6 Endpoints) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-md">
+<!-- 1. POST /api/encode -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm font-bold px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container">POST</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Encoder Gateway</span>
+</div>
+<span class="font-label-mono-lg text-label-mono-lg text-primary font-bold">/api/encode</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Encodes raw plaintext input payloads into user-specified steganographic format representations (Base32, Base64, Hexadecimal, Binary).
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded font-label-mono-sm text-label-mono-sm flex flex-col gap-0.5">
+<div class="text-outline">REQUEST BODY:</div>
+<div class="text-on-surface truncate">{ text: string, scheme: "b32"|"b64"|"hex" }</div>
+<div class="text-outline mt-1">RESPONSE:</div>
+<div class="text-secondary truncate">{ encoded: string, entropy: 4.12, bytes: 48 }</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container"></span> Status 200 OK</span>
+<span>Latency: ~1.2ms</span>
+</div>
+</div>
+<!-- 2. POST /api/decode -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm font-bold px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container">POST</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Reassembler Module</span>
+</div>
+<span class="font-label-mono-lg text-label-mono-lg text-primary font-bold">/api/decode</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Reassembles fragmented packet sequence chunks, strips transport padding, and reconstructs original plaintext with SHA-256 validation.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded font-label-mono-sm text-label-mono-sm flex flex-col gap-0.5">
+<div class="text-outline">REQUEST BODY:</div>
+<div class="text-on-surface truncate">{ chunks: Array&lt;string&gt;, scheme: "b32" }</div>
+<div class="text-outline mt-1">RESPONSE:</div>
+<div class="text-secondary truncate">{ decoded: string, valid: true, sha256: "9a..." }</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container"></span> Status 200 OK</span>
+<span>Latency: ~1.8ms</span>
+</div>
+</div>
+<!-- 3. POST /api/simulate -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm font-bold px-space-sm py-0.5 rounded bg-secondary-container text-on-secondary-container">POST</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Simulation Controller</span>
+</div>
+<span class="font-label-mono-lg text-label-mono-lg text-secondary font-bold">/api/simulate</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Executes UDP 53 packet transmission simulation injects realistic latency jitter, out-of-order reordering, and synthetic packet drops.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded font-label-mono-sm text-label-mono-sm flex flex-col gap-0.5">
+<div class="text-outline">REQUEST BODY:</div>
+<div class="text-on-surface truncate">{ payload: string, loss_rate: 0.05, jitter: 15 }</div>
+<div class="text-outline mt-1">RESPONSE:</div>
+<div class="text-secondary truncate">{ packets: Array&lt;Packet&gt;, dropped: 1, duration: 240 }</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary-container"></span> Status 200 OK</span>
+<span>Latency: ~4.5ms</span>
+</div>
+</div>
+<!-- 4. POST /api/analyze -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm font-bold px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container">POST</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Heuristic Engine</span>
+</div>
+<span class="font-label-mono-lg text-label-mono-lg text-primary font-bold">/api/analyze</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Evaluates single or batch DNS queries. Computes Shannon entropy index, label length distributions, and composite anomaly confidence score.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded font-label-mono-sm text-label-mono-sm flex flex-col gap-0.5">
+<div class="text-outline">REQUEST BODY:</div>
+<div class="text-on-surface truncate">{ query_names: ["vj2s.tunnel.lab.local"] }</div>
+<div class="text-outline mt-1">RESPONSE:</div>
+<div class="text-secondary truncate">{ entropy: 4.88, is_tunnel: true, score: 96 }</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container"></span> Status 200 OK</span>
+<span>Latency: ~2.1ms</span>
+</div>
+</div>
+<!-- 5. GET /api/normal-traffic -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm font-bold px-space-sm py-0.5 rounded bg-surface-container-highest text-tertiary">GET</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Telemetry Source</span>
+</div>
+<span class="font-label-mono-lg text-label-mono-lg text-tertiary font-bold">/api/normal-traffic</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Supplies pre-compiled corpus of legitimate recursive DNS resolutions (A/AAAA/MX queries to Alexa Top 1000) for forensic baseline comparisons.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded font-label-mono-sm text-label-mono-sm flex flex-col gap-0.5">
+<div class="text-outline">QUERY PARAMS:</div>
+<div class="text-on-surface truncate">?sample_size=100&amp;include_cdn=true</div>
+<div class="text-outline mt-1">RESPONSE:</div>
+<div class="text-secondary truncate">{ dataset: "alexa_top_clean", count: 100 }</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Status 200 OK</span>
+<span>Latency: ~0.8ms</span>
+</div>
+</div>
+<!-- 6. POST /api/compare -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between shadow-md hover:bg-surface-container-high transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-sm text-label-mono-sm font-bold px-space-sm py-0.5 rounded bg-primary-container text-on-primary-container">POST</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Statistical Divergence</span>
+</div>
+<span class="font-label-mono-lg text-label-mono-lg text-primary font-bold">/api/compare</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Calculates Kullback–Leibler divergence, character frequency histograms, and comparative Kolmogorov-Smirnov metrics between streams.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded font-label-mono-sm text-label-mono-sm flex flex-col gap-0.5">
+<div class="text-outline">REQUEST BODY:</div>
+<div class="text-on-surface truncate">{ sample_stream_id: "s_942", baseline_id: "b_01" }</div>
+<div class="text-outline mt-1">RESPONSE:</div>
+<div class="text-secondary truncate">{ kl_divergence: 1.84, ks_p_value: 0.0012 }</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container"></span> Status 200 OK</span>
+<span>Latency: ~3.4ms</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: HARDWARE & ENVIRONMENT DEPLOYMENT TOPOLOGY (Tactical Architecture Card) -->
+<section class="bg-surface-container p-space-lg rounded-xl flex flex-col lg:flex-row items-center justify-between gap-space-lg shadow-xl relative overflow-hidden">
+<div class="flex flex-col gap-space-xs max-w-xl">
+<div class="flex items-center gap-space-xs text-primary font-label-mono-sm text-label-mono-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[16px]">memory</span>
+        Zero-Dependency Sandbox Execution
+      </div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">
+        Deterministic Local Node Topology
+      </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        The DNS Covert Channel Analyzer is structured intentionally as an air-gapped forensic workbench. By virtualizing nameserver queries inside memory-mapped JavaScript ArrayBuffers, the suite generates 100% compliant RFC 1035 frames without needing administrative raw sockets or external internet connectivity.
+      </p>
+<div class="flex items-center gap-space-md pt-space-xs">
+<div class="flex items-center gap-1 text-on-surface font-label-mono-sm text-label-mono-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+          Strict Academic Isolation
+        </div>
+<div class="flex items-center gap-1 text-on-surface font-label-mono-sm text-label-mono-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+          Deterministic PRNG Jitter
+        </div>
+</div>
+</div>
+<!-- Visual Architecture Status Indicators -->
+<div class="grid grid-cols-2 gap-space-md w-full lg:w-auto">
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-1">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">SIMULATED MTU</span>
+<span class="font-display-lg text-headline-lg text-primary font-bold">512 <span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant font-normal">Bytes</span></span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Classic DNS UDP Limit</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-1">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">MAX QNAME LABEL</span>
+<span class="font-display-lg text-headline-lg text-secondary font-bold">63 <span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant font-normal">Octets</span></span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">RFC 1035 §3.1 Rule</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-1">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">DISPATCH RATE</span>
+<span class="font-display-lg text-headline-lg text-tertiary font-bold">1.2k <span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant font-normal">pkts/sec</span></span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Peak Loopback Engine</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-1">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">ENTROPY THRESHOLD</span>
+<span class="font-display-lg text-headline-lg text-error font-bold">4.20 <span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant font-normal">H(X)</span></span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Covert Alarm Trigger</span>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Interactive Pipeline Stage Inspector Data Store
+  const pipelineStages = [
+    {
+      pill: "STAGE 01 OF 09",
+      title: "User Input Ingestion Buffer",
+      desc: "Accepts arbitrary plaintext strings or binary exfiltration files from researchers via the Steganography Simulator module. Configures transmission target subdomain, record type encapsulation strategy, and network simulation parameters.",
+      input: "UTF-8 String Buffer",
+      output: "JSON Request Body",
+      code: `{\n  "raw_message": "COMPUTER NETWORKS PROJECT",\n  "encoding": "base32",\n  "record_type": "TXT",\n  "chunk_size": 32,\n  "root_domain": "tunnel.lab.local",\n  "sim_params": { "latency_ms": 12, "drop_rate": 0.0 }\n}`
+    },
+    {
+      pill: "STAGE 02 OF 09",
+      title: "Responsive Glassmorphic Web Interface",
+      desc: "Lightweight client engine constructed with pure Vanilla JS. Provides deterministic state machines for real-time traffic monitoring, byte inspection tables, and reactive entropy graphs without external front-end framework bloat.",
+      input: "DOM Events / User Actions",
+      output: "XHR / Fetch Payloads",
+      code: `// Client-side dispatcher\nconst response = await fetch('/api/simulate', {\n  method: 'POST',\n  headers: { 'Content-Type': 'application/json' },\n  body: JSON.stringify(simPayload)\n});\nconst telemetryStream = await response.json();`
+    },
+    {
+      pill: "STAGE 03 OF 09",
+      title: "Express.js REST Gateway Controller",
+      desc: "High-performance Node.js REST API layer that coordinates the modular steganography lifecycle. Enforces schema validation, handles cross-module errors, and dispatches analytical tasks asynchronously.",
+      input: "HTTP/1.1 REST Payload",
+      output: "Modular Pipeline Objects",
+      code: `router.post('/simulate', (req, res) => {\n  const { payload, scheme, sim_params } = req.body;\n  const chunks = encoder.serialize(payload, scheme);\n  const packets = simEngine.generate(chunks, sim_params);\n  res.json({ count: packets.length, stream: packets });\n});`
+    },
+    {
+      pill: "STAGE 04 OF 09",
+      title: "Encoder & Serialization Subsystem",
+      desc: "Transforms arbitrary ASCII data into DNS-compatible representations conforming to RFC 4648. Handles Base32 encoding (case-insensitive QNAME compliance) and raw hexadecimal byte-packing for binary channels.",
+      input: "ASCII Byte Buffer",
+      output: "Base32 / Hex Chunks",
+      code: `// Base32 serialization snippet\nconst chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';\nfunction toBase32(str) {\n  /* RFC 4648 5-bit packing implementation */\n  return b32Chunks.map(c => c.toLowerCase());\n}`
+    },
+    {
+      pill: "STAGE 05 OF 09",
+      title: "Network Simulation Engine",
+      desc: "Models real-world wide-area network impairments before packet transmission. Dynamically applies Gaussian jitter delays, emulates random or burst packet losses, and executes out-of-order sequencing.",
+      input: "Ordered Chunk Stream",
+      output: "Impaired Telemetry Stream",
+      code: `{\n  "injected_loss": 0.04,\n  "applied_jitter_ms": 8.4,\n  "reordered_sequences": [0, 2, 1, 3, 4],\n  "synthetic_carrier": "UDP/IPv4"\n}`
+    },
+    {
+      pill: "STAGE 06 OF 09",
+      title: "RFC 1035 Synthetic Datagram Constructor",
+      desc: "Compiles encoded data into binary RFC 1035 wire frames. Constructs 12-byte headers (Transaction ID, QR flag, Opcode, RCODE), sets Query Type (TXT/CNAME/NULL), and computes length octets.",
+      input: "Sanitized Subdomain Chunks",
+      output: "Raw Wire DNS Frames",
+      code: `Header Breakdown:\n- ID: 0x4A1F (19007)\n- Flags: 0x0100 (Standard Query, RD=1)\n- QDCOUNT: 1, ANCOUNT: 0, NSCOUNT: 0, ARCOUNT: 0\n- QNAME: \\x08in73mfq4\\x06tunnel\\x03lab\\x05local\\x00\n- QTYPE: 0x0010 (TXT), QCLASS: 0x0001 (IN)`
+    },
+    {
+      pill: "STAGE 07 OF 09",
+      title: "Heuristic Anomaly Detector",
+      desc: "Evaluates stream queries in real-time. Calculates Shannon Entropy H(X) = -sum(P(x) * log2(P(x))), monitors label lengths, checks character n-gram frequencies, and flags high-entropy covert exfiltration tunnels.",
+      input: "Wire Packet Stream",
+      output: "Forensic Heuristic Metrics",
+      code: `{\n  "shannon_entropy": 4.891,\n  "label_length": 58,\n  "character_diversity_ratio": 0.88,\n  "covert_channel_verdict": "CRITICAL_EXFIL_DETECTED",\n  "confidence_percent": 98.4\n}`
+    },
+    {
+      pill: "STAGE 08 OF 09",
+      title: "Sequence Reassembler & Decoder",
+      desc: "Inspects incoming packets at the receiver boundary. Reorders out-of-sequence chunks via protocol index headers, strips padding bytes, and compares the recovered SHA-256 digest against the original payload.",
+      input: "Extracted Covert Chunks",
+      output: "Decoded Message & Hash",
+      code: `{\n  "total_chunks": 4,\n  "reconstructed_length": 25,\n  "verified_message": "COMPUTER NETWORKS PROJECT",\n  "sha256": "8a32b21c5f89e472688da3b207ec1",\n  "integrity": "VERIFIED_100%_MATCH"\n}`
+    },
+    {
+      pill: "STAGE 09 OF 09",
+      title: "Visualization & Telemetry Layer",
+      desc: "Delivers continuous real-time forensic displays: Wireshark-inspired multi-pane hex inspector, interactive packet logs, waterfall latency timelines, and statistical divergence comparison graphs.",
+      input: "Aggregated Telemetry Data",
+      output: "Rendered Interactive Canvas",
+      code: `// Render payload update\nrenderPacketTable(streamData);\nupdateEntropyGauge(heuristicResult.shannon_entropy);\nrenderWireHexMatrix(activePacket.raw_octets);`
+    }
+  ];
+
+  function selectPipelineNode(index) {
+    // Reset all nodes
+    document.querySelectorAll('.pipeline-node').forEach((node, i) => {
+      node.classList.remove('bg-surface-container-high', 'shadow-xl');
+      node.classList.add('bg-surface-container');
+    });
+
+    // Highlight selected node
+    const activeCard = document.getElementById(`pipeline-card-${index}`);
+    if (activeCard) {
+      activeCard.classList.remove('bg-surface-container');
+      activeCard.classList.add('bg-surface-container-high', 'shadow-xl');
+    }
+
+    // Populate detail section
+    const stage = pipelineStages[index];
+    document.getElementById('detail-stage-pill').textContent = stage.pill;
+    document.getElementById('detail-title').textContent = stage.title;
+    document.getElementById('detail-desc').textContent = stage.desc;
+    document.getElementById('detail-input').textContent = stage.input;
+    document.getElementById('detail-output').textContent = stage.output;
+    document.getElementById('detail-code').textContent = stage.code;
+  }
+
+  // Initialize with Stage 0 selected
+  selectPipelineNode(0);
+</script></main></div></body></html>

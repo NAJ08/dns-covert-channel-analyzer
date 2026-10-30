@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#001f28", "secondary-fixed": "#d8e2ff", "surface-container": "#1a1f2e", "inverse-on-surface": "#2b303f", "outline-variant": "#3c494e", "error": "#ffb4ab", "on-error-container": "#ffdad6", "inverse-surface": "#dee2f6", "on-background": "#dee2f6", "tertiary-container": "#6bccff", "tertiary-fixed": "#c4e7ff", "surface-bright": "#343948", "on-primary-fixed-variant": "#004e60", "tertiary-fixed-dim": "#7bd0ff", "secondary": "#aec6ff", "surface-container-lowest": "#090e1c", "on-tertiary": "#00354a", "on-tertiary-fixed-variant": "#004c69", "background": "#0e1321", "surface-container-low": "#161b2a", "on-tertiary-fixed": "#001e2c", "primary-fixed": "#b6ebff", "surface-variant": "#303444", "surface-container-highest": "#303444", "tertiary": "#b8e3ff", "on-secondary-container": "#00275e", "surface-container-high": "#252a39", "on-primary-container": "#00566a", "on-error": "#690005", "secondary-container": "#508eff", "on-surface": "#dee2f6", "primary-container": "#00d2ff", "inverse-primary": "#00677f", "on-tertiary-container": "#005575", "on-secondary-fixed": "#001a43", "secondary-fixed-dim": "#aec6ff", "on-secondary": "#002e6b", "primary-fixed-dim": "#47d6ff", "on-secondary-fixed-variant": "#004397", "on-surface-variant": "#bbc9cf", "surface": "#0e1321", "on-primary": "#003543", "error-container": "#93000a", "surface-tint": "#47d6ff", "outline": "#859399", "surface-dim": "#0e1321", "primary": "#a5e7ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "1.5rem", "space-xl": "1.5rem", "space-md": "0.75rem", "space-lg": "1rem", "gutter-desktop": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "0.75rem", "margin": "0.75rem" }, "fontFamily": { "label-sans-caps": [ "Inter" ], "body-sm": [ "Inter" ], "label-mono-sm": [ "JetBrains Mono" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Inter" ], "body-md": [ "Inter" ], "label-mono-lg": [ "JetBrains Mono" ], "label-mono-md": [ "JetBrains Mono" ] }, "fontSize": { "label-sans-caps": [ "10px", { "lineHeight": "12px", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-mono-sm": [ "10px", { "lineHeight": "14px", "fontWeight": "400" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "fontWeight": "600" } ], "headline-lg-mobile": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "display-lg": [ "36px", { "lineHeight": "44px", "fontWeight": "700" } ], "headline-md": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "headline-sm": [ "15px", { "lineHeight": "20px", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "fontWeight": "400" } ], "body-md": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "label-mono-lg": [ "13px", { "lineHeight": "18px", "fontWeight": "500" } ], "label-mono-md": [ "11px", { "lineHeight": "16px", "fontWeight": "500" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest/60 backdrop-blur-xl"><img alt="DNS COVERT Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQiuCo1Ac-ZWJhhAfvIoXn2NCz_-Kwpwd2zla3PBYvDF7EcTdaYl0xuIECtGEebuHpxDM_Y9HLB6lZl5ZsXHQfvbRfwL2hNwwROxw4zxLevA7s326cPvfvJqKxLUo582XJPVYhT7BHY6W5Unl0_uP7jNxN1CRKRzfs8VnBiHfALukBgqffanQ1Ubh9hPvp5lScwsCWouQlEkLHuv7RYGMyusumB5frFrYReYxB"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-wider uppercase leading-none">DNS COVERT</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant leading-tight tracking-tight">Channel Analyzer</span></div></div><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-widest">Forensic Modules</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="stego-simulator" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="font-body-md text-body-md">Stego Simulator</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary-container font-bold rounded-lg" data-path="packet-inspector" href="#"><span class="material-symbols-outlined text-[18px]">manage_search</span><span class="font-body-md text-body-md">Packet Inspector</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="anomaly-detection" href="#"><span class="material-symbols-outlined text-[18px]">warning</span><span class="font-body-md text-body-md">Anomaly Detection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="traffic-comparison" href="#"><span class="material-symbols-outlined text-[18px]">compare_arrows</span><span class="font-body-md text-body-md">Traffic Comparison</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="packet-log" href="#"><span class="material-symbols-outlined text-[18px]">history</span><span class="font-body-md text-body-md">Packet Log</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="education" href="#"><span class="material-symbols-outlined text-[18px]">school</span><span class="font-body-md text-body-md">Education</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="architecture" href="#"><span class="material-symbols-outlined text-[18px]">account_tree</span><span class="font-body-md text-body-md">Architecture</span></a></nav></div><div class="p-space-sm m-space-sm bg-surface-container-lowest rounded-lg flex flex-col gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-mono-sm text-label-mono-sm text-primary uppercase font-bold">Simulation Mode</span></div><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">v2.4</span></div><div class="flex items-center justify-between text-on-surface-variant pt-space-xs"><span class="font-label-mono-sm text-label-mono-sm flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-primary">dns</span> UDP:53 Bound</span><button class="text-on-surface-variant hover:text-primary transition-colors" title="Reset telemetry socket" type="button"><span class="material-symbols-outlined text-[14px]">restart_alt</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[20px]">radar</span><div class="flex items-center gap-space-xs font-label-mono-md text-label-mono-md"><span class="text-on-surface-variant">NET_OPS</span><span class="text-outline">/</span><span class="text-primary font-bold tracking-wide uppercase">LIVE TELEMETRY STREAM</span></div></div><div class="hidden xl:flex items-center gap-space-md px-space-md py-space-xs bg-surface-container-high rounded-full font-label-mono-sm text-label-mono-sm"><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Target:</span><span class="text-primary font-bold">google.com</span></div><span class="text-outline">•</span><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Buffer:</span><span class="text-secondary font-bold">1,248 pkts</span></div><span class="text-outline">•</span><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Engine:</span><span class="text-tertiary">Node.js / Express</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container rounded-lg font-label-mono-sm text-label-mono-sm"><span class="text-outline">LATENCY</span><span class="text-primary font-bold">0.4ms</span></div><div class="hidden sm:flex flex-col items-end"><span class="font-label-sans-caps text-label-sans-caps text-primary uppercase">Simulation Only</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Academic Defense Demo</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-lg"><div class="flex flex-col w-full pb-space-xl">
+<!-- Dynamic Atmospheric Glow Overlay -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 right-1/4 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -left-20 w-80 h-80 bg-error/5 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Screen Header & Operational Status -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md py-space-md mb-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-mono-sm text-label-mono-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            RFC 1035 Dissector
+          </span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">|</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Frame: #0002.hex</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">Packet Inspector</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep Packet Dissection &amp; Raw RFC 1035 Wire Format Decoding</p>
+</div>
+<!-- Action Toggles & Inspector Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 bg-surface-container-high rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">Capture Buffer: Active</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline px-1">/</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">5/1024 frames</span>
+</div>
+<div class="flex items-center bg-surface-container-lowest p-0.5 rounded-lg shadow-inner">
+<button class="px-space-sm py-1 rounded bg-surface-container-high font-label-mono-sm text-label-mono-sm text-primary font-bold transition-all shadow-sm" id="mode-hex">HEX</button>
+<button class="px-space-sm py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface transition-colors" id="mode-bin">BINARY</button>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 bg-error-container/40 rounded-lg text-error font-label-mono-sm text-label-mono-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px]">crisis_alert</span>
+<span>Dissect Packet #02</span>
+</div>
+</div>
+</div>
+<!-- Main Wireshark / SOC Forensic Split Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- LEFT PANEL: Packet Stream List (35% -> col-span-4 or 5) -->
+<div class="xl:col-span-4 flex flex-col gap-space-sm">
+<!-- Filter Bar -->
+<div class="flex flex-col gap-space-xs p-space-sm bg-surface-container-low rounded-xl shadow-md backdrop-blur-md">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sans-caps text-label-sans-caps uppercase text-outline tracking-wider">Stream Ingestion</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary">pcap_live: eth0</span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-[18px] text-outline">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-mono-sm text-label-mono-sm pl-8 pr-8 py-2 rounded-lg outline-none focus:bg-surface-container-highest transition-all shadow-inner placeholder:text-outline" id="stream-filter" placeholder="Filter by QNAME, TxID, or status..." type="text" value="google.com"/>
+<button class="absolute right-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1 font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Display Filter: <code class="text-primary font-bold">dns.id &amp;&amp; dns.flags.response == 0</code></span>
+<span class="text-outline">5 Match</span>
+</div>
+</div>
+<!-- Scrollable Capture Table / Stream Cards -->
+<div class="flex flex-col gap-space-xs max-h-[780px] overflow-y-auto pr-1">
+<!-- Packet #01 -->
+<div class="group cursor-pointer p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg transition-all shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-outline group-hover:text-primary transition-colors">#01</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">TxID:</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-bold">0x4A1F</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-secondary-fixed font-label-mono-sm text-label-mono-sm uppercase">DELIVERED</span>
+</div>
+<div class="font-label-mono-md text-label-mono-md text-on-surface truncate">pkt01-Q09NUFVURVI.google.com</div>
+<div class="flex items-center justify-between mt-2 pt-1 font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container-lowest/50 px-2 py-1 rounded">
+<span class="text-primary font-bold">TYPE: A</span>
+<span>Entropy: <span class="text-tertiary-fixed font-bold">4.15 H(X)</span></span>
+<span>UDP / 53</span>
+</div>
+</div>
+<!-- Packet #02 (ACTIVE SELECTED) -->
+<div class="relative cursor-pointer p-space-sm bg-surface-container-high rounded-lg shadow-lg">
+<div class="absolute -left-1 top-2 bottom-2 w-1.5 bg-error rounded-r"></div>
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-error">#02</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">TxID:</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">0x7E3B</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping ml-1"></span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-error-container text-error font-label-mono-sm text-label-mono-sm font-bold uppercase shadow-sm">SUSPICIOUS</span>
+</div>
+<div class="font-label-mono-md text-label-mono-md text-primary font-bold truncate">pkt02-TkVUV09SS1M.google.com</div>
+<div class="flex items-center justify-between mt-2 pt-1 font-label-mono-sm text-label-mono-sm bg-surface-container-lowest px-2 py-1 rounded">
+<span class="text-error font-bold">TYPE: TXT (16)</span>
+<span>Entropy: <span class="text-error font-bold">4.28 H(X)</span></span>
+<span class="text-on-surface-variant">Payload Exfil</span>
+</div>
+</div>
+<!-- Packet #03 -->
+<div class="group cursor-pointer p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg transition-all shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-outline group-hover:text-primary transition-colors">#03</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">TxID:</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-bold">0x9C2D</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-secondary-fixed font-label-mono-sm text-label-mono-sm uppercase">DELIVERED</span>
+</div>
+<div class="font-label-mono-md text-label-mono-md text-on-surface truncate">pkt03-UFJPSkVDVA.google.com</div>
+<div class="flex items-center justify-between mt-2 pt-1 font-label-mono-sm text-label-mono-sm text-on-surface-variant bg-surface-container-lowest/50 px-2 py-1 rounded">
+<span class="text-primary font-bold">TYPE: A</span>
+<span>Entropy: <span class="text-tertiary-fixed font-bold">3.98 H(X)</span></span>
+<span>UDP / 53</span>
+</div>
+</div>
+<!-- Packet #04 -->
+<div class="group cursor-pointer p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg transition-all shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-outline group-hover:text-primary transition-colors">#04</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">TxID:</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">0x11AB</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-lowest text-outline font-label-mono-sm text-label-mono-sm uppercase">NORMAL</span>
+</div>
+<div class="font-label-mono-md text-label-mono-md text-on-surface-variant truncate">update.google.com</div>
+<div class="flex items-center justify-between mt-2 pt-1 font-label-mono-sm text-label-mono-sm text-outline bg-surface-container-lowest/30 px-2 py-1 rounded">
+<span>TYPE: A</span>
+<span>Entropy: 2.12 H(X)</span>
+<span>Clean Vector</span>
+</div>
+</div>
+<!-- Packet #05 -->
+<div class="group cursor-pointer p-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg transition-all shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm font-bold text-outline group-hover:text-primary transition-colors">#05</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">TxID:</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold">0x88EF</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-lowest text-outline font-label-mono-sm text-label-mono-sm uppercase">NORMAL</span>
+</div>
+<div class="font-label-mono-md text-label-mono-md text-on-surface-variant truncate">mail.google.com</div>
+<div class="flex items-center justify-between mt-2 pt-1 font-label-mono-sm text-label-mono-sm text-outline bg-surface-container-lowest/30 px-2 py-1 rounded">
+<span>TYPE: MX (15)</span>
+<span>Entropy: 2.30 H(X)</span>
+<span>Legitimate MTA</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Diagnostic Widget -->
+<div class="p-space-md bg-surface-container-low rounded-xl shadow-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sans-caps text-label-sans-caps uppercase text-outline">Tunneling Risk Metric</span>
+<span class="font-label-mono-sm text-label-mono-sm text-error font-bold">89.4% CRITICAL</span>
+</div>
+<!-- Shannon Entropy Sparkline / Meter -->
+<div class="w-full bg-surface-container-lowest h-2 rounded-full overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 45%;"></div>
+<div class="bg-tertiary-container h-full" style="width: 25%;"></div>
+<div class="bg-error h-full" style="width: 30%;"></div>
+</div>
+<div class="flex justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant pt-1">
+<span>Base H(X): 3.2</span>
+<span>Current: <strong class="text-error">4.28 (Encoded)</strong></span>
+<span>Max: 8.0</span>
+</div>
+</div>
+<!-- Visual Sensor Node Map -->
+<div class="p-space-md bg-surface-container-low rounded-xl shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sans-caps text-label-sans-caps uppercase text-outline">Sensor Geolocation Relay</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold">Active TAP</span>
+</div>
+<div class="w-full h-36 bg-cover bg-center rounded-lg shadow-inner relative overflow-hidden" data-location="Zurich, Switzerland" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDfqd1LH1NSzn7XIT2QSI_1dXugnzt8GQgykh-2wpw2g7-jY2r3AVxKv9ERIhNZpkkYj5jSDtoOonRHDaVyDZ6zb-I8fPfm-ae0N4pGISmPsI8a-LmYPc3iMDsfNvWZgp2f_n5qjWnU76u2XO3ReGrOeJbxAzZNq4s7RE2uwPRSsnuCXyBrdr-m9JA29s47hjtXSCufF7DQw09BTAlUqyHl-qkEAu5_GijAo9hL')">
+<div class="absolute inset-0 bg-surface-container-lowest/40 backdrop-blur-[1px] flex items-end p-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest/90 text-primary font-label-mono-sm text-label-mono-sm">Relay Edge Node: CH-ZRH-09 (47.3769° N, 8.5417° E)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Detailed Protocol Dissection (65% -> col-span-8) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- 1. DNS HEADER & FLAGS (Expandable Section) -->
+<div class="bg-surface-container-low rounded-xl shadow-md p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between cursor-pointer" onclick="document.getElementById('header-details').classList.toggle('hidden')">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">account_tree</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">DNS HEADER &amp; FLAGS</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">RFC 1035 Section 4.1.1 (12 Bytes Fixed Header)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 bg-primary-container/20 text-primary font-label-mono-sm text-label-mono-sm rounded">Flags: 0x0100</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xs pt-space-xs" id="header-details">
+<div class="p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Transaction ID</div>
+<div class="font-label-mono-lg text-label-mono-lg text-primary font-bold mt-1">0x7E3B <span class="text-on-surface-variant text-body-sm">(32315)</span></div>
+<div class="font-label-mono-sm text-label-mono-sm text-outline-variant mt-0.5">Wire Bytes: [00-01]</div>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Questions (QDCOUNT)</div>
+<div class="font-label-mono-lg text-label-mono-lg text-on-surface font-bold mt-1">1 Entry</div>
+<div class="font-label-mono-sm text-label-mono-sm text-outline-variant mt-0.5">Wire Bytes: [04-05]</div>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Answers (ANCOUNT)</div>
+<div class="font-label-mono-lg text-label-mono-lg text-outline font-bold mt-1">0 Records</div>
+<div class="font-label-mono-sm text-label-mono-sm text-outline-variant mt-0.5">Wire Bytes: [06-07]</div>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Additional (ARCOUNT)</div>
+<div class="font-label-mono-lg text-label-mono-lg text-secondary font-bold mt-1">1 (EDNS0 OPT)</div>
+<div class="font-label-mono-sm text-label-mono-sm text-outline-variant mt-0.5">Wire Bytes: [10-11]</div>
+</div>
+<!-- Deep Flags Breakdown Strip -->
+<div class="md:col-span-2 lg:col-span-4 p-space-sm bg-surface-container-high rounded-lg flex flex-wrap items-center justify-between gap-space-xs font-label-mono-sm text-label-mono-sm">
+<div class="flex items-center gap-1.5"><span class="text-outline">QR:</span><span class="text-on-surface font-bold">0 (Query)</span></div>
+<div class="flex items-center gap-1.5"><span class="text-outline">Opcode:</span><span class="text-on-surface font-bold">0 (Standard Query)</span></div>
+<div class="flex items-center gap-1.5"><span class="text-outline">AA:</span><span class="text-outline font-bold">0 (Non-Auth)</span></div>
+<div class="flex items-center gap-1.5"><span class="text-outline">TC:</span><span class="text-outline font-bold">0 (Not Truncated)</span></div>
+<div class="flex items-center gap-1.5"><span class="text-outline">RD:</span><span class="text-primary font-bold">1 (Recursion Desired)</span></div>
+<div class="flex items-center gap-1.5"><span class="text-outline">RA:</span><span class="text-outline font-bold">0</span></div>
+<div class="flex items-center gap-1.5"><span class="text-outline">Z:</span><span class="text-outline font-bold">0 (Reserved)</span></div>
+<div class="flex items-center gap-1.5"><span class="text-outline">RCODE:</span><span class="text-secondary font-bold">0 (NoError)</span></div>
+</div>
+</div>
+</div>
+<!-- 2. QUESTION SECTION & COVERT CHANNEL ANALYSIS -->
+<div class="bg-surface-container-low rounded-xl shadow-md p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-error text-[20px]">manage_search</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">QUESTION SECTION &amp; STEGANOGRAPHY SIGNATURES</h2>
+<p class="font-label-mono-sm text-label-mono-sm text-outline">Targeted RFC 1035 Question Specifier with Covert Payload Extraction</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-error/20 text-error font-label-mono-sm text-label-mono-sm font-bold">Entropy Trigger &gt; 4.0</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-xs">
+<!-- Full QNAME Inspection Card -->
+<div class="md:col-span-2 p-space-sm bg-surface-container-lowest rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">QNAME Wire Representation</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Length: 32 bytes</span>
+</div>
+<div class="p-space-sm bg-surface-container rounded font-label-mono-md text-label-mono-md text-on-surface overflow-x-auto select-all">
+<span class="text-error font-bold">pkt02-TkVUV09SS1M</span><span class="text-primary font-bold">.google.com</span>
+</div>
+<!-- Covert Payload Extraction -->
+<div class="mt-space-xs p-space-sm bg-error-container/20 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm">
+<span class="text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock_open</span> Extracted Covert Payload
+                  </span>
+<span class="text-outline">Base64 Encoded (17 Chars)</span>
+</div>
+<div class="font-label-mono-md text-label-mono-md text-on-surface font-bold bg-surface-container-lowest px-2 py-1 rounded flex items-center justify-between">
+<code>pkt02-TkVUV09SS1M</code>
+<span class="material-symbols-outlined text-outline text-[16px] cursor-pointer hover:text-primary" title="Copy raw payload">content_copy</span>
+</div>
+<div class="font-label-mono-sm text-label-mono-sm text-secondary-fixed flex items-center gap-2 pt-1">
+<span class="text-outline">Decoded ASCII:</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold">"NETWORKS"</span>
+<span class="text-outline text-[10px]">(Packet 2 of segmented transmission)</span>
+</div>
+</div>
+</div>
+<!-- QTYPE & QCLASS Card -->
+<div class="flex flex-col gap-space-xs">
+<div class="p-space-sm bg-surface-container-lowest rounded-lg flex-1">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">QTYPE (Query Type)</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 rounded bg-error text-surface font-label-mono-lg text-label-mono-lg font-bold">TXT</span>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Type 16 (Covert Vector)</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-2">TXT queries are commonly abused to exfiltrate arbitrary payloads without caching interference.</p>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg flex-1">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">QCLASS</span>
+<div class="font-label-mono-lg text-label-mono-lg text-on-surface font-bold mt-1">IN <span class="text-on-surface-variant font-label-mono-sm text-label-mono-sm">(0x0001 - Internet)</span></div>
+<div class="font-label-mono-sm text-label-mono-sm text-outline-variant mt-0.5">Wire Bytes: [31-32]</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. SIMULATED DNS RESPONSE & COVERT HANDSHAKE -->
+<div class="bg-surface-container-low rounded-xl shadow-md p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">reply</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">SIMULATED DNS RESPONSE &amp; C2 ACQUISITION</h3>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Loopback Emulated Resolver (Synthetic Node)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-mono-sm text-label-mono-sm font-bold">TTL: 60s</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Response Flags</div>
+<div class="font-label-mono-md text-label-mono-md text-primary font-bold mt-1">0x8180</div>
+<div class="font-label-mono-sm text-label-mono-sm text-on-surface-variant mt-0.5">Std query resp, No error</div>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Authoritative Nameserver</div>
+<div class="font-label-mono-md text-label-mono-md text-on-surface font-bold mt-1">ns1.google.com</div>
+<div class="font-label-mono-sm text-label-mono-sm text-outline mt-0.5">Root Recursive Forwarder</div>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Injected Answer (C2 ACK)</div>
+<div class="font-label-mono-md text-label-mono-md text-secondary font-bold mt-1 truncate">TXT "ACK:pkt02-RECV"</div>
+<div class="font-label-mono-sm text-label-mono-sm text-error mt-0.5">Covert Downstream Token</div>
+</div>
+</div>
+</div>
+<!-- 4. RAW WIRE FORMAT (HEXADECIMAL DUMP) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden flex flex-col">
+<!-- Terminal Title Bar -->
+<div class="px-space-md py-space-sm bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-error inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-surface-variant inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface font-bold">RAW WIRE FORMAT (HEXADECIMAL DUMP)</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">| Frame 2 Length: 56 Bytes</span>
+</div>
+<div class="flex items-center gap-space-sm font-label-mono-sm text-label-mono-sm">
+<span class="text-primary font-bold animate-pulse" id="active-wire-target">Hover over bytes for protocol lookup</span>
+<button class="px-2 py-0.5 bg-surface-container-high hover:bg-surface-bright rounded text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" title="Copy as C Array">
+<span class="material-symbols-outlined text-[14px]">code</span> Export Hex
+              </button>
+</div>
+</div>
+<!-- Hex + ASCII Breakdown Display -->
+<div class="p-space-md font-label-mono-md text-label-mono-md overflow-x-auto leading-relaxed select-text">
+<!-- Row 0000 -->
+<div class="grid grid-cols-12 gap-2 py-0.5 hover:bg-surface-container-high/40 rounded transition-colors group">
+<span class="col-span-2 text-outline select-none">0000</span>
+<div class="col-span-6 flex flex-wrap gap-1.5 font-bold">
+<!-- TxID (7e 3b) -->
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Header: Transaction ID (0x7E3B)">7e</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Header: Transaction ID (0x7E3B)">3b</span>
+<!-- Flags (01 00) -->
+<span class="hex-byte text-secondary cursor-pointer hover:bg-secondary/20 px-0.5 rounded" data-field="Header: Query Flags (0x0100)">01</span>
+<span class="hex-byte text-secondary cursor-pointer hover:bg-secondary/20 px-0.5 rounded" data-field="Header: Query Flags (0x0100)">00</span>
+<!-- QDCOUNT (00 01) -->
+<span class="hex-byte text-on-surface-variant cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="Header: Question Count (1)">00</span>
+<span class="hex-byte text-on-surface-variant cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="Header: Question Count (1)">01</span>
+<!-- ANCOUNT (00 00) -->
+<span class="hex-byte text-outline-variant cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="Header: Answer Count (0)">00</span>
+<span class="hex-byte text-outline-variant cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="Header: Answer Count (0)">00</span>
+<span class="text-outline select-none ml-1 mr-1">|</span>
+<!-- NSCOUNT (00 00) -->
+<span class="hex-byte text-outline-variant cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="Header: Authority Count (0)">00</span>
+<span class="hex-byte text-outline-variant cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="Header: Authority Count (0)">00</span>
+<!-- ARCOUNT (00 01) -->
+<span class="hex-byte text-secondary-fixed cursor-pointer hover:bg-secondary/20 px-0.5 rounded" data-field="Header: Additional Record Count (1)">00</span>
+<span class="hex-byte text-secondary-fixed cursor-pointer hover:bg-secondary/20 px-0.5 rounded" data-field="Header: Additional Record Count (1)">01</span>
+<!-- QNAME Label Length (0x11 = 17) -->
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Question: Label Length (17 bytes for payload)">11</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 'p'">70</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 'k'">6b</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 't'">74</span>
+</div>
+<div class="col-span-4 text-on-surface font-label-mono-sm text-label-mono-sm tracking-widest pl-2">
+<span class="text-primary">~;</span><span class="text-secondary">..</span><span class="text-on-surface-variant">..</span><span class="text-outline-variant">..</span><span class="text-outline-variant">..</span><span class="text-secondary-fixed">..</span><span class="text-error">.pkt</span>
+</div>
+</div>
+<!-- Row 0010 -->
+<div class="grid grid-cols-12 gap-2 py-0.5 hover:bg-surface-container-high/40 rounded transition-colors group">
+<span class="col-span-2 text-outline select-none">0010</span>
+<div class="col-span-6 flex flex-wrap gap-1.5 font-bold">
+<!-- '0' '2' '-' 'T' 'k' 'V' 'U' 'V' -->
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: '0'">30</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: '2'">32</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: '-'">2d</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 'T'">54</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 'k'">6b</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 'V'">56</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 'U'">55</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 'V'">56</span>
+<span class="text-outline select-none ml-1 mr-1">|</span>
+<!-- '0' '9' 'S' 'S' 'S' 0x06 'g' 'o' -->
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: '0'">30</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: '9'">39</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 'S'">53</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 'S'">53</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Payload Byte: 'S'">53</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Question: Domain Label Length (6 bytes for 'google')">06</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Domain Byte: 'g'">67</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Domain Byte: 'o'">6f</span>
+</div>
+<div class="col-span-4 text-on-surface font-label-mono-sm text-label-mono-sm tracking-widest pl-2">
+<span class="text-error">02-TkVUV</span><span class="text-error">09SSS</span><span class="text-primary">.go</span>
+</div>
+</div>
+<!-- Row 0020 -->
+<div class="grid grid-cols-12 gap-2 py-0.5 hover:bg-surface-container-high/40 rounded transition-colors group">
+<span class="col-span-2 text-outline select-none">0020</span>
+<div class="col-span-6 flex flex-wrap gap-1.5 font-bold">
+<!-- 'o' 'g' 'l' 'e' 0x03 'c' 'o' 'm' -->
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Domain Byte: 'o'">6f</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Domain Byte: 'g'">67</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Domain Byte: 'l'">6c</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Domain Byte: 'e'">65</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Question: TLD Label Length (3 bytes for 'com')">03</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Domain Byte: 'c'">63</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Domain Byte: 'o'">6f</span>
+<span class="hex-byte text-primary cursor-pointer hover:bg-primary/20 px-0.5 rounded" data-field="Domain Byte: 'm'">6d</span>
+<span class="text-outline select-none ml-1 mr-1">|</span>
+<!-- Terminating 00, QTYPE 0x0010 (TXT), QCLASS 0x0001 (IN) -->
+<span class="hex-byte text-outline-variant cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="Question: Null Domain Terminator">00</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Question Type: TXT (0x0010)">00</span>
+<span class="hex-byte text-error cursor-pointer hover:bg-error/20 px-0.5 rounded" data-field="Question Type: TXT (0x0010)">10</span>
+<span class="hex-byte text-secondary cursor-pointer hover:bg-secondary/20 px-0.5 rounded" data-field="Question Class: IN (0x0001)">00</span>
+<span class="hex-byte text-secondary cursor-pointer hover:bg-secondary/20 px-0.5 rounded" data-field="Question Class: IN (0x0001)">01</span>
+<!-- EDNS0 OPT RR Name (00), Type (00 29 = 41) -->
+<span class="hex-byte text-outline-variant cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="EDNS0: Root name">00</span>
+<span class="hex-byte text-secondary-fixed cursor-pointer hover:bg-secondary/20 px-0.5 rounded" data-field="EDNS0: Type OPT (41)">00</span>
+<span class="hex-byte text-secondary-fixed cursor-pointer hover:bg-secondary/20 px-0.5 rounded" data-field="EDNS0: Type OPT (41)">29</span>
+</div>
+<div class="col-span-4 text-on-surface font-label-mono-sm text-label-mono-sm tracking-widest pl-2">
+<span class="text-primary">ogle.com</span><span class="text-outline-variant">.</span><span class="text-error">..</span><span class="text-secondary">..</span><span class="text-secondary-fixed">..)</span>
+</div>
+</div>
+<!-- Row 0030 -->
+<div class="grid grid-cols-12 gap-2 py-0.5 hover:bg-surface-container-high/40 rounded transition-colors group">
+<span class="col-span-2 text-outline select-none">0030</span>
+<div class="col-span-6 flex flex-wrap gap-1.5 font-bold">
+<!-- EDNS0 UDP payload size 4096 (10 00), RCODE, flags, RDLEN (00 00) -->
+<span class="hex-byte text-secondary-fixed cursor-pointer hover:bg-secondary/20 px-0.5 rounded" data-field="EDNS0: UDP payload size 4096">10</span>
+<span class="hex-byte text-secondary-fixed cursor-pointer hover:bg-secondary/20 px-0.5 rounded" data-field="EDNS0: UDP payload size 4096">00</span>
+<span class="hex-byte text-outline cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="EDNS0: Higher bits in extended RCODE">00</span>
+<span class="hex-byte text-outline cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="EDNS0: EDNS version 0">00</span>
+<span class="hex-byte text-outline cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="EDNS0: Z flags (DO=0)">00</span>
+<span class="hex-byte text-outline cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="EDNS0: Z flags">00</span>
+<span class="hex-byte text-outline cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="EDNS0: Data Length (0)">00</span>
+<span class="hex-byte text-outline cursor-pointer hover:bg-surface-container px-0.5 rounded" data-field="EDNS0: Data Length (0)">00</span>
+<span class="text-outline select-none ml-1 mr-1">|</span>
+<span class="text-outline-variant">..</span>
+<span class="text-outline-variant">..</span>
+<span class="text-outline-variant">..</span>
+<span class="text-outline-variant">..</span>
+<span class="text-outline-variant">..</span>
+<span class="text-outline-variant">..</span>
+<span class="text-outline-variant">..</span>
+<span class="text-outline-variant">..</span>
+</div>
+<div class="col-span-4 text-on-surface-variant font-label-mono-sm text-label-mono-sm tracking-widest pl-2">
+<span class="text-secondary-fixed">........</span>
+</div>
+</div>
+</div>
+<!-- Interactive Color Legend Bar -->
+<div class="px-space-md py-space-xs bg-surface-container flex flex-wrap items-center justify-between gap-space-sm font-label-mono-sm text-label-mono-sm">
+<div class="flex items-center gap-space-sm">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> TxID &amp; Hostname</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span> Covert Payload / QTYPE</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Flags &amp; Class</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary-fixed"></span> EDNS0 Options</span>
+</div>
+<div class="text-outline">Click byte to copy offset</div>
+</div>
+</div>
+<!-- Analytical Context Card: Forensics Findings -->
+<div class="p-space-md bg-surface-container-high rounded-xl shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="p-2 rounded bg-error/10 text-error">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Stego Channel Confirmation: Base64 Subdomain Exfiltration</div>
+<p class="font-body-md text-body-md text-on-surface-variant">The sequence label <code class="text-primary font-bold">pkt02</code> aligns with chunk #2 of an orchestrated DNS tunnel stream transmitting encrypted session keys.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="px-space-md py-2 rounded bg-surface-container hover:bg-surface-bright text-on-surface font-label-mono-sm text-label-mono-sm transition-colors shadow-sm">
+              Export PCAP
+            </button>
+<button class="px-space-md py-2 rounded bg-gradient-to-r from-secondary to-primary-container text-on-primary-fixed font-label-mono-sm text-label-mono-sm font-bold shadow-md hover:brightness-110 transition-all">
+              Add To Threat Blocklist
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Interactive Hex Byte Inspector Tooltip & Status Bar Updates
+  document.querySelectorAll('.hex-byte').forEach(byteEl => {
+    byteEl.addEventListener('mouseenter', () => {
+      const fieldDesc = byteEl.getAttribute('data-field');
+      const targetLabel = document.getElementById('active-wire-target');
+      if (targetLabel && fieldDesc) {
+        targetLabel.innerText = 'Field: ' + fieldDesc;
+        targetLabel.classList.remove('animate-pulse');
+        targetLabel.classList.add('text-primary');
+      }
+    });
+
+    byteEl.addEventListener('mouseleave', () => {
+      const targetLabel = document.getElementById('active-wire-target');
+      if (targetLabel) {
+        targetLabel.innerText = 'Hover over bytes for protocol lookup';
+        targetLabel.classList.add('animate-pulse');
+      }
+    });
+  });
+
+  // Toggle Hex / Binary Mode Indicator
+  const hexBtn = document.getElementById('mode-hex');
+  const binBtn = document.getElementById('mode-bin');
+  if (hexBtn && binBtn) {
+    hexBtn.addEventListener('click', () => {
+      hexBtn.className = 'px-space-sm py-1 rounded bg-surface-container-high font-label-mono-sm text-label-mono-sm text-primary font-bold transition-all shadow-sm';
+      binBtn.className = 'px-space-sm py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface transition-colors';
+    });
+    binBtn.addEventListener('click', () => {
+      binBtn.className = 'px-space-sm py-1 rounded bg-surface-container-high font-label-mono-sm text-label-mono-sm text-primary font-bold transition-all shadow-sm';
+      hexBtn.className = 'px-space-sm py-1 rounded font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface transition-colors';
+    });
+  }
+</script></main></div></body></html>

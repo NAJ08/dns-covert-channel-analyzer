@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNS Steganography &amp; Covert Channel Analyzer | Computer Networks Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="chart.min.js"></script>
+</head>
+<body>
+  <!-- Global Top Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo-badge">
+        <span class="pulse-dot"></span>
+        <span class="logo-icon">📡</span>
+      </div>
+      <div>
+        <h1 class="brand-title">DNS STEGANOGRAPHY &amp; COVERT CHANNEL ANALYZER</h1>
+        <p class="brand-subtitle">Educational Network Security Simulation &amp; Defensive Traffic Analysis Lab</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="safety-badge">
+        <span class="safety-icon">🔒</span>
+        <span>SIMULATED — NO REAL DNS REQUEST SENT &bull; LOCAL LAB ONLY</span>
+      </div>
+      <button id="btn-quick-demo" class="btn btn-cyan btn-glow">
+        <span class="icon">⚡</span> Run Demo
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <button class="nav-tab active" data-tab="dashboard">
+      <span class="nav-icon">🛡️</span> Investigation Lab
+    </button>
+    <button class="nav-tab" data-tab="simulator">
+      <span class="nav-icon">⚙️</span> Educational Simulator
+    </button>
+    <button class="nav-tab" data-tab="analyzer">
+      <span class="nav-icon">🔍</span> Packet Inspector
+    </button>
+    <button class="nav-tab" data-tab="detection">
+      <span class="nav-icon">🛡️</span> Anomaly Detection
+    </button>
+    <button class="nav-tab" data-tab="comparison">
+      <span class="nav-icon">⚖️</span> Traffic Comparison
+    </button>
+    <button class="nav-tab" data-tab="evaluation">
+      <span class="nav-icon">🔬</span> Evaluation Lab
+    </button>
+    <button class="nav-tab" data-tab="log">
+      <span class="nav-icon">📜</span> Packet Log
+    </button>
+    <button class="nav-tab" data-tab="about">
+      <span class="nav-icon">📖</span> Education &amp; Architecture
+    </button>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="main-content">
+    
+    <!-- 1. INVESTIGATION LAB / DASHBOARD TAB -->
+    <section id="tab-dashboard" class="tab-pane active">
+      <!-- Safety Banner -->
+      <div class="safety-banner-bar mb-3 flex-between">
+        <div class="flex-row gap-2 align-center">
+          <span class="badge badge-normal">SIMULATION LAB MODE</span>
+          <span class="safety-banner-text"><strong>SIMULATED — NO REAL DNS REQUEST SENT:</strong> Interactive security investigation workbench modeling synthetic DNS traffic streams, multi-client topology, and anomaly detection.</span>
+        </div>
+        <button class="btn btn-xs btn-outline ml-auto" id="btn-goto-simulator" title="Switch to Educational Encoder & Decoder Simulator">Open Encoder/Decoder ➔</button>
+      </div>
+
+      <!-- Real-Time Investigation KPIs -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-title">Stream Events</span>
+            <span class="stat-icon">📦</span>
+          </div>
+          <div class="stat-value" id="dash-total-events">0</div>
+          <div class="stat-footer text-muted" id="dash-total-sub">Awaiting replay</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-title">Normal Queries</span>
+            <span class="stat-icon">🟢</span>
+          </div>
+          <div class="stat-value text-emerald" id="dash-normal-events">0</div>
+          <div class="stat-footer text-muted">Baseline benign</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-title">Anomalies &amp; Alerts</span>
+            <span class="stat-icon">⚠️</span>
+          </div>
+          <div class="stat-value text-danger" id="dash-alert-events">0</div>
+          <div class="stat-footer text-muted" id="dash-alert-sub">0 unusual &bull; 0 suspicious</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-title">UDP Packet Loss</span>
+            <span class="stat-icon">📉</span>
+          </div>
+          <div class="stat-value text-amber" id="dash-loss-events">0</div>
+          <div class="stat-footer text-muted" id="dash-loss-sub">0% drop rate</div>
+        </div>
+
+        <div class="stat-card highlight-border">
+          <div class="stat-header">
+            <span class="stat-title">Analyst Cases Reviewed</span>
+            <span class="stat-icon">📝</span>
+          </div>
+          <div class="stat-value text-cyan" id="dash-reviewed-events">0</div>
+          <div class="stat-footer text-muted">Security investigation cases</div>
+        </div>
+      </div>
+
+      <!-- Threat Alert Ticker Bar -->
+      <div class="alert-ticker mb-3" id="dash-alert-ticker">
+        <div class="ticker-badge" id="ticker-status-badge">🟢 MONITORING</div>
+        <div class="ticker-text" id="ticker-status-text">Synthetic stream ready. Select a scenario and click "▶ Start Replay" to begin live traffic analysis.</div>
+      </div>
+
+      <!-- Control Console & Scenario Replay (Feature 1) -->
+      <div class="card mb-3">
+        <div class="card-header flex-between">
+          <div>
+            <h2 class="card-title">Synthetic DNS Traffic Replay &amp; Scenario Station</h2>
+            <p class="card-subtitle">Select a predefined network scenario to replay simulated DNS query events across synthetic client hosts</p>
+          </div>
+          <div class="flex-row gap-2 align-center">
+            <button class="btn btn-sm btn-outline text-cyan" id="btn-dash-run-demo" title="Run educational covert channel demonstration">⚡ Run Demo</button>
+            <span class="badge badge-normal" id="replay-status-pill">IDLE</span>
+          </div>
+        </div>
+
+        <!-- Scenario Selection Grid -->
+        <div class="scenario-config-grid">
+          <div class="form-group mb-2">
+            <label for="select-replay-scenario" class="form-label">Investigation Scenario:</label>
+            <select id="select-replay-scenario" class="form-control">
+              <option value="normal_browsing" selected>1. Normal DNS Browsing (Baseline Benign Traffic)</option>
+              <option value="query_burst">2. Unusual Query Burst (High-Rate IoT Automated Lookups)</option>
+              <option value="high_entropy">3. High-Entropy DNS Labels (Base64/Base32 Covert Steganography)</option>
+              <option value="long_queries">4. Long Query Names (Payload Size Maximization)</option>
+              <option value="mixed_traffic">5. Mixed Normal &amp; Anomalous Traffic (Realistic SOC Triage)</option>
+              <option value="packet_loss_reconstruction">6. Packet-Loss &amp; Reconstruction (UDP Transport Loss)</option>
+            </select>
+            <div class="scenario-desc-box mt-1" id="replay-scenario-desc">
+              Typical enterprise day-to-day traffic across three internal clients. Queries follow natural language conventions with low character entropy.
+            </div>
+          </div>
+
+          <div class="replay-controls-cluster">
+            <div class="flex-row gap-3 wrap">
+              <div class="control-item">
+                <label class="form-label text-xs">Deterministic Seed:</label>
+                <div class="input-group-seed">
+                  <input type="number" id="replay-seed-input" class="form-control form-control-sm" value="42" style="width: 90px;">
+                  <button class="btn btn-sm btn-outline" id="btn-replay-seed-rnd" title="Generate Random Seed">🎲</button>
+                </div>
+              </div>
+
+              <div class="control-item">
+                <label class="form-label text-xs">Playback Speed:</label>
+                <div class="speed-pill-group">
+                  <button class="speed-pill" data-speed="1400" id="speed-05x">0.5x</button>
+                  <button class="speed-pill active" data-speed="700" id="speed-1x">1.0x</button>
+                  <button class="speed-pill" data-speed="350" id="speed-2x">2.0x</button>
+                  <button class="speed-pill" data-speed="100" id="speed-5x">5.0x</button>
+                </div>
+              </div>
+
+              <div class="control-item" id="wrapper-replay-loss" style="display: none;">
+                <label class="form-label text-xs">Packet Loss:</label>
+                <span class="badge badge-unusual" id="replay-loss-label">20% Loss</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons Bar -->
+            <div class="replay-action-bar mt-2">
+              <button class="btn btn-cyan btn-md" id="btn-replay-play">▶ Start Replay</button>
+              <button class="btn btn-outline btn-md" id="btn-replay-pause" disabled>⏸ Pause</button>
+              <button class="btn btn-outline btn-md" id="btn-replay-step">⏭ Step</button>
+              <button class="btn btn-outline btn-md" id="btn-replay-reset">🔄 Reset</button>
+              <button class="btn btn-emerald btn-md ml-auto" id="btn-replay-all">⚡ Complete Stream</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Replay Progress Bar -->
+        <div class="replay-progress-track mt-3">
+          <div class="replay-progress-fill" id="replay-progress-fill" style="width: 0%;"></div>
+        </div>
+        <div class="replay-progress-meta text-xs text-muted flex-between mt-1">
+          <span id="replay-progress-counter">Event 0 of 0 processed</span>
+          <span id="replay-progress-pct">0% Complete</span>
+        </div>
+      </div>
+
+      <!-- Feature 2: Interactive Synthetic Network Topology Map -->
+      <div class="card mb-3">
+        <div class="card-header flex-between">
+          <div>
+            <h2 class="card-title">Interactive Synthetic Network Topology Map</h2>
+            <p class="card-subtitle">Visualizes synthetic clients, central recursive resolver, and simulated destinations. Click any node to filter the investigation timeline.</p>
+          </div>
+          <div class="flex-row gap-2">
+            <span class="badge badge-normal" id="topology-filter-status">Viewing All Nodes</span>
+            <button class="btn btn-xs btn-outline" id="btn-clear-topo-filter" style="display: none;">✕ Clear Filter</button>
+          </div>
+        </div>
+
+        <div class="topology-wrapper" id="topology-wrapper">
+          <!-- Topology SVG Connections & Animated Packets Layer -->
+          <svg class="topology-connections-layer" id="topology-svg-connections" aria-hidden="true">
+            <g class="topo-paths-static" id="topo-paths-static">
+              <path id="path-client-01-resolver" class="topo-wire" />
+              <path id="path-client-02-resolver" class="topo-wire" />
+              <path id="path-client-03-resolver" class="topo-wire" />
+              <path id="path-resolver-dest-web" class="topo-wire" />
+              <path id="path-resolver-dest-cdn" class="topo-wire" />
+              <path id="path-resolver-dest-covert" class="topo-wire" />
+            </g>
+            <g class="topo-packets-layer" id="topo-packets-layer"></g>
+          </svg>
+
+          <!-- Clients Column (Tier 1) -->
+          <div class="topo-col topo-col-clients">
+            <div class="topo-col-label">Synthetic Client Hosts (Local Subnet 192.168.1.0/24)</div>
+
+            <div class="topo-node-card" id="topo-node-client-01" data-node="client-01">
+              <div class="node-badge-type">Workstation</div>
+              <div class="node-main-row">
+                <span class="node-icon">🖥️</span>
+                <div>
+                  <div class="node-name">Workstation-01</div>
+                  <div class="node-ip">192.168.1.101 (FinDept)</div>
+                </div>
+              </div>
+              <div class="node-footer-meta">
+                <span class="node-stat-pill" id="stat-node-client-01">0 queries</span>
+                <span class="node-alert-pill" id="alert-node-client-01" style="display:none;">0 alerts</span>
+              </div>
+            </div>
+
+            <div class="topo-node-card" id="topo-node-client-02" data-node="client-02">
+              <div class="node-badge-type">Laptop</div>
+              <div class="node-main-row">
+                <span class="node-icon">💻</span>
+                <div>
+                  <div class="node-name">Laptop-02</div>
+                  <div class="node-ip">192.168.1.102 (DevEng)</div>
+                </div>
+              </div>
+              <div class="node-footer-meta">
+                <span class="node-stat-pill" id="stat-node-client-02">0 queries</span>
+                <span class="node-alert-pill" id="alert-node-client-02" style="display:none;">0 alerts</span>
+              </div>
+            </div>
+
+            <div class="topo-node-card" id="topo-node-client-03" data-node="client-03">
+              <div class="node-badge-type">IoT Device</div>
+              <div class="node-main-row">
+                <span class="node-icon">📟</span>
+                <div>
+                  <div class="node-name">IoT-Sensor-03</div>
+                  <div class="node-ip">192.168.1.103 (HVAC/Cam)</div>
+                </div>
+              </div>
+              <div class="node-footer-meta">
+                <span class="node-stat-pill" id="stat-node-client-03">0 queries</span>
+                <span class="node-alert-pill" id="alert-node-client-03" style="display:none;">0 alerts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Middle Gateway & Resolver Column (Tier 2) -->
+          <div class="topo-col topo-col-resolver">
+            <div class="topo-col-label">Default Gateway &amp; Resolver</div>
+            <div class="topo-node-card resolver-card" id="topo-node-resolver" data-node="resolver-01">
+              <div class="node-badge-type">Recursive DNS &bull; Port 53</div>
+              <div class="node-main-row">
+                <span class="node-icon">🔄</span>
+                <div>
+                  <div class="node-name">Local DNS Gateway</div>
+                  <div class="node-ip">192.168.1.1 (Fwd: 8.8.8.8)</div>
+                </div>
+              </div>
+              <div class="node-desc-text">Performs recursive caching and forwarding for internal hosts.</div>
+              <div class="node-footer-meta">
+                <span class="node-stat-pill" id="stat-node-resolver">0 processed</span>
+                <span class="pulse-indicator" id="pulse-resolver-indicator">Listening</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Destinations Column (Tier 3) -->
+          <div class="topo-col topo-col-destinations">
+            <div class="topo-col-label">Simulated DNS Destinations</div>
+
+            <div class="topo-node-card" id="topo-node-dest-web" data-node="dest-web">
+              <div class="node-badge-type">Public Web</div>
+              <div class="node-main-row">
+                <span class="node-icon">🌍</span>
+                <div>
+                  <div class="node-name">Web Authoritative NS</div>
+                  <div class="node-ip">google.com / wikipedia.org</div>
+                </div>
+              </div>
+              <div class="node-footer-meta">
+                <span class="node-stat-pill" id="stat-node-dest-web">0 resolved</span>
+              </div>
+            </div>
+
+            <div class="topo-node-card" id="topo-node-dest-cdn" data-node="dest-cdn">
+              <div class="node-badge-type">Edge CDN</div>
+              <div class="node-main-row">
+                <span class="node-icon">⚡</span>
+                <div>
+                  <div class="node-name">Edge CDN NS</div>
+                  <div class="node-ip">cloudfront.net / akamai</div>
+                </div>
+              </div>
+              <div class="node-footer-meta">
+                <span class="node-stat-pill" id="stat-node-dest-cdn">0 resolved</span>
+              </div>
+            </div>
+
+            <div class="topo-node-card" id="topo-node-dest-covert" data-node="dest-covert">
+              <div class="node-badge-type text-danger">Simulated Attacker NS</div>
+              <div class="node-main-row">
+                <span class="node-icon">🎯</span>
+                <div>
+                  <div class="node-name">Exfiltration Endpoint</div>
+                  <div class="node-ip">203.0.113.99 (Covert NS)</div>
+                </div>
+              </div>
+              <div class="node-footer-meta">
+                <span class="node-stat-pill text-danger" id="stat-node-dest-covert">0 received</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="topology-legend mt-2 flex-between text-xs text-muted">
+          <span>💡 <strong>Tip:</strong> Click any node (e.g. Laptop-02 or IoT-Sensor) to isolate its queries on the timeline.</span>
+          <span>Status: <span class="text-cyan" id="topo-status-label">Topology Idle</span></span>
+        </div>
+      </div>
+
+      <!-- Stream Visual Overview & Progression -->
+      <div class="stream-overview-card mb-3" id="stream-overview-card">
+        <div class="flex-between align-center">
+          <div>
+            <h3 class="card-title text-sm" style="margin-bottom: 2px;">Synthetic Stream Composition &amp; Suspicion Progression</h3>
+            <p class="text-xs text-muted" style="margin: 0;">Real-time ratio of benign vs. anomalous traffic and suspicious trajectory over time</p>
+          </div>
+          <div class="stream-stats-pills">
+            <span class="badge badge-normal" id="overview-badge-normal">0 Normal</span>
+            <span class="badge badge-unusual" id="overview-badge-unusual">0 Unusual</span>
+            <span class="badge badge-suspicious" id="overview-badge-suspicious">0 Suspicious</span>
+          </div>
+        </div>
+        <div class="overview-visuals-grid">
+          <div>
+            <div class="flex-between text-xs text-muted mb-1">
+              <span>Traffic Distribution Ratio</span>
+              <span id="overview-ratio-label">0% Normal / 0% Unusual / 0% Suspicious</span>
+            </div>
+            <div class="ratio-bar-track">
+              <div class="ratio-segment segment-normal" id="ratio-seg-normal" style="width: 0%;" title="Normal"></div>
+              <div class="ratio-segment segment-unusual" id="ratio-seg-unusual" style="width: 0%;" title="Unusual"></div>
+              <div class="ratio-segment segment-suspicious" id="ratio-seg-suspicious" style="width: 0%;" title="Suspicious"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex-between text-xs text-muted mb-1">
+              <span>Suspicion Progression Timeline (0–100)</span>
+              <span class="text-cyan text-xs" id="progression-selected-label">No event selected</span>
+            </div>
+            <div style="height: 48px; position: relative;">
+              <canvas id="chart-replay-progression"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3 & Feature 4: Two-Column Split Investigation Workbench -->
+      <div class="workbench-grid mb-3">
+        <!-- Left: Filterable Event Timeline -->
+        <div class="card timeline-card">
+          <div class="card-header flex-between">
+            <div>
+              <h2 class="card-title">Live Traffic Timeline</h2>
+              <p class="card-subtitle">Chronological stream of synthetic DNS query events. Click any event to inspect.</p>
+            </div>
+            <span class="badge badge-normal" id="timeline-count-badge">0 Events</span>
+          </div>
+
+          <!-- Timeline Filters -->
+          <div class="timeline-filters-grid mb-2">
+            <input type="text" id="timeline-search" class="form-control form-control-sm" placeholder="🔍 Search FQDN, subdomain...">
+            <select id="timeline-client-filter" class="form-control form-control-sm">
+              <option value="all">All Clients</option>
+              <option value="client-01">Workstation-01 (192.168.1.101)</option>
+              <option value="client-02">Laptop-02 (192.168.1.102)</option>
+              <option value="client-03">IoT-Sensor-03 (192.168.1.103)</option>
+            </select>
+            <select id="timeline-status-filter" class="form-control form-control-sm">
+              <option value="all">All Statuses</option>
+              <option value="Normal">Normal Only</option>
+              <option value="Unusual">Unusual Only</option>
+              <option value="Suspicious">Suspicious Only</option>
+              <option value="LOST">Dropped (UDP Loss)</option>
+            </select>
+            <select id="timeline-sort-filter" class="form-control form-control-sm">
+              <option value="time">Time (Chronological)</option>
+              <option value="entropy">Highest Entropy</option>
+              <option value="length">Longest Query</option>
+              <option value="score">Highest Suspicion Score</option>
+            </select>
+          </div>
+
+          <!-- Timeline Events Feed Container -->
+          <div class="timeline-container" id="timeline-events-container">
+            <div class="timeline-placeholder text-center text-muted p-4">
+              <span>Awaiting replay. Click "▶ Start Replay" or "⚡ Complete Stream" above to generate synthetic traffic events.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Event Detail & Security Analyst Investigation Workbench -->
+        <div class="card investigation-card">
+          <div class="card-header flex-between">
+            <div>
+              <h2 class="card-title">Event Detail &amp; Analyst Workbench</h2>
+              <p class="card-subtitle">Inspect packet features, evaluate detector rule triggers, and record investigation findings</p>
+            </div>
+            <span class="badge badge-normal" id="active-event-badge">Select an Event</span>
+          </div>
+
+          <div id="investigation-empty-state" class="investigation-empty-state text-center text-muted p-4">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem; opacity: 0.7;">🔎</div>
+            <h4 class="text-white text-sm font-bold mb-1">No Query Event Selected</h4>
+            <p class="text-xs" style="max-width: 420px; margin: 0 auto;">Select any DNS event row from the Live Traffic Timeline to inspect wire-level packet fields, entropy decomposition, automated scoring rationale, and trace its path across the network topology.</p>
+          </div>
+
+          <div id="investigation-detail-container" style="display: none;">
+            <!-- Selected Event Summary Box -->
+            <div class="event-summary-box mb-3">
+              <div class="flex-between">
+                <span class="code-inline text-cyan font-bold text-sm" id="detail-query-name">query.example.com</span>
+                <span class="badge" id="detail-status-badge">Normal</span>
+              </div>
+              <div class="event-meta-line text-xs text-muted mt-1 flex-between">
+                <span>Timestamp: <strong id="detail-timestamp" class="text-white">--</strong> &bull; Client: <strong id="detail-client" class="text-white">--</strong></span>
+                <span>Delivery: <strong id="detail-delivery" class="text-emerald">DELIVERED</strong></span>
+              </div>
+            </div>
+
+            <!-- RFC 1035 Packet Protocol Fields Summary -->
+            <div class="packet-fields-summary mb-3" id="detail-packet-fields">
+              <div class="packet-fields-grid">
+                <div class="field-item">
+                  <span class="field-k">TxID</span>
+                  <span class="field-v text-cyan font-mono" id="detail-pkt-txid">0x0000</span>
+                </div>
+                <div class="field-item">
+                  <span class="field-k">RR Type</span>
+                  <span class="field-v font-mono" id="detail-pkt-qtype">TXT (16)</span>
+                </div>
+                <div class="field-item">
+                  <span class="field-k">Wire Size</span>
+                  <span class="field-v font-mono" id="detail-pkt-wire-size">0 B</span>
+                </div>
+                <div class="field-item">
+                  <span class="field-k">Transport</span>
+                  <span class="field-v font-mono text-white" id="detail-pkt-transport">UDP / 53</span>
+                </div>
+                <div class="field-item">
+                  <span class="field-k">Destination NS</span>
+                  <span class="field-v font-mono text-muted" id="detail-pkt-dest">ns1.corp</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Technical Telemetry Chips -->
+            <div class="telemetry-chips-grid mb-3">
+              <div class="tel-chip">
+                <span class="tel-label">Shannon Entropy</span>
+                <span class="tel-val" id="detail-entropy">0.00</span>
+                <span class="tel-sub">bits/char</span>
+              </div>
+              <div class="tel-chip">
+                <span class="tel-label">Query Length</span>
+                <span class="tel-val" id="detail-length">0</span>
+                <span class="tel-sub">characters</span>
+              </div>
+              <div class="tel-chip">
+                <span class="tel-label">Subdomain Length</span>
+                <span class="tel-val" id="detail-sub-length">0</span>
+                <span class="tel-sub">longest label</span>
+              </div>
+              <div class="tel-chip">
+                <span class="tel-label">Unusual Char Ratio</span>
+                <span class="tel-val" id="detail-unusual-ratio">0%</span>
+                <span class="tel-sub">digits/symbols</span>
+              </div>
+              <div class="tel-chip">
+                <span class="tel-label">Payload-to-Domain</span>
+                <span class="tel-val" id="detail-ratio">0.0x</span>
+                <span class="tel-sub">label ratio</span>
+              </div>
+              <div class="tel-chip">
+                <span class="tel-label">Query Frequency</span>
+                <span class="tel-val" id="detail-qps">1.0</span>
+                <span class="tel-sub">QPS context</span>
+              </div>
+            </div>
+
+            <!-- Automated Anomaly Assessment & Reasons -->
+            <div class="detector-verdict-box mb-3">
+              <div class="flex-between mb-1">
+                <span class="text-xs text-muted font-bold">AUTOMATED DETECTOR SCORING:</span>
+                <span class="badge badge-normal" id="detail-score-pill">Score: 0/100</span>
+              </div>
+              <ul class="reason-list text-xs" id="detail-reasons-list">
+                <li>No anomalies triggered.</li>
+              </ul>
+            </div>
+
+            <!-- Plain-English Forensic Explanation -->
+            <div class="forensic-explanation-box mb-3" id="detail-explanation-box">
+              <div class="text-xs font-bold text-cyan mb-1">📋 ANALYST PLAIN-ENGLISH SUMMARY:</div>
+              <p class="text-xs text-white" id="detail-plain-explanation" style="margin: 0; line-height: 1.5;">
+                Select an event to view forensic analysis.
+              </p>
+            </div>
+
+            <!-- Inspector Transition Shortcut -->
+            <div class="inspector-shortcut-bar mb-3 flex-between">
+              <span class="text-xs text-muted">Examine complete wire hex dump and paired RFC 1035 response:</span>
+              <button class="btn btn-sm btn-outline text-cyan" id="btn-open-in-inspector">
+                🔍 Open in Full Packet Inspector ➔
+              </button>
+            </div>
+
+            <hr class="divider mb-3">
+
+            <!-- Security Analyst Investigation Panel (Feature 4) -->
+            <div class="investigation-form">
+              <div class="flex-between mb-2">
+                <h3 class="form-title text-sm text-cyan font-bold">🛡️ Analyst Investigation Assessment</h3>
+                <span class="badge badge-normal" id="investigation-review-badge">Not Reviewed</span>
+              </div>
+
+              <!-- Analyst Classification -->
+              <div class="form-group mb-2">
+                <label class="form-label text-xs">Analyst Verdict / Classification:</label>
+                <div class="classification-pills">
+                  <label class="class-pill">
+                    <input type="radio" name="analyst-classification" value="Normal" checked>
+                    <span class="pill-label pill-normal">Normal</span>
+                  </label>
+                  <label class="class-pill">
+                    <input type="radio" name="analyst-classification" value="Unusual">
+                    <span class="pill-label pill-unusual">Unusual</span>
+                  </label>
+                  <label class="class-pill">
+                    <input type="radio" name="analyst-classification" value="Potentially Suspicious">
+                    <span class="pill-label pill-suspicious">Potentially Suspicious</span>
+                  </label>
+                  <label class="class-pill">
+                    <input type="radio" name="analyst-classification" value="Inconclusive">
+                    <span class="pill-label pill-inconclusive">Inconclusive</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Supporting Evidence Checklist -->
+              <div class="form-group mb-2">
+                <label class="form-label text-xs">Supporting Investigation Evidence:</label>
+                <div class="evidence-checklist-grid text-xs">
+                  <label class="evidence-item"><input type="checkbox" id="ev-entropy"> High Shannon Entropy (&gt;3.8 bits/char)</label>
+                  <label class="evidence-item"><input type="checkbox" id="ev-length"> Subdomain label &gt; 30 chars</label>
+                  <label class="evidence-item"><input type="checkbox" id="ev-burst"> High query rate / burst pattern</label>
+                  <label class="evidence-item"><input type="checkbox" id="ev-charset"> Unusual character set (Base64/Hex/Binary)</label>
+                  <label class="evidence-item"><input type="checkbox" id="ev-ratio"> High payload-to-domain ratio</label>
+                  <label class="evidence-item"><input type="checkbox" id="ev-cdn"> Known legitimate CDN / cloud infrastructure</label>
+                  <label class="evidence-item"><input type="checkbox" id="ev-loss"> Dropped / missing UDP transport packet</label>
+                </div>
+              </div>
+
+              <!-- Analyst Notes Textarea -->
+              <div class="form-group mb-3">
+                <label for="investigation-notes" class="form-label text-xs">Analyst Investigation Notes:</label>
+                <textarea id="investigation-notes" class="form-control form-control-sm" rows="2" placeholder="Record reasoning, triage observations, or threat context..."></textarea>
+              </div>
+
+              <div class="flex-between">
+                <span class="text-xs text-muted">⚠️ <em>Note: Analyst verdicts are recorded independently from automated alerts.</em></span>
+                <button class="btn btn-cyan btn-sm" id="btn-save-assessment">💾 Save Assessment</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 4 & Feature 5: Investigation Findings Log & Scenario Evaluation Summary -->
+      <div class="card mb-3">
+        <div class="card-header flex-between">
+          <div>
+            <h2 class="card-title">Security Investigation Findings Log</h2>
+            <p class="card-subtitle">Summary of analyst-reviewed events, classification decisions, and benchmark evaluation</p>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-sm btn-cyan" id="btn-eval-scenario">🔬 Benchmark Scenario Performance</button>
+            <button class="btn btn-sm btn-outline" id="btn-export-investigation-csv">📄 Export Findings (CSV)</button>
+          </div>
+        </div>
+
+        <!-- Investigation Findings Table -->
+        <div class="table-responsive mb-3">
+          <table class="table" id="table-investigations">
+            <thead>
+              <tr>
+                <th>Event ID</th>
+                <th>Timestamp</th>
+                <th>Client</th>
+                <th>Query Name</th>
+                <th>Automated Score</th>
+                <th>Analyst Classification</th>
+                <th>Recorded Evidence</th>
+                <th>Analyst Notes</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-investigations">
+              <tr>
+                <td colspan="8" class="text-center text-muted">No events reviewed yet. Select an event from the timeline above and save an assessment.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Inline Scenario Benchmark Results (Populated when user clicks Benchmark) -->
+        <div class="scenario-eval-panel mt-3" id="scenario-eval-panel" style="display: none;">
+          <div class="card-header flex-between mb-2">
+            <h3 class="card-title text-sm text-cyan">Scenario Ground-Truth Benchmark Results</h3>
+            <span class="badge badge-normal" id="scenario-eval-badge">Evaluated vs Ground Truth</span>
+          </div>
+          <div class="scenario-eval-metrics-grid" id="scenario-eval-metrics-grid">
+            <!-- Populated via script.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 6: Transport Layer UDP Packet Loss & Reconstruction Status Card -->
+      <div class="card mb-3" id="dash-transport-loss-card" style="display: none;">
+        <div class="card-header flex-between">
+          <div>
+            <h2 class="card-title">Transport Layer UDP Packet Loss &amp; Reconstruction</h2>
+            <p class="card-subtitle">Evaluates delivery reliability, dropped sequence IDs, and payload recovery independently from anomaly scoring</p>
+          </div>
+          <span class="badge badge-unusual" id="dash-transport-loss-badge">UDP Unreliable</span>
+        </div>
+        <div class="stats-grid mb-2">
+          <div class="stat-card">
+            <div class="stat-title text-xs text-muted">Loss Rate Setting</div>
+            <div class="stat-value text-amber" id="dash-loss-rate-val">20%</div>
+            <div class="stat-footer text-muted">Simulated packet drop</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title text-xs text-muted">Datagrams Delivered</div>
+            <div class="stat-value text-emerald" id="dash-loss-delivered-val">0</div>
+            <div class="stat-footer text-muted" id="dash-loss-total-val">out of 0 packets</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title text-xs text-muted">Datagrams Dropped</div>
+            <div class="stat-value text-danger" id="dash-loss-dropped-val">0</div>
+            <div class="stat-footer text-muted" id="dash-loss-missing-seq">Missing IDs: None</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title text-xs text-muted">Reconstruction Status</div>
+            <div class="stat-value" id="dash-loss-recon-status">SUCCESS</div>
+            <div class="stat-footer text-muted">Evaluated independently of threat score</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preserved Educational Collapsible References -->
+      <details class="card mb-3">
+        <summary class="card-title text-sm" style="cursor: pointer; padding: 0.5rem 0;">
+          📚 Educational Reference: Live Covert Channel Transmission Pipeline (Click to Expand)
+        </summary>
+        <div class="callout-box info mb-2 mt-2" style="font-size: 0.75rem; border-left: 3px solid var(--accent-cyan); background: rgba(0, 240, 255, 0.05); padding: 0.5rem 0.75rem; border-radius: 4px;">
+          ℹ️ <strong>Theoretical Reference Model:</strong> This diagram illustrates conceptual protocol stages for DNS covert channel analysis. Active stages highlight synchronously with synthetic simulation events to contextualize the active packet stream.
+        </div>
+        <div class="flex-between align-center mb-2 mt-2">
+          <span class="text-xs text-muted" id="pipeline-log-text">System Ready</span>
+          <span class="badge badge-normal" id="pipeline-status-tag">System Ready</span>
+        </div>
+        <div class="pipeline-container mt-2">
+          <div class="pipeline-node" id="node-sender">
+            <div class="node-icon">👤</div>
+            <div class="node-title">Sender</div>
+            <div class="node-meta">Original Message</div>
+          </div>
+          <div class="pipeline-line" id="line-1"><div class="packet-dot"></div></div>
+          <div class="pipeline-node" id="node-encoder">
+            <div class="node-icon">🔐</div>
+            <div class="node-title">Encoder</div>
+            <div class="node-meta">Encoded Payload</div>
+          </div>
+          <div class="pipeline-line" id="line-2"><div class="packet-dot"></div></div>
+          <div class="pipeline-node" id="node-simulator">
+            <div class="node-icon">🌐</div>
+            <div class="node-title">DNS Simulator</div>
+            <div class="node-meta">Packetized Labels</div>
+          </div>
+          <div class="pipeline-line" id="line-3"><div class="packet-dot"></div></div>
+          <div class="pipeline-node" id="node-network">
+            <div class="node-icon">☁️</div>
+            <div class="node-title">Simulated Net</div>
+            <div class="node-meta">Transmission / Loss</div>
+          </div>
+          <div class="pipeline-line" id="line-4"><div class="packet-dot"></div></div>
+          <div class="pipeline-node" id="node-analyzer">
+            <div class="node-icon">🛡️</div>
+            <div class="node-title">DNS Analyzer</div>
+            <div class="node-meta">Anomaly Detection</div>
+          </div>
+          <div class="pipeline-line" id="line-5"><div class="packet-dot"></div></div>
+          <div class="pipeline-node" id="node-decoder">
+            <div class="node-icon">🔓</div>
+            <div class="node-title">Decoder</div>
+            <div class="node-meta">Reassembly</div>
+          </div>
+          <div class="pipeline-line" id="line-6"><div class="packet-dot"></div></div>
+          <div class="pipeline-node" id="node-receiver">
+            <div class="node-icon">🎯</div>
+            <div class="node-title">Receiver</div>
+            <div class="node-meta">Plaintext Restored</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="card mb-3">
+        <summary class="card-title text-sm" style="cursor: pointer; padding: 0.5rem 0;">
+          📚 Educational Reference: Simulated DNS Resolution Flow (Click to Expand)
+        </summary>
+        <div class="flex-between align-center mb-2 mt-2">
+          <span class="text-xs text-muted" id="res-step-text">Awaiting query resolution flow.</span>
+        </div>
+        <div class="dns-res-wrapper mt-2">
+          <div class="res-stage" id="res-node-client">
+            <div class="res-icon">💻</div>
+            <div class="res-title">Client Host</div>
+            <div class="res-sub">192.168.1.105</div>
+            <div class="res-status-tag" id="res-tag-client">READY</div>
+          </div>
+          <div class="res-arrow" id="res-arrow-1">➔</div>
+          <div class="res-stage" id="res-node-resolver">
+            <div class="res-icon">🔄</div>
+            <div class="res-title">DNS Resolver</div>
+            <div class="res-sub">8.8.8.8 (Recursive)</div>
+            <div class="res-status-tag" id="res-tag-resolver">WAITING</div>
+          </div>
+          <div class="res-arrow" id="res-arrow-2">➔</div>
+          <div class="res-stage" id="res-node-root">
+            <div class="res-icon">🌍</div>
+            <div class="res-title">Root DNS (.)</div>
+            <div class="res-sub">Root Zone</div>
+            <div class="res-status-tag" id="res-tag-root">STANDBY</div>
+          </div>
+          <div class="res-arrow" id="res-arrow-3">➔</div>
+          <div class="res-stage" id="res-node-tld">
+            <div class="res-icon">🏛️</div>
+            <div class="res-title">TLD DNS (.com)</div>
+            <div class="res-sub">Top-Level Domain</div>
+            <div class="res-status-tag" id="res-tag-tld">STANDBY</div>
+          </div>
+          <div class="res-arrow" id="res-arrow-4">➔</div>
+          <div class="res-stage" id="res-node-auth">
+            <div class="res-icon">🏢</div>
+            <div class="res-title">Authoritative DNS</div>
+            <div class="res-sub" id="res-auth-domain">ns1.example.com</div>
+            <div class="res-status-tag" id="res-tag-auth">STANDBY</div>
+          </div>
+          <div class="res-arrow" id="res-arrow-5">➔</div>
+          <div class="res-stage" id="res-node-response">
+            <div class="res-icon">📥</div>
+            <div class="res-title">DNS Response</div>
+            <div class="res-sub">Answer Packet</div>
+            <div class="res-status-tag" id="res-tag-response">STANDBY</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="card mb-3">
+        <summary class="card-title text-sm" style="cursor: pointer; padding: 0.5rem 0;">
+          📚 Educational Reference: Network Protocol Stack (L7 ➔ L4 ➔ L3 ➔ L2) (Click to Expand)
+        </summary>
+        <div class="protocol-stack-grid mt-3">
+          <div class="stack-layer-card active-layer" data-layer="application" id="layer-card-app">
+            <div class="layer-badge">Layer 7</div>
+            <div class="layer-title">Application Layer</div>
+            <div class="layer-protocol">DNS (RFC 1035)</div>
+            <div class="layer-summary">Encapsulates covert payload in query subdomain.</div>
+          </div>
+          <div class="stack-layer-card" data-layer="transport" id="layer-card-transport">
+            <div class="layer-badge">Layer 4</div>
+            <div class="layer-title">Transport Layer</div>
+            <div class="layer-protocol">UDP (RFC 768)</div>
+            <div class="layer-summary">8-byte UDP header. Dst Port 53. Unreliable datagram.</div>
+          </div>
+          <div class="stack-layer-card" data-layer="internet" id="layer-card-internet">
+            <div class="layer-badge">Layer 3</div>
+            <div class="layer-title">Internet Layer</div>
+            <div class="layer-protocol">IPv4 (RFC 791)</div>
+            <div class="layer-summary">20-byte IP header. Protocol 17 (UDP). TTL: 64.</div>
+          </div>
+          <div class="stack-layer-card" data-layer="networkAccess" id="layer-card-link">
+            <div class="layer-badge">Layer 2</div>
+            <div class="layer-title">Network Access</div>
+            <div class="layer-protocol">Ethernet II / Wi-Fi</div>
+            <div class="layer-summary">14-byte MAC header. EtherType 0x0800. FCS frame check.</div>
+          </div>
+        </div>
+        <div class="stack-inspection-box mt-3" id="stack-inspection-box">
+          <div class="stack-ins-header">
+            <h3 class="stack-ins-title" id="stack-ins-title">Application Layer: DNS (Domain Name System - RFC 1035)</h3>
+            <span class="badge badge-normal" id="stack-ins-badge">L7 Protocol</span>
+          </div>
+          <p class="stack-ins-desc text-sm text-muted" id="stack-ins-desc">
+            The simulated covert message chunk is embedded directly into the query label (e.g. pkt01-Q09NUFVU.example.com).
+          </p>
+          <div class="stack-fields-grid mt-2" id="stack-fields-grid"></div>
+        </div>
+      </details>
+    </section>
+
+
+    <!-- 2. STEGO SIMULATOR TAB -->
+    <section id="tab-simulator" class="tab-pane">
+      <!-- Safety Banner in Simulator -->
+      <div class="safety-banner-bar mb-3">
+        <span class="badge badge-normal">SIMULATION MODE ONLY</span>
+        <span class="safety-banner-text"><strong>SIMULATED — NO REAL DNS REQUEST SENT:</strong> Fictional requests are processed in-browser. No packets reach public DNS servers.</span>
+      </div>
+
+      <!-- Educational Simulation Telemetry KPIs -->
+      <div class="stats-grid mb-3">
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-title">Simulated Packets</span>
+            <span class="stat-icon">📦</span>
+          </div>
+          <div class="stat-value" id="dash-packets-count">0</div>
+          <div class="stat-footer text-muted" id="dash-packets-sub">Awaiting simulation</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-title">DNS Queries</span>
+            <span class="stat-icon">🌐</span>
+          </div>
+          <div class="stat-value" id="dash-queries-count">0</div>
+          <div class="stat-footer text-muted" id="dash-queries-sub">Base domain: example.com</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-title">Average Shannon Entropy</span>
+            <span class="stat-icon">🔣</span>
+          </div>
+          <div class="stat-value" id="dash-entropy-val">0.00 <span class="unit">bits/char</span></div>
+          <div class="stat-footer text-muted" id="dash-entropy-sub">Entropy in acceptable range</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-header">
+            <span class="stat-title">Suspicion Score</span>
+            <span class="stat-icon">🛡️</span>
+          </div>
+          <div class="stat-value" id="dash-score-val">0</div>
+          <div class="stat-footer text-muted flex-between">
+            <span id="dash-score-sub">0 heuristics evaluated</span>
+            <span class="badge badge-normal" id="dash-score-badge">Idle</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="simulator-layout">
+        <!-- Controls Sidebar -->
+        <div class="card sim-controls-card">
+          <div class="card-header">
+            <h2 class="card-title">Simulation Parameters</h2>
+          </div>
+
+          <div class="form-group">
+            <label for="input-message" class="form-label">Secret Message to Hide:</label>
+            <textarea id="input-message" class="form-control" rows="3" placeholder="Enter secret plaintext message...">COMPUTER NETWORKS PROJECT</textarea>
+            <div class="sample-chips">
+              <span class="chip" data-sample="COMPUTER NETWORKS PROJECT">Demo Project</span>
+              <span class="chip" data-sample="EXFILTRATION_TEST_KEY_44921">Key Data</span>
+              <span class="chip" data-sample="DNS COVERT CHANNELS ARE SUBTLE">Subtle Msg</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="select-encoding" class="form-label">Encoding Method:</label>
+            <select id="select-encoding" class="form-control">
+              <option value="base64" selected>Base64 (Standard 64-char ASCII)</option>
+              <option value="hex">Hexadecimal (Base16 Nibbles)</option>
+              <option value="base32">Base32 (RFC 4648 DNS-safe)</option>
+              <option value="binary">Binary (8-bit Bitstream 01)</option>
+            </select>
+          </div>
+
+          <!-- Feature 1: Simulated Base Domain with Realistic Presets -->
+          <div class="form-group">
+            <label for="input-domain" class="form-label">Simulated Base Domain:</label>
+            <input type="text" id="input-domain" class="form-control" value="example.com" placeholder="example.com">
+            <div class="sample-chips mt-1">
+              <span class="chip chip-domain" data-domain="example.com">example.com (default)</span>
+              <span class="chip chip-domain" data-domain="example.net">example.net</span>
+              <span class="chip chip-domain" data-domain="example.org">example.org</span>
+              <span class="chip chip-domain" data-domain="tunnel.example">tunnel.example</span>
+            </div>
+            <span class="text-xs text-muted mt-1 display-block">Generates queries like: <code class="code-inline">pkt01-&lt;chunk&gt;.example.com</code></span>
+          </div>
+
+          <div class="form-group">
+            <label for="select-qtype" class="form-label">DNS Query Type:</label>
+            <select id="select-qtype" class="form-control">
+              <option value="A" selected>A (IPv4 Host Record)</option>
+              <option value="TXT">TXT (Text Record)</option>
+              <option value="CNAME">CNAME (Alias)</option>
+              <option value="NULL">NULL (Raw Octets)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <div class="slider-header">
+              <label for="slider-chunk-size" class="form-label">Subdomain Chunk Size:</label>
+              <span class="slider-val" id="chunk-size-val">16 chars</span>
+            </div>
+            <input type="range" id="slider-chunk-size" min="8" max="48" step="4" value="16" class="form-slider">
+            <div class="slider-footer text-xs text-muted">RFC 1035 label limit: max 63 characters</div>
+          </div>
+
+          <!-- Feature 5: Packet Loss Slider -->
+          <div class="form-group packet-loss-group">
+            <div class="slider-header">
+              <label for="slider-packet-loss" class="form-label text-warning">
+                <strong>Packet Loss Rate:</strong>
+              </label>
+              <span class="slider-val text-warning" id="packet-loss-val">0% (Reliable)</span>
+            </div>
+            <input type="range" id="slider-packet-loss" min="0" max="30" step="5" value="0" class="form-slider slider-warning">
+            <div class="slider-footer text-xs text-muted">Range: 0% to 30% &bull; Demonstrates UDP unreliability and reconstruction failure</div>
+          </div>
+
+          <div class="form-group">
+            <div class="slider-header">
+              <label for="slider-delay" class="form-label">Simulated Packet Delay:</label>
+              <span class="slider-val" id="delay-val">120 ms</span>
+            </div>
+            <input type="range" id="slider-delay" min="30" max="600" step="30" value="120" class="form-slider">
+            <div class="slider-footer text-xs text-muted">Packet inter-arrival interval with random jitter</div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="check-include-seq" checked>
+              <span>Include Sequence Tag (<code class="code-inline">pkt01-</code>, <code class="code-inline">pkt02-</code>)</span>
+            </label>
+          </div>
+
+          <!-- Playback Controls -->
+          <div class="playback-controls">
+            <button class="btn btn-cyan" id="btn-sim-start">▶ Start Simulation</button>
+            <button class="btn btn-outline" id="btn-sim-step">⏯ Step-by-Step</button>
+            <button class="btn btn-outline" id="btn-sim-pause" disabled>⏸ Pause</button>
+            <button class="btn btn-outline" id="btn-sim-reset">↺ Reset</button>
+          </div>
+        </div>
+
+        <!-- Pipeline Execution View -->
+        <div class="sim-pipeline-stages">
+          <!-- Step 1 & 2: Encoding Stage -->
+          <div class="card stage-card">
+            <div class="stage-header">
+              <div class="stage-num">1 &bull; 2</div>
+              <div>
+                <h3 class="stage-title">Original Message ➔ Encoded Payload</h3>
+                <p class="stage-desc">Secret data converted into educational wire format</p>
+              </div>
+            </div>
+            <div class="stage-content">
+              <div class="meta-pills mb-2">
+                <span class="pill">Original: <strong id="pipe-orig-bytes">0</strong> bytes</span>
+                <span class="pill">Encoded: <strong id="pipe-enc-bytes">0</strong> chars</span>
+                <span class="pill">Expansion: <strong id="pipe-exp-ratio">1.0x</strong></span>
+                <span class="pill">Estimated Packets: <strong id="pipe-pkt-estimate">0</strong></span>
+              </div>
+              <div class="code-terminal" id="pipe-encoded-payload">[Encoded payload will appear here...]</div>
+            </div>
+          </div>
+
+          <!-- Step 3 & 4: Chunking & Simulated DNS Queries & Packet Loss -->
+          <div class="card stage-card">
+            <div class="stage-header">
+              <div class="stage-num">3 &bull; 4</div>
+              <div>
+                <h3 class="stage-title">Packetized Queries ➔ Simulated Transmission &amp; Packet Loss</h3>
+                <p class="stage-desc">Synthetic DNS queries with delivery tracking</p>
+              </div>
+              <div class="packet-stats-pill" id="pipe-loss-summary">
+                Generated: 0 | Delivered: 0 | Lost: 0
+              </div>
+            </div>
+            <div class="stage-content">
+              <div class="chunk-list-container" id="pipe-chunks-list">
+                <div class="empty-state">No queries generated yet. Click "Start Simulation" or "Run Demo".</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5 & 6: Reassembly, Packet Loss Diagnostic & Decoding -->
+          <div class="card stage-card">
+            <div class="stage-header">
+              <div class="stage-num">5 &bull; 6</div>
+              <div>
+                <h3 class="stage-title">Reassembly ➔ Decoding (Packet Loss Inspection)</h3>
+                <p class="stage-desc">Receiver extracts delivered chunks and detects missing sequence numbers</p>
+              </div>
+              <div id="pipe-recon-badge" class="badge badge-normal">Ready</div>
+            </div>
+            <div class="stage-content">
+              <!-- Packet Loss Diagnostic Banner -->
+              <div class="loss-alert-box" id="pipe-loss-alert" style="display: none;">
+                <span class="alert-icon">⚠️</span>
+                <div>
+                  <strong>Reconstruction Status: FAILED</strong> &bull; <span id="pipe-missing-list">Missing packets: none</span>
+                  <div class="text-xs text-muted mt-1">UDP is an unreliable protocol. Without retransmission, dropped packets corrupt payload recovery.</div>
+                </div>
+              </div>
+
+              <div class="reconstruction-view">
+                <div class="recon-block">
+                  <div class="recon-label">Assembled Payload Stream:</div>
+                  <div class="code-terminal" id="pipe-assembled-stream">[Pending query reception...]</div>
+                </div>
+                <div class="recon-block mt-3">
+                  <div class="recon-label">Decoded Plaintext Output:</div>
+                  <div class="code-terminal success-terminal" id="pipe-decoded-plaintext">[Recovered message will appear here...]</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 3. PACKET ANALYZER TAB (Feature 3: Paired DNS Request & Response) -->
+    <section id="tab-analyzer" class="tab-pane">
+      <div class="safety-banner-bar mb-3">
+        <span class="badge badge-normal">SIMULATION MODE ONLY</span>
+        <span class="safety-banner-text"><strong>SIMULATED — NO REAL DNS REQUEST SENT:</strong> Inspect paired DNS Request and Response models.</span>
+      </div>
+
+      <div class="card mb-3">
+        <div class="packet-selector-bar">
+          <div class="selector-left">
+            <label for="select-active-packet" class="form-label mr-2">Select Simulated Packet:</label>
+            <select id="select-active-packet" class="form-control packet-dropdown">
+              <option value="0">No packets simulated yet</option>
+            </select>
+            <button class="btn btn-sm btn-outline" id="btn-prev-pkt">◀ Prev</button>
+            <button class="btn btn-sm btn-outline" id="btn-next-pkt">Next ▶</button>
+          </div>
+          <div class="selector-right">
+            <span class="badge badge-normal" id="analyzer-pkt-status">Packet #1</span>
+            <span class="badge badge-normal ml-2" id="analyzer-delivery-status">DELIVERED</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Visual Flow Query -> Server -> Response -->
+      <div class="card mb-3">
+        <div class="req-resp-visual-flow">
+          <div class="flow-box flow-req">
+            <div class="flow-icon">📤</div>
+            <strong>DNS Query (Client)</strong>
+            <span class="text-xs text-muted" id="flow-req-qname">example.com</span>
+          </div>
+          <div class="flow-connector">➔</div>
+          <div class="flow-box flow-server">
+            <div class="flow-icon">🖥️</div>
+            <strong>DNS Server (Resolver/Auth)</strong>
+            <span class="text-xs text-muted">UDP Port 53</span>
+          </div>
+          <div class="flow-connector">➔</div>
+          <div class="flow-box flow-resp">
+            <div class="flow-icon">📥</div>
+            <strong>DNS Response (Server)</strong>
+            <span class="text-xs text-muted" id="flow-resp-rdata">192.0.2.1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side-by-side DNS Request & DNS Response Cards -->
+      <div class="two-col-grid mb-3">
+        <!-- DNS Request Card -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title text-cyan">DNS Request (Query)</h2>
+              <p class="card-subtitle">Client datagram carrying covert payload chunk</p>
+            </div>
+            <span class="badge badge-unusual">QR = 0 (Query)</span>
+          </div>
+
+          <div class="packet-fields-table">
+            <div class="p-field-row"><span class="p-key">Transaction ID:</span> <span class="p-val code-inline" id="req-tx-id">0x0000</span></div>
+            <div class="p-field-row"><span class="p-key">Flags:</span> <span class="p-val" id="req-flags">0x0100 (Standard Query, RD=1)</span></div>
+            <div class="p-field-row"><span class="p-key">Questions (QDCOUNT):</span> <span class="p-val" id="req-qdcount">1</span></div>
+            <div class="p-field-row"><span class="p-key">Query Name (QNAME):</span> <span class="p-val code-inline" id="req-qname">-</span></div>
+            <div class="p-field-row"><span class="p-key">Query Type (QTYPE):</span> <span class="p-val" id="req-qtype">A (Host Address)</span></div>
+            <div class="p-field-row"><span class="p-key">Query Class (QCLASS):</span> <span class="p-val" id="req-qclass">IN (Internet)</span></div>
+          </div>
+        </div>
+
+        <!-- DNS Response Card -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title text-emerald">DNS Response (Answer)</h2>
+              <p class="card-subtitle">Server response answering with simulated RR</p>
+            </div>
+            <span class="badge badge-normal">QR = 1 (Response)</span>
+          </div>
+
+          <div class="packet-fields-table">
+            <div class="p-field-row"><span class="p-key">Transaction ID:</span> <span class="p-val code-inline" id="resp-tx-id">0x0000 (Matches Request)</span></div>
+            <div class="p-field-row"><span class="p-key">Response Flags:</span> <span class="p-val" id="resp-flags">0x8180 (Response, AA=1, RA=1)</span></div>
+            <div class="p-field-row"><span class="p-key">Questions (QDCOUNT):</span> <span class="p-val" id="resp-qdcount">1</span></div>
+            <div class="p-field-row"><span class="p-key">Answers (ANCOUNT):</span> <span class="p-val" id="resp-ancount">1</span></div>
+            <div class="p-field-row"><span class="p-key">Query Name (QNAME):</span> <span class="p-val code-inline" id="resp-qname">-</span></div>
+            <div class="p-field-row"><span class="p-key">Query Type / Class:</span> <span class="p-val" id="resp-type-class">A / IN</span></div>
+            <div class="p-field-row"><span class="p-key">Simulated Answer:</span> <span class="p-val text-emerald code-inline" id="resp-answer-rdata">192.0.2.1</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RFC 1035 Dissector & Hex Dump Grid -->
+      <div class="analyzer-grid">
+        <!-- Visual Packet Tree Dissector -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">RFC 1035 Packet Dissector Tree</h2>
+            <span class="text-xs text-muted">Synthetic Datagram Breakdown</span>
+          </div>
+
+          <div class="dissector-tree">
+            <!-- Transport Layer -->
+            <div class="tree-node open">
+              <div class="tree-label"><span class="tree-arrow">▼</span> <strong>Layer 4: User Datagram Protocol (UDP)</strong></div>
+              <div class="tree-children">
+                <div class="tree-leaf">Source Port: <span class="highlight-val" id="tree-src-port">54120</span></div>
+                <div class="tree-children-item">Destination Port: <span class="highlight-val">53 (DNS Domain Name System)</span></div>
+                <div class="tree-children-item">UDP Length: <span class="highlight-val" id="tree-udp-len">52 octets</span></div>
+                <div class="tree-children-item">Checksum: <span class="text-muted">0x0000 (Simulated / Unchecked)</span></div>
+              </div>
+            </div>
+
+            <!-- DNS Header -->
+            <div class="tree-node open">
+              <div class="tree-label"><span class="tree-arrow">▼</span> <strong>Layer 7: DNS Query Header (12 Octets)</strong></div>
+              <div class="tree-children">
+                <div class="tree-children-item">Transaction ID: <span class="highlight-val" id="tree-tx-id">0x1A2B</span></div>
+                
+                <div class="tree-node open">
+                  <div class="tree-label"><span class="tree-arrow">▼</span> Flags: <span class="highlight-val" id="tree-flags-raw">0x0100</span> (Standard query, RD)</div>
+                  <div class="tree-children">
+                    <div class="tree-children-item">0... .... .... .... = QR: <span class="flag-val">0 (Query)</span></div>
+                    <div class="tree-children-item">.000 0... .... .... = Opcode: <span class="flag-val">0 (Standard Query - QUERY)</span></div>
+                    <div class="tree-children-item">.... .0.. .... .... = AA (Authoritative): <span class="flag-val">0</span></div>
+                    <div class="tree-children-item">.... ..0. .... .... = TC (Truncated): <span class="flag-val">0</span></div>
+                    <div class="tree-children-item">.... ...1 .... .... = RD (Recursion Desired): <span class="flag-val">1 (Yes)</span></div>
+                    <div class="tree-children-item">.... .... 0... .... = RA (Recursion Available): <span class="flag-val">0</span></div>
+                    <div class="tree-children-item">.... .... .000 .... = Z (Reserved): <span class="flag-val">0</span></div>
+                    <div class="tree-children-item">.... .... .... 0000 = RCODE (Response Code): <span class="flag-val">0 (No Error)</span></div>
+                  </div>
+                </div>
+
+                <div class="tree-children-item">Questions Count (QDCOUNT): <span class="highlight-val" id="tree-qdcount">1</span></div>
+                <div class="tree-children-item">Answer RRs (ANCOUNT): <span class="highlight-val">0</span></div>
+                <div class="tree-children-item">Authority RRs (NSCOUNT): <span class="highlight-val">0</span></div>
+                <div class="tree-children-item">Additional RRs (ARCOUNT): <span class="highlight-val">0</span></div>
+              </div>
+            </div>
+
+            <!-- DNS Question Section -->
+            <div class="tree-node open">
+              <div class="tree-label"><span class="tree-arrow">▼</span> <strong>DNS Question Section (Queries: 1)</strong></div>
+              <div class="tree-children">
+                <div class="tree-children-item">Query Name (QNAME): <span class="highlight-val code-inline" id="tree-qname">example.com</span></div>
+                <div class="tree-children-item">Query Type (QTYPE): <span class="highlight-val" id="tree-qtype">A (Host Address) [1]</span></div>
+                <div class="tree-children-item">Query Class (QCLASS): <span class="highlight-val" id="tree-qclass">IN (Internet) [1]</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wire Format Hex Dump & Field Inspection -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Wire Format Hex Dump &amp; Payload Inspection</h2>
+            <span class="text-xs text-muted" id="analyzer-wire-size">44 bytes</span>
+          </div>
+
+          <div class="payload-details-box">
+            <div class="detail-row">
+              <span class="detail-key">Packet Number:</span>
+              <span class="detail-val" id="ins-pkt-num">1</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-key">Delivery Status:</span>
+              <span class="detail-val" id="ins-del-status"><span class="badge badge-normal">DELIVERED</span></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-key">Timestamp:</span>
+              <span class="detail-val" id="ins-timestamp">10:00:00.000</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-key">Simulated Query Name:</span>
+              <span class="detail-val code-inline" id="ins-query-name">-</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-key">Embedded Covert Payload:</span>
+              <span class="detail-val highlight-val" id="ins-payload">-</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-key">Payload Length:</span>
+              <span class="detail-val" id="ins-payload-len">0 chars</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-key">Shannon Character Entropy:</span>
+              <span class="detail-val" id="ins-entropy">0.00 bits/char</span>
+            </div>
+          </div>
+
+          <h3 class="subsection-title mt-3">Raw Wire Hex Octets (RFC 1035 wire representation)</h3>
+          <div class="hexdump-viewer" id="analyzer-hexdump">
+            00 00 01 00 00 01 00 00 00 00 00 00 ...
+          </div>
+          <div class="hexdump-legend text-xs text-muted mt-2">
+            <span>🔵 [0-11] Header (12 bytes)</span> | 
+            <span>🟢 [12..] QNAME wire-encoded labels</span> | 
+            <span>🟡 Last 4 bytes: QTYPE (2) + QCLASS (2)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4. ANOMALY DETECTION TAB -->
+    <section id="tab-detection" class="tab-pane">
+      <div class="detection-top-grid">
+        <!-- Suspicion Gauge Card -->
+        <div class="card gauge-card">
+          <div class="card-header">
+            <h2 class="card-title">Composite Suspicion Score</h2>
+            <span class="text-xs text-muted">Rule-Based Anomaly Scoring</span>
+          </div>
+
+          <div class="gauge-display">
+            <div class="gauge-circle-outer">
+              <div class="gauge-circle-inner">
+                <span class="gauge-big-num" id="gauge-score-number">0</span>
+                <span class="gauge-denominator">/ 100</span>
+              </div>
+            </div>
+            <div class="gauge-classification mt-2">
+              <span class="badge badge-normal badge-lg" id="gauge-class-badge">Normal</span>
+            </div>
+            <p class="gauge-verdict text-sm text-muted mt-2" id="gauge-verdict-text">
+              Traffic analysis indicates benign characteristics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Statistical Radar / Feature Indicators -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Extracted Network Anomaly Indicators</h2>
+            <span class="text-xs text-muted">Feature vector derived from query batch</span>
+          </div>
+
+          <div class="indicators-grid">
+            <div class="indicator-tile">
+              <div class="ind-title">Average Query Length</div>
+              <div class="ind-val" id="ind-query-len">0 <span class="unit">chars</span></div>
+              <div class="ind-bar-container"><div class="ind-bar" id="bar-query-len" style="width: 15%"></div></div>
+              <div class="ind-threshold">Threshold: &gt; 30 chars</div>
+            </div>
+
+            <div class="indicator-tile">
+              <div class="ind-title">Subdomain Length</div>
+              <div class="ind-val" id="ind-subdomain-len">0 <span class="unit">chars</span></div>
+              <div class="ind-bar-container"><div class="ind-bar" id="bar-subdomain-len" style="width: 10%"></div></div>
+              <div class="ind-threshold">Threshold: &gt; 16 chars</div>
+            </div>
+
+            <div class="indicator-tile">
+              <div class="ind-title">Character Shannon Entropy</div>
+              <div class="ind-val" id="ind-entropy">0.00 <span class="unit">bits/char</span></div>
+              <div class="ind-bar-container"><div class="ind-bar" id="bar-entropy" style="width: 20%"></div></div>
+              <div class="ind-threshold">Threshold: &gt; 3.6 bits/char</div>
+            </div>
+
+            <div class="indicator-tile">
+              <div class="ind-title">Unusual Character Ratio</div>
+              <div class="ind-val" id="ind-unusual-chars">0.0 <span class="unit">%</span></div>
+              <div class="ind-bar-container"><div class="ind-bar" id="bar-unusual-chars" style="width: 5%"></div></div>
+              <div class="ind-threshold">Threshold: &gt; 25% (digits, case)</div>
+            </div>
+
+            <div class="indicator-tile">
+              <div class="ind-title">Payload-to-Domain Ratio</div>
+              <div class="ind-val" id="ind-payload-ratio">0.0 <span class="unit">x</span></div>
+              <div class="ind-bar-container"><div class="ind-bar" id="bar-payload-ratio" style="width: 10%"></div></div>
+              <div class="ind-threshold">Threshold: &gt; 1.0x ratio</div>
+            </div>
+
+            <div class="indicator-tile">
+              <div class="ind-title">Non-Cached Label Uniqueness</div>
+              <div class="ind-val" id="ind-uniqueness">0.0 <span class="unit">%</span></div>
+              <div class="ind-bar-container"><div class="ind-bar" id="bar-uniqueness" style="width: 10%"></div></div>
+              <div class="ind-threshold">Threshold: &gt; 90% unique labels</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explainable Rule Contribution Table -->
+      <div class="card mt-3">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Transparent Rule Contributions (Explainable AI / Expert System)</h2>
+            <p class="card-subtitle">Examines each individual heuristic and shows its exact contribution to the total suspicion score</p>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table" id="table-rule-contributions">
+            <thead>
+              <tr>
+                <th>Rule Name</th>
+                <th>Feature Tested</th>
+                <th>Observed Value</th>
+                <th>Anomaly Threshold</th>
+                <th>Points Added</th>
+                <th>Diagnostic Explanation</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-rule-contributions">
+              <tr>
+                <td colspan="6" class="text-center text-muted">Run a simulation or demo to inspect rule evaluations.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="disclaimer-callout mt-3">
+          <strong>⚠️ Educational Lab Disclaimer:</strong> The scoring algorithms and thresholds presented here are simplified for instructional demonstration of Computer Networks principles. In production environments, Security Operations Centers (SOCs) use machine learning on terabytes of passive DNS (pDNS), combined with Threat Intelligence feeds and WHOIS age to detect tunneling.
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 5. NORMAL VS COVERT COMPARISON TAB -->
+    <section id="tab-comparison" class="tab-pane">
+      <div class="card mb-3">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Baseline Comparison: Normal DNS vs Simulated Covert DNS</h2>
+            <p class="card-subtitle">Side-by-side evaluation against a synthetic benign baseline (<code class="code-inline">sample-traffic.json</code>)</p>
+          </div>
+          <button class="btn btn-sm btn-outline" id="btn-refresh-compare">↺ Refresh Comparison</button>
+        </div>
+
+        <!-- Comparative Metrics Table -->
+        <div class="table-responsive">
+          <table class="data-table comparison-table">
+            <thead>
+              <tr>
+                <th>Network Traffic Metric</th>
+                <th>Unit</th>
+                <th>Normal DNS (Baseline)</th>
+                <th>Simulated Covert DNS</th>
+                <th>Variance / Delta</th>
+                <th>Networking Significance</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-comparison-metrics">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Comparison Charts Grid -->
+      <div class="two-col-grid">
+        <div class="card">
+          <h3 class="card-title mb-2">Query Length Distribution</h3>
+          <p class="card-subtitle mb-3">FQDN length comparison across packet sequences</p>
+          <div class="chart-box">
+            <canvas id="chart-query-length"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title mb-2">Shannon Entropy Comparison</h3>
+          <p class="card-subtitle mb-3">Randomness of label characters (bits per character)</p>
+          <div class="chart-box">
+            <canvas id="chart-entropy"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="two-col-grid mt-3">
+        <div class="card">
+          <h3 class="card-title mb-2">Suspicion Score Breakdown</h3>
+          <p class="card-subtitle mb-3">Threat score evaluation comparison</p>
+          <div class="chart-box">
+            <canvas id="chart-scores"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title mb-2">Payload Size vs Protocol Overhead</h3>
+          <p class="card-subtitle mb-3">Effective payload carried versus DNS packet encapsulation</p>
+          <div class="chart-box">
+            <canvas id="chart-payload"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 5B. EVALUATION LAB TAB (Scientific Performance & Measurable Detection Engine) -->
+    <section id="tab-evaluation" class="tab-pane">
+      <!-- Safety & Academic Notice Banner -->
+      <div class="safety-banner-bar mb-3">
+        <span class="badge badge-normal">SCIENTIFIC EVALUATION LAB</span>
+        <span class="safety-banner-text"><strong>CONTROLLED EXPERIMENTAL BENCHMARK:</strong> Dual-detector evaluation across held-out test splits. Evaluates the multi-feature rule detector against an entropy-threshold baseline with zero scenario leakage.</span>
+      </div>
+
+      <!-- Experiment Controls Card -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">🔬 Experiment Controls &amp; Evaluation Setup</h2>
+            <p class="card-subtitle">Configure dataset generation parameters, deterministic seeds, and evaluation split thresholds</p>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-sm btn-outline" id="btn-export-eval-csv">⬇ Export Results (CSV)</button>
+            <button class="btn btn-sm btn-outline" id="btn-export-eval-json">⬇ Export Results (JSON)</button>
+            <button class="btn btn-sm btn-outline" id="btn-print-eval-report">🖨️ Printable Report</button>
+          </div>
+        </div>
+
+        <div class="eval-controls-grid">
+          <!-- Control 1: Sample Count -->
+          <div class="form-group">
+            <label class="form-label" for="eval-sample-count">
+              <span>Dataset Sample Count</span>
+              <span class="label-val text-cyan" id="eval-sample-count-val">100 samples</span>
+            </label>
+            <input type="range" id="eval-sample-count" class="form-slider" min="20" max="400" step="10" value="100">
+            <span class="help-text">Balanced split between normal and simulated covert streams</span>
+          </div>
+
+          <!-- Control 2: Random Seed -->
+          <div class="form-group">
+            <label class="form-label" for="eval-seed">Random Seed (Deterministic PRNG)</label>
+            <div class="seed-input-group">
+              <input type="number" id="eval-seed" class="form-control" value="42" placeholder="e.g. 42">
+              <button class="btn btn-sm btn-outline" id="btn-random-seed" title="Generate New Seed">🎲</button>
+            </div>
+            <span class="help-text">Identical seeds produce bitwise-reproducible samples</span>
+          </div>
+
+          <!-- Control 3: Calibration / Evaluation Split -->
+          <div class="form-group">
+            <label class="form-label" for="eval-split-ratio">
+              <span>Calibration / Evaluation Split</span>
+              <span class="label-val text-cyan" id="eval-split-ratio-val">30% Cal / 70% Eval</span>
+            </label>
+            <input type="range" id="eval-split-ratio" class="form-slider" min="15" max="50" step="5" value="30">
+            <span class="help-text">Stratified by label; whole scenarios kept together to prevent evaluation leakage</span>
+          </div>
+
+          <!-- Control 4: Encoding Method -->
+          <div class="form-group">
+            <label class="form-label" for="eval-encoding">Covert Encoding Scheme</label>
+            <select id="eval-encoding" class="form-control">
+              <option value="all">All Encodings (Mixed Stream)</option>
+              <option value="base64">Base64 Only</option>
+              <option value="hex">Hexadecimal Only</option>
+              <option value="binary">Binary (Bitstream) Only</option>
+              <option value="base32">Base32 Only</option>
+            </select>
+            <span class="help-text">Encodings utilized in simulated covert scenarios</span>
+          </div>
+
+          <!-- Control 5: Entropy Threshold Baseline Mode -->
+          <div class="form-group">
+            <label class="form-label">Method B Entropy Threshold</label>
+            <div class="checkbox-container mb-2">
+              <label class="checkbox-label">
+                <input type="checkbox" id="eval-auto-calibrate" checked>
+                <span>Auto-calibrate on calibration split (Max F1)</span>
+              </label>
+            </div>
+            <div id="eval-manual-threshold-wrapper" style="opacity: 0.5; pointer-events: none;">
+              <div class="flex-between text-xs mb-1">
+                <span>Manual Threshold</span>
+                <span id="eval-entropy-threshold-val" class="text-cyan">3.50 bits/char</span>
+              </div>
+              <input type="range" id="eval-entropy-threshold" class="form-slider" min="1.5" max="4.8" step="0.05" value="3.50">
+            </div>
+            <span class="help-text">Tuned strictly on calibration set; evaluated on held-out samples</span>
+          </div>
+
+          <!-- Control 6: Packet Loss Simulation -->
+          <div class="form-group">
+            <label class="form-label" for="eval-packet-loss">
+              <span>Transport Packet Loss Rate</span>
+              <span class="label-val text-cyan" id="eval-packet-loss-val">0% (Reliable)</span>
+            </label>
+            <input type="range" id="eval-packet-loss" class="form-slider" min="0" max="30" step="5" value="0">
+            <span class="help-text">Simulates UDP datagram drops; reported separately from ground truth</span>
+          </div>
+        </div>
+
+        <div class="btn-row mt-3">
+          <button class="btn btn-cyan btn-glow" id="btn-run-evaluation">
+            <span class="icon">🔬</span> Run Scientific Evaluation
+          </button>
+          <span class="text-muted text-xs ml-3" id="eval-status-indicator">Ready to evaluate. Click to generate samples and benchmark detectors.</span>
+        </div>
+      </div>
+
+      <!-- A. Experiment Summary Banner -->
+      <div class="card mb-3" id="eval-summary-card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title text-cyan">📋 Experiment Setup &amp; Partition Summary</h3>
+            <p class="card-subtitle">Dataset partition counts, scenario grouping, and evaluation parameters</p>
+          </div>
+          <div class="badge badge-normal" id="badge-leakage-status">🛡️ Zero Scenario Leakage Verified</div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total Generated Samples</div>
+            <div class="stat-value text-cyan" id="stat-eval-total">--</div>
+            <div class="stat-sub" id="stat-eval-balance">Normal: -- | Covert: --</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Calibration Split (Tuning)</div>
+            <div class="stat-value text-emerald" id="stat-eval-cal">--</div>
+            <div class="stat-sub" id="stat-eval-cal-sub">Used for entropy threshold calibration</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Evaluation Split (Held-Out)</div>
+            <div class="stat-value text-cyan" id="stat-eval-eval">--</div>
+            <div class="stat-sub" id="stat-eval-eval-sub">Strictly isolated evaluation samples</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Deterministic Seed</div>
+            <div class="stat-value text-white" id="stat-eval-seed">--</div>
+            <div class="stat-sub">Reproducible experimental state</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- B. Performance Metrics Cards -->
+      <div class="two-col-grid mb-3">
+        <!-- Detector A: Rule-Based -->
+        <div class="card perf-card">
+          <div class="card-header">
+            <div>
+              <div class="badge badge-normal mb-1">METHOD A</div>
+              <h3 class="card-title">Multi-Feature Rule-Based Detector</h3>
+              <p class="card-subtitle">Composite decision rule: Score &ge; 50 &rarr; Covert, &lt; 50 &rarr; Normal</p>
+            </div>
+          </div>
+          <div class="metric-tiles-grid">
+            <div class="metric-tile">
+              <span class="m-label">Accuracy</span>
+              <span class="m-val text-cyan" id="metric-rule-accuracy">--%</span>
+            </div>
+            <div class="metric-tile">
+              <span class="m-label">Precision</span>
+              <span class="m-val text-emerald" id="metric-rule-precision">--%</span>
+            </div>
+            <div class="metric-tile">
+              <span class="m-label">Recall (Sensitivity)</span>
+              <span class="m-val text-cyan" id="metric-rule-recall">--%</span>
+            </div>
+            <div class="metric-tile">
+              <span class="m-label">Specificity</span>
+              <span class="m-val text-emerald" id="metric-rule-specificity">--%</span>
+            </div>
+            <div class="metric-tile">
+              <span class="m-label">F1-Score</span>
+              <span class="m-val text-amber" id="metric-rule-f1">--</span>
+            </div>
+            <div class="metric-tile">
+              <span class="m-label">False Positive Rate</span>
+              <span class="m-val text-danger" id="metric-rule-fpr">--%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detector B: Entropy Baseline -->
+        <div class="card perf-card">
+          <div class="card-header">
+            <div>
+              <div class="badge badge-unusual mb-1">METHOD B (BASELINE)</div>
+              <h3 class="card-title">Entropy-Threshold Baseline</h3>
+              <p class="card-subtitle" id="label-entropy-baseline-rule">Decision rule: Shannon Entropy &gt; 3.50 bits/char &rarr; Covert</p>
+            </div>
+          </div>
+          <div class="metric-tiles-grid">
+            <div class="metric-tile">
+              <span class="m-label">Accuracy</span>
+              <span class="m-val text-cyan" id="metric-entropy-accuracy">--%</span>
+            </div>
+            <div class="metric-tile">
+              <span class="m-label">Precision</span>
+              <span class="m-val text-emerald" id="metric-entropy-precision">--%</span>
+            </div>
+            <div class="metric-tile">
+              <span class="m-label">Recall (Sensitivity)</span>
+              <span class="m-val text-cyan" id="metric-entropy-recall">--%</span>
+            </div>
+            <div class="metric-tile">
+              <span class="m-label">Specificity</span>
+              <span class="m-val text-emerald" id="metric-entropy-specificity">--%</span>
+            </div>
+            <div class="metric-tile">
+              <span class="m-label">F1-Score</span>
+              <span class="m-val text-amber" id="metric-entropy-f1">--</span>
+            </div>
+            <div class="metric-tile">
+              <span class="m-label">False Positive Rate</span>
+              <span class="m-val text-danger" id="metric-entropy-fpr">--%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- C. Confusion Matrices -->
+      <div class="two-col-grid mb-3">
+        <div class="card">
+          <h3 class="card-title mb-2">Confusion Matrix: Rule-Based Detector</h3>
+          <p class="card-subtitle mb-3">Evaluated on held-out evaluation samples (<span id="cm-rule-total">--</span> queries)</p>
+          <div class="cm-wrapper">
+            <table class="cm-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Predicted Covert</th>
+                  <th>Predicted Normal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Actual Covert</th>
+                  <td class="cm-cell cm-tp">
+                    <div class="cm-tag">True Positive (TP)</div>
+                    <div class="cm-num" id="cm-rule-tp">--</div>
+                    <div class="cm-pct" id="cm-rule-tp-pct">--%</div>
+                  </td>
+                  <td class="cm-cell cm-fn">
+                    <div class="cm-tag">False Negative (FN)</div>
+                    <div class="cm-num" id="cm-rule-fn">--</div>
+                    <div class="cm-pct" id="cm-rule-fn-pct">--%</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Actual Normal</th>
+                  <td class="cm-cell cm-fp">
+                    <div class="cm-tag">False Positive (FP)</div>
+                    <div class="cm-num" id="cm-rule-fp">--</div>
+                    <div class="cm-pct" id="cm-rule-fp-pct">--%</div>
+                  </td>
+                  <td class="cm-cell cm-tn">
+                    <div class="cm-tag">True Negative (TN)</div>
+                    <div class="cm-num" id="cm-rule-tn">--</div>
+                    <div class="cm-pct" id="cm-rule-tn-pct">--%</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title mb-2">Confusion Matrix: Entropy-Threshold Baseline</h3>
+          <p class="card-subtitle mb-3">Evaluated on identical held-out evaluation samples (<span id="cm-entropy-total">--</span> queries)</p>
+          <div class="cm-wrapper">
+            <table class="cm-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Predicted Covert</th>
+                  <th>Predicted Normal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Actual Covert</th>
+                  <td class="cm-cell cm-tp">
+                    <div class="cm-tag">True Positive (TP)</div>
+                    <div class="cm-num" id="cm-entropy-tp">--</div>
+                    <div class="cm-pct" id="cm-entropy-tp-pct">--%</div>
+                  </td>
+                  <td class="cm-cell cm-fn">
+                    <div class="cm-tag">False Negative (FN)</div>
+                    <div class="cm-num" id="cm-entropy-fn">--</div>
+                    <div class="cm-pct" id="cm-entropy-fn-pct">--%</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Actual Normal</th>
+                  <td class="cm-cell cm-fp">
+                    <div class="cm-tag">False Positive (FP)</div>
+                    <div class="cm-num" id="cm-entropy-fp">--</div>
+                    <div class="cm-pct" id="cm-entropy-fp-pct">--%</div>
+                  </td>
+                  <td class="cm-cell cm-tn">
+                    <div class="cm-tag">True Negative (TN)</div>
+                    <div class="cm-num" id="cm-entropy-tn">--</div>
+                    <div class="cm-pct" id="cm-entropy-tn-pct">--%</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- D. Detector Comparison Chart & Full Metrics Table -->
+      <div class="two-col-grid mb-3">
+        <div class="card">
+          <h3 class="card-title mb-2">Detector Comparison (Chart)</h3>
+          <p class="card-subtitle mb-3">Comparative performance on identical held-out evaluation split</p>
+          <div class="chart-box">
+            <canvas id="chart-eval-comparison"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title mb-2">Complete Scientific Metrics Comparison</h3>
+          <p class="card-subtitle mb-3">Side-by-side performance breakdown with variance delta</p>
+          <div class="table-responsive">
+            <table class="data-table" id="table-eval-metrics-comparison">
+              <thead>
+                <tr>
+                  <th>Evaluation Metric</th>
+                  <th>Rule-Based Detector</th>
+                  <th>Entropy Baseline</th>
+                  <th>Delta (&Delta;)</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-eval-metrics-comparison">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- E. Feature Distribution Analysis -->
+      <div class="card mb-3">
+        <h3 class="card-title text-cyan mb-2">📊 Empirical Feature Distributions (Normal vs Simulated Covert)</h3>
+        <p class="card-subtitle mb-3">Observed distribution characteristics across the evaluated traffic classes</p>
+        <div class="table-responsive">
+          <table class="data-table" id="table-feature-distributions">
+            <thead>
+              <tr>
+                <th>Feature Name</th>
+                <th>Normal Mean (&plusmn; StdDev)</th>
+                <th>Normal Range [Min - Max]</th>
+                <th>Covert Mean (&plusmn; StdDev)</th>
+                <th>Covert Range [Min - Max]</th>
+                <th>Significance / Separation</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-feature-distributions">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- F. Error Analysis: False Positives & False Negatives -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title text-amber">🔍 Error Analysis &amp; Diagnostic Inspection</h3>
+            <p class="card-subtitle">Detailed investigation of False Positives (legitimate queries flagged as covert) and False Negatives (covert queries evading detection)</p>
+          </div>
+          <div class="filter-dropdowns">
+            <select id="eval-error-detector-filter" class="form-control mr-2">
+              <option value="ruleBased">Rule-Based Detector Errors</option>
+              <option value="entropyBaseline">Entropy Baseline Errors</option>
+            </select>
+            <select id="eval-error-type-filter" class="form-control">
+              <option value="all">All Errors (FP + FN)</option>
+              <option value="fp">False Positives (FP) Only</option>
+              <option value="fn">False Negatives (FN) Only</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table" id="table-eval-errors">
+            <thead>
+              <tr>
+                <th>Sample ID</th>
+                <th>Ground Truth</th>
+                <th>Prediction</th>
+                <th>Query Name</th>
+                <th>Key Features (Length / Entropy)</th>
+                <th>Diagnostic Explanation &amp; Root Cause</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-eval-errors">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- G. Packet Loss Transport Impact (Conditional) -->
+      <div class="card mb-3" id="eval-loss-card" style="display: none;">
+        <h3 class="card-title text-danger mb-2">📦 Transport-Layer Packet Loss &amp; Reconstruction Impact</h3>
+        <p class="card-subtitle mb-3">Separation of transport-layer UDP datagram loss from ground-truth detection classification</p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Loss Simulation Rate</div>
+            <div class="stat-value text-danger" id="eval-loss-rate-val">--%</div>
+            <div class="stat-sub">Configured drop probability</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Covert Packets Delivered</div>
+            <div class="stat-value text-emerald" id="eval-loss-delivered-val">--</div>
+            <div class="stat-sub" id="eval-loss-total-val">out of -- covert packets</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Covert Packets Dropped</div>
+            <div class="stat-value text-danger" id="eval-loss-dropped-val">--</div>
+            <div class="stat-sub">Dropped by connectionless UDP</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Reconstruction Status</div>
+            <div class="stat-value" id="eval-loss-recon-status">--</div>
+            <div class="stat-sub">Requires 100% sequential delivery</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 6. PACKET LOG TAB (Feature 5: Delivered vs Lost Status Column & Filter) -->
+    <section id="tab-log" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Simulated DNS Packet Log</h2>
+            <p class="card-subtitle">Comprehensive record of all generated packets with search, filter, delivery status, and export capabilities</p>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-sm btn-outline" id="btn-export-csv">⬇ Export CSV</button>
+            <button class="btn btn-sm btn-outline" id="btn-export-json">⬇ Export JSON</button>
+          </div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-bar">
+          <div class="search-box">
+            <input type="text" id="log-search-input" class="form-control" placeholder="Search by query name, chunk, status, or delivery...">
+          </div>
+          <div class="filter-dropdowns">
+            <select id="log-filter-status" class="form-control mr-2">
+              <option value="all">All Anomaly Ratings</option>
+              <option value="Normal">Normal Only</option>
+              <option value="Unusual">Unusual Only</option>
+              <option value="Suspicious">Suspicious Only</option>
+            </select>
+            <select id="log-filter-delivery" class="form-control">
+              <option value="all">All Deliveries</option>
+              <option value="DELIVERED">Delivered Only</option>
+              <option value="LOST">Lost Only</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+          <table class="data-table" id="table-packets">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="packetNumber"># ↕</th>
+                <th class="sortable" data-sort="deliveryStatus">Delivery ↕</th>
+                <th class="sortable" data-sort="timestamp">Timestamp ↕</th>
+                <th class="sortable" data-sort="queryName">Query Name (FQDN) ↕</th>
+                <th>Type</th>
+                <th class="sortable" data-sort="length">Length ↕</th>
+                <th class="sortable" data-sort="entropy">Entropy ↕</th>
+                <th>Score</th>
+                <th>Status</th>
+                <th>Inspect</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-packets">
+              <tr>
+                <td colspan="10" class="text-center text-muted">No packets generated yet. Start a simulation to populate log.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 7. EDUCATIONAL & ARCHITECTURE TAB -->
+    <section id="tab-about" class="tab-pane">
+      <div class="safety-banner-bar mb-3">
+        <span class="badge badge-normal">SIMULATION MODE ONLY</span>
+        <span class="safety-banner-text"><strong>EDUCATIONAL CURRICULUM:</strong> Designed for Computer Networks laboratory instruction, RFC 1035 wire analysis, and defensive anomaly detection.</span>
+      </div>
+
+      <!-- Architecture Flow Diagram -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">System Architecture: DNS Steganography Simulator &amp; Analyzer</h2>
+            <p class="card-subtitle">Layered software flow design for Computer Networks coursework</p>
+          </div>
+        </div>
+        
+        <div class="arch-flow-wrapper">
+          <div class="arch-node">
+            <div class="arch-badge">Client Tier</div>
+            <div class="arch-title">User</div>
+            <div class="arch-desc">Enters secret payload &amp; selects parameters</div>
+          </div>
+          <div class="arch-arrow">➔</div>
+
+          <div class="arch-node">
+            <div class="arch-badge">Interface</div>
+            <div class="arch-title">Web Interface</div>
+            <div class="arch-desc">HTML5, CSS3, Vanilla ES6 JavaScript</div>
+          </div>
+          <div class="arch-arrow">➔</div>
+
+          <div class="arch-node">
+            <div class="arch-badge">Logic Layer</div>
+            <div class="arch-title">Encoding Engine</div>
+            <div class="arch-desc">Base64, Hex, Binary, Base32 + Chunking</div>
+          </div>
+          <div class="arch-arrow">➔</div>
+
+          <div class="arch-node">
+            <div class="arch-badge">RFC 1035</div>
+            <div class="arch-title">DNS Simulator</div>
+            <div class="arch-desc">Constructs synthetic UDP/53 packet models &amp; responses</div>
+          </div>
+          <div class="arch-arrow">➔</div>
+
+          <div class="arch-node">
+            <div class="arch-badge">Inspection</div>
+            <div class="arch-title">Traffic Analyzer</div>
+            <div class="arch-desc">Shannon Entropy &amp; Feature Extraction</div>
+          </div>
+          <div class="arch-arrow">➔</div>
+
+          <div class="arch-node">
+            <div class="arch-badge">Security</div>
+            <div class="arch-title">Detection Engine</div>
+            <div class="arch-desc">Transparent Rule-Based Suspicion Scoring</div>
+          </div>
+          <div class="arch-arrow">➔</div>
+
+          <div class="arch-node">
+            <div class="arch-badge">Visuals</div>
+            <div class="arch-title">Visualization Dashboard</div>
+            <div class="arch-desc">Dissector, comparison charts, &amp; logs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Educational Concepts Accordion / Grid -->
+      <div class="edu-grid">
+        <div class="card">
+          <h3 class="card-title text-cyan mb-2">1. What is the Domain Name System (DNS)?</h3>
+          <p class="edu-text">
+            DNS is the hierarchical, decentralized naming system for computers and network devices on the Internet. It translates human-friendly domain names (e.g., <code class="code-inline">google.com</code>) into numerical IP addresses using UDP port 53.
+          </p>
+          <div class="edu-highlight">
+            <strong>RFC 1035 Structure:</strong> Every DNS query consists of a 12-byte header containing a 16-bit Transaction ID, query/response flags, question counts, and a variable-length Question section formatted as length-prefixed labels ending with a null byte (0x00).
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title text-cyan mb-2">2. Recursive vs. Iterative DNS Resolution Flow</h3>
+          <p class="edu-text">
+            When a client queries a hostname like <code class="code-inline">pkt01-data.example.com</code>:
+          </p>
+          <ul class="edu-list">
+            <li><strong>Recursive Resolver:</strong> The local resolver queries Root, TLD, and Authoritative servers on behalf of the client.</li>
+            <li><strong>Root DNS (.):</strong> Points the resolver to the <code class="code-inline">.com</code> TLD nameservers.</li>
+            <li><strong>TLD DNS (.com):</strong> Points the resolver to authoritative nameservers for <code class="code-inline">example.com</code> &mdash; which, in a real covert channel, is a nameserver the receiver controls.</li>
+            <li><strong>Authoritative DNS:</strong> Holds the official zone record and returns the final DNS Response.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title text-cyan mb-2">3. UDP Transport &amp; The Impact of Packet Loss</h3>
+          <p class="edu-text">
+            DNS predominantly uses **UDP (User Datagram Protocol)** over port 53 because it is lightweight, connectionless, and minimizes round-trip latency.
+          </p>
+          <div class="edu-highlight border-warning">
+            <strong>The Packet Loss Problem in Covert Channels:</strong> Because UDP does not provide guaranteed delivery, congestion control, or automatic retransmissions, dropped packets lead directly to missing chunks. Without an application-layer sequencing and acknowledgment mechanism, covert message reassembly fails.
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title text-cyan mb-2">4. How Defenders Detect Suspicious DNS Traffic</h3>
+          <p class="edu-text">
+            Defensive network analysts and Intrusion Detection Systems (IDS) inspect several statistical features:
+          </p>
+          <ul class="edu-list">
+            <li>
+              <strong>Shannon Character Entropy:</strong>
+              <div class="math-box">\(H(X) = -\sum_{i=1}^{n} P(x_i) \log_2 P(x_i)\)</div>
+              Calculates character randomness. Natural English domains score ~2.0 - 3.2, whereas Base64/Hex/encrypted streams exceed 3.8 - 4.5 bits/char.
+            </li>
+            <li><strong>Query &amp; Subdomain Length:</strong> Natural hostnames are short. Large payloads force unusually long labels near the 63-byte boundary.</li>
+            <li><strong>Volume &amp; Caching Evasion:</strong> Every covert chunk uses a unique subdomain, generating zero DNS cache hits and high query bursts.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Defensive Mitigations -->
+      <div class="card mt-3">
+        <h3 class="card-title text-emerald mb-2">🛡️ Defensive Best Practices &amp; Network Hardening</h3>
+        <div class="mitigation-grid">
+          <div class="mitigation-item">
+            <strong>Response Policy Zones (RPZ):</strong> Enforces DNS firewalls to block queries matching newly registered, high-entropy, or suspicious pseudo-domains.
+          </div>
+          <div class="mitigation-item">
+            <strong>DNS Inspection &amp; Deep Packet Inspection (DPI):</strong> Next-generation firewalls analyze label entropy and flag high-frequency bursts of NXDOMAIN or non-cached subdomains.
+          </div>
+          <div class="mitigation-item">
+            <strong>Egress Restriction:</strong> Blocks direct outbound port 53 and known DNS-over-HTTPS endpoints so clients cannot bypass the monitored resolver. (Note: DNSSEC authenticates DNS <em>responses</em> against spoofing, but does not stop data hidden in <em>query names</em>, so it is not a covert-channel defence.)
+          </div>
+          <div class="mitigation-item">
+            <strong>Internal Split-Horizon DNS:</strong> Isolates internal queries and forces all outbound traffic through strict recursive proxies that log and monitor queries per second (QPS).
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="app-footer">
+    <div>
+      <strong>DNS Steganography &amp; Covert Channel Analyzer</strong> &bull; Computer Networks Academic Lab Tool
+    </div>
+    <div class="text-muted text-xs">
+      Strictly Local Educational Simulation &bull; Adheres to RFC 1035 &amp; Ethical Defensive Standards &bull; SIMULATION MODE ONLY
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "dns-steganography-tool",
+  "version": "1.0.0",
+  "description": "Educational DNS Steganography & Covert Channel Analyzer for Computer Networks",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "test": "node tests/test-api.js && node tests/test-server-integration.js && node tests/test-evaluation.js && node tests/test-scenarios.js && node tests/test-ui-dom.js && node tests/test-fixes.js",
+    "eval:seeds": "node tests/eval-multiseed.js"
+  },
+  "keywords": [
+    "dns",
+    "steganography",
+    "covert-channel",
+    "computer-networks",
+    "entropy",
+    "traffic-analysis",
+    "cybersecurity"
+  ],
+  "author": "Computer Networks Lab",
+  "license": "MIT",
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

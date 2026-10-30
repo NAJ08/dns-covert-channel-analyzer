@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#001f28", "secondary-fixed": "#d8e2ff", "surface-container": "#1a1f2e", "inverse-on-surface": "#2b303f", "outline-variant": "#3c494e", "error": "#ffb4ab", "on-error-container": "#ffdad6", "inverse-surface": "#dee2f6", "on-background": "#dee2f6", "tertiary-container": "#6bccff", "tertiary-fixed": "#c4e7ff", "surface-bright": "#343948", "on-primary-fixed-variant": "#004e60", "tertiary-fixed-dim": "#7bd0ff", "secondary": "#aec6ff", "surface-container-lowest": "#090e1c", "on-tertiary": "#00354a", "on-tertiary-fixed-variant": "#004c69", "background": "#0e1321", "surface-container-low": "#161b2a", "on-tertiary-fixed": "#001e2c", "primary-fixed": "#b6ebff", "surface-variant": "#303444", "surface-container-highest": "#303444", "tertiary": "#b8e3ff", "on-secondary-container": "#00275e", "surface-container-high": "#252a39", "on-primary-container": "#00566a", "on-error": "#690005", "secondary-container": "#508eff", "on-surface": "#dee2f6", "primary-container": "#00d2ff", "inverse-primary": "#00677f", "on-tertiary-container": "#005575", "on-secondary-fixed": "#001a43", "secondary-fixed-dim": "#aec6ff", "on-secondary": "#002e6b", "primary-fixed-dim": "#47d6ff", "on-secondary-fixed-variant": "#004397", "on-surface-variant": "#bbc9cf", "surface": "#0e1321", "on-primary": "#003543", "error-container": "#93000a", "surface-tint": "#47d6ff", "outline": "#859399", "surface-dim": "#0e1321", "primary": "#a5e7ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "1.5rem", "space-xl": "1.5rem", "space-md": "0.75rem", "space-lg": "1rem", "gutter-desktop": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "0.75rem", "margin": "0.75rem" }, "fontFamily": { "label-sans-caps": [ "Inter" ], "body-sm": [ "Inter" ], "label-mono-sm": [ "JetBrains Mono" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Inter" ], "body-md": [ "Inter" ], "label-mono-lg": [ "JetBrains Mono" ], "label-mono-md": [ "JetBrains Mono" ] }, "fontSize": { "label-sans-caps": [ "10px", { "lineHeight": "12px", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-mono-sm": [ "10px", { "lineHeight": "14px", "fontWeight": "400" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "fontWeight": "600" } ], "headline-lg-mobile": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "display-lg": [ "36px", { "lineHeight": "44px", "fontWeight": "700" } ], "headline-md": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "headline-sm": [ "15px", { "lineHeight": "20px", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "fontWeight": "400" } ], "body-md": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "label-mono-lg": [ "13px", { "lineHeight": "18px", "fontWeight": "500" } ], "label-mono-md": [ "11px", { "lineHeight": "16px", "fontWeight": "500" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest/60 backdrop-blur-xl"><img alt="DNS COVERT Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQiuCo1Ac-ZWJhhAfvIoXn2NCz_-Kwpwd2zla3PBYvDF7EcTdaYl0xuIECtGEebuHpxDM_Y9HLB6lZl5ZsXHQfvbRfwL2hNwwROxw4zxLevA7s326cPvfvJqKxLUo582XJPVYhT7BHY6W5Unl0_uP7jNxN1CRKRzfs8VnBiHfALukBgqffanQ1Ubh9hPvp5lScwsCWouQlEkLHuv7RYGMyusumB5frFrYReYxB"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-wider uppercase leading-none">DNS COVERT</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant leading-tight tracking-tight">Channel Analyzer</span></div></div><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-widest">Forensic Modules</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="stego-simulator" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="font-body-md text-body-md">Stego Simulator</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="packet-inspector" href="#"><span class="material-symbols-outlined text-[18px]">manage_search</span><span class="font-body-md text-body-md">Packet Inspector</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="anomaly-detection" href="#"><span class="material-symbols-outlined text-[18px]">warning</span><span class="font-body-md text-body-md">Anomaly Detection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="traffic-comparison" href="#"><span class="material-symbols-outlined text-[18px]">compare_arrows</span><span class="font-body-md text-body-md">Traffic Comparison</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="packet-log" href="#"><span class="material-symbols-outlined text-[18px]">history</span><span class="font-body-md text-body-md">Packet Log</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary-container font-bold rounded-lg" data-path="education" href="#"><span class="material-symbols-outlined text-[18px]">school</span><span class="font-body-md text-body-md">Education</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="architecture" href="#"><span class="material-symbols-outlined text-[18px]">account_tree</span><span class="font-body-md text-body-md">Architecture</span></a></nav></div><div class="p-space-sm m-space-sm bg-surface-container-lowest rounded-lg flex flex-col gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-mono-sm text-label-mono-sm text-primary uppercase font-bold">Simulation Mode</span></div><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">v2.4</span></div><div class="flex items-center justify-between text-on-surface-variant pt-space-xs"><span class="font-label-mono-sm text-label-mono-sm flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-primary">dns</span> UDP:53 Bound</span><button class="text-on-surface-variant hover:text-primary transition-colors" title="Reset telemetry socket" type="button"><span class="material-symbols-outlined text-[14px]">restart_alt</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[20px]">radar</span><div class="flex items-center gap-space-xs font-label-mono-md text-label-mono-md"><span class="text-on-surface-variant">NET_OPS</span><span class="text-outline">/</span><span class="text-primary font-bold tracking-wide uppercase">LIVE TELEMETRY STREAM</span></div></div><div class="hidden xl:flex items-center gap-space-md px-space-md py-space-xs bg-surface-container-high rounded-full font-label-mono-sm text-label-mono-sm"><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Target:</span><span class="text-primary font-bold">google.com</span></div><span class="text-outline">•</span><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Buffer:</span><span class="text-secondary font-bold">1,248 pkts</span></div><span class="text-outline">•</span><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Engine:</span><span class="text-tertiary">Node.js / Express</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container rounded-lg font-label-mono-sm text-label-mono-sm"><span class="text-outline">LATENCY</span><span class="text-primary font-bold">0.4ms</span></div><div class="hidden sm:flex flex-col items-end"><span class="font-label-sans-caps text-label-sans-caps text-primary uppercase">Simulation Only</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Academic Defense Demo</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-lg"><div class="flex flex-col w-full pb-space-xl">
+<!-- Educational Module Topbar -->
+<div class="relative w-full rounded-xl bg-surface-container-low p-space-lg mb-space-lg overflow-hidden shadow-xl">
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs font-label-mono-sm text-label-mono-sm text-primary uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Curriculum Specification • SEC-NET-402</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">DNS Security &amp; Steganography Education</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Academic Foundations &amp; Theoretical Frameworks for Computer Networks Defense</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-space-xs rounded-lg bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-tertiary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">terminal</span> RFC 1035 Compliant
+        </span>
+<span class="px-space-sm py-space-xs rounded-lg bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">shield</span> Defense Syllabus
+        </span>
+</div>
+</div>
+<!-- Quick Jump Anchor Pills -->
+<div class="mt-space-md pt-space-md flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase mr-space-xs">Syllabus Index:</span>
+<a class="px-space-sm py-space-xs rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface-variant hover:text-primary font-label-mono-sm text-label-mono-sm transition-all flex items-center gap-space-xs" href="#dns-resolution">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>What is DNS?
+      </a>
+<a class="px-space-sm py-space-xs rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface-variant hover:text-primary font-label-mono-sm text-label-mono-sm transition-all flex items-center gap-space-xs" href="#dns-steganography">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim"></span>DNS Steganography
+      </a>
+<a class="px-space-sm py-space-xs rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface-variant hover:text-primary font-label-mono-sm text-label-mono-sm transition-all flex items-center gap-space-xs" href="#covert-channels">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>Covert Channels
+      </a>
+<a class="px-space-sm py-space-xs rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface-variant hover:text-primary font-label-mono-sm text-label-mono-sm transition-all flex items-center gap-space-xs" href="#wire-format">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Packet Wire Format
+      </a>
+<a class="px-space-sm py-space-xs rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface-variant hover:text-primary font-label-mono-sm text-label-mono-sm transition-all flex items-center gap-space-xs" href="#protocol-stack">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>OSI / TCP Stack
+      </a>
+<a class="px-space-sm py-space-xs rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface-variant hover:text-primary font-label-mono-sm text-label-mono-sm transition-all flex items-center gap-space-xs" href="#shannon-entropy">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>Shannon Entropy
+      </a>
+</div>
+</div>
+<!-- Educational Visual Context Hero -->
+<div class="relative w-full rounded-xl bg-surface-container-lowest p-space-lg mb-space-lg overflow-hidden shadow-xl flex flex-col lg:flex-row items-center gap-space-lg">
+<div class="relative z-10 flex-1 flex flex-col gap-space-sm">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-primary/10 text-primary w-fit font-label-mono-sm text-label-mono-sm uppercase">
+<span class="material-symbols-outlined text-[14px]">lock_open</span> Perimeter Egress Paradox
+      </div>
+<h2 class="font-headline-md text-headline-md text-on-surface">The Anatomy of Covert Tunneling via Recursive Name Service</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Because UDP port 53 is vital for external domain resolution, legacy border firewalls routinely allow DNS datagrams unchecked out of perimeter boundaries. This curricular lab explains how adversaries hide exfiltration payloads inside RFC-valid DNS records, how the protocol tree carries stego-data, and how information theory exposes anomalous query randomness.
+      </p>
+<div class="flex items-center gap-space-md pt-space-xs text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary-container"></span>RFC 1035 Standard</div>
+<div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-container"></span>Shannon Metric: H(X)</div>
+<div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-error"></span>Payload Concealment</div>
+</div>
+</div>
+<div class="relative w-full lg:w-96 h-48 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Futuristic dark tactical cybersecurity operations center screen displaying real-time recursive DNS packet graphs, cyan telemetry wire diagrams, glowing vector pathways, and network tree topologies in navy and neon cyan tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6wWWJyoaZQHaAbRlFB3UpDa0Jg5jl79uh3gJ0Fr54TuYQVGkKaq2XRTxFfvm2HsidChbcYVcd5Lz2-RW4FLtM5Gh_-xLijmCceYEVkCpLtydnu16GTpOVLfHGYNuNrSTgJtcKsFMa9NvieuFC6qgAei0ttvtdomjOm8ti8tGPB6iTNpRKdut2IbXba6zzaFw7OZ95btdQfwkp8IVs2okvsWK_7lAZrPNp0rzF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-surface font-label-mono-sm text-label-mono-sm">
+<span class="bg-surface-container-lowest/80 px-1.5 py-0.5 rounded">Fig 1.0 • Egress Path</span>
+<span class="text-primary font-bold">53/UDP Sniffed</span>
+</div>
+</div>
+</div>
+<!-- Module 1: What is DNS & How Does Resolution Work? -->
+<section class="flex flex-col gap-space-md mb-space-xl scroll-mt-20" id="dns-resolution">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded bg-surface-container-high text-primary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-bold">01</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">What is DNS &amp; How Does Resolution Work?</h3>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Hierarchical Inverted Tree Structure</span>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- Theory & Conceptual Framework -->
+<div class="xl:col-span-5 rounded-xl bg-surface-container-low p-space-lg flex flex-col justify-between shadow-md">
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-wider">Protocol Foundations</span>
+<p class="font-body-md text-body-md text-on-surface">
+            The <strong class="text-primary">Domain Name System (DNS)</strong> serves as the internet's decentralized hierarchical directory, translating human-memorized Fully Qualified Domain Names (FQDNs like <span class="font-label-mono-sm text-label-mono-sm text-secondary bg-surface-container px-1 py-0.5 rounded">telemetry.lab.net</span>) into numerical 32-bit IPv4 or 128-bit IPv6 hardware routing addresses.
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            A single client resolution request triggers an iterative chain across globally distributed server roles. Unless cached locally, the resolver traverses the root zone (<code class="text-tertiary font-label-mono-sm text-label-mono-sm">.</code>), the Top-Level Domain (<code class="text-tertiary font-label-mono-sm text-label-mono-sm">.com / .net</code>), and eventually queries the domain's dedicated authoritative server.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container rounded-lg p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<span>Recursive Lookup Mechanics</span>
+<span class="text-primary">Iterative Referrals</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs text-center">
+<div class="bg-surface-container-highest p-space-xs rounded">
+<span class="block font-label-mono-sm text-label-mono-sm text-on-surface font-bold">13 Root Pairs</span>
+<span class="font-label-sans-caps text-label-sans-caps text-on-surface-variant">A.root-servers.net</span>
+</div>
+<div class="bg-surface-container-highest p-space-xs rounded">
+<span class="block font-label-mono-sm text-label-mono-sm text-on-surface font-bold">TLD Registries</span>
+<span class="font-label-sans-caps text-label-sans-caps text-on-surface-variant">gTLD / ccTLD</span>
+</div>
+<div class="bg-surface-container-highest p-space-xs rounded">
+<span class="block font-label-mono-sm text-label-mono-sm text-primary font-bold">Authoritative NS</span>
+<span class="font-label-sans-caps text-label-sans-caps text-on-surface-variant">Final Zone Record</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Flow Graphic Diagram -->
+<div class="xl:col-span-7 rounded-xl bg-surface-container-low p-space-lg shadow-md flex flex-col">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-wider">Interactive Resolution Path Diagram</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">touch_app</span> Click nodes to trace steps
+          </span>
+</div>
+<!-- SVG Sequence Diagram -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md overflow-x-auto">
+<svg class="w-full min-w-[580px] h-44" fill="none" viewbox="0 0 700 170" xmlns="http://www.w3.org/2000/svg">
+<!-- Connection Lines -->
+<path d="M 60 85 L 170 85" stroke="#3c494e" stroke-dasharray="4 4" stroke-width="2"></path>
+<path d="M 220 70 L 320 30" stroke="#3c494e" stroke-width="2"></path>
+<path d="M 220 85 L 450 85" stroke="#3c494e" stroke-width="2"></path>
+<path d="M 220 100 L 580 140" stroke="#00d2ff" stroke-dasharray="6 3" stroke-width="2.5"></path>
+<!-- Node 1: Client -->
+<g class="cursor-pointer group" id="svg-node-client">
+<rect fill="#1a1f2e" height="60" rx="8" width="60" x="10" y="55"></rect>
+<text fill="#a5e7ff" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold" text-anchor="middle" x="40" y="83">CLIENT</text>
+<text fill="#859399" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="40" y="98">Stub Resolver</text>
+<circle cx="40" cy="45" fill="#00d2ff" r="4"></circle>
+</g>
+<!-- Node 2: Local / Recursive Resolver -->
+<g class="cursor-pointer group" id="svg-node-resolver">
+<rect fill="#252a39" height="70" rx="8" width="80" x="150" y="50"></rect>
+<text fill="#dee2f6" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold" text-anchor="middle" x="190" y="80">RECURSIVE</text>
+<text fill="#a5e7ff" font-family="Plus Jakarta Sans" font-size="9" text-anchor="middle" x="190" y="93">RESOLVER</text>
+<text fill="#859399" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="190" y="107">8.8.8.8 / 1.1.1.1</text>
+</g>
+<!-- Node 3: Root Server -->
+<g class="cursor-pointer group" id="svg-node-root">
+<rect fill="#1a1f2e" height="46" rx="6" width="100" x="300" y="10"></rect>
+<text fill="#dee2f6" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold" text-anchor="middle" x="350" y="28">1. ROOT (.)</text>
+<text fill="#859399" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="350" y="42">Refers to TLD</text>
+</g>
+<!-- Node 4: TLD Server -->
+<g class="cursor-pointer group" id="svg-node-tld">
+<rect fill="#1a1f2e" height="46" rx="6" width="100" x="420" y="65"></rect>
+<text fill="#dee2f6" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold" text-anchor="middle" x="470" y="83">2. TLD (.com)</text>
+<text fill="#859399" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="470" y="97">Refers to NS</text>
+</g>
+<!-- Node 5: Authoritative Server (Attacker Controlled In Stego) -->
+<g class="cursor-pointer group" id="svg-node-auth">
+<rect fill="#003543" height="50" rx="6" width="120" x="550" y="115"></rect>
+<rect fill="transparent" height="50" rx="6" width="120" x="550" y="115"></rect>
+<text fill="#a5e7ff" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold" text-anchor="middle" x="610" y="133">3. AUTHORITATIVE</text>
+<text fill="#47d6ff" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="610" y="146">ns1.target.org</text>
+<text fill="#ffb4ab" font-family="JetBrains Mono" font-size="7" text-anchor="middle" x="610" y="157">Potential Stego Sink</text>
+</g>
+</svg>
+</div>
+<div class="mt-space-sm p-space-sm rounded-lg bg-surface-container text-body-sm font-body-sm text-on-surface-variant flex items-center justify-between" id="resolution-interactive-detail">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+<span><strong class="text-on-surface">Resolution Principle:</strong> When steganography is employed, the Authoritative Server acts as the covert receiver, receiving exfiltrated payloads via recursive intermediate lookups.</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary">RTT: ~34ms</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Module 2 & Module 3 Split Bento -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md mb-space-xl">
+<!-- Module 2: What is DNS Steganography? -->
+<section class="rounded-xl bg-surface-container-low p-space-lg flex flex-col justify-between shadow-md scroll-mt-20" id="dns-steganography">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded bg-surface-container-high text-primary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-bold">02</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">DNS Steganography</h3>
+</div>
+<span class="px-space-sm py-0.5 rounded bg-primary/10 font-label-mono-sm text-label-mono-sm text-primary">Covert Encoding</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+<strong class="text-on-surface">DNS Steganography</strong> is the practice of embedding arbitrary hidden payloads directly into RFC-standard DNS protocol fields without corrupting the operational syntax of the request or response.
+        </p>
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<span class="font-label-mono-md text-label-mono-md text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">subdirectory_arrow_right</span> Subdomain Infiltration (QNAME)
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Adversaries slice data into base32/base64 chunks and prepend them to the queried domain:
+            </p>
+<div class="p-space-xs bg-surface-container-lowest rounded font-label-mono-sm text-label-mono-sm text-secondary overflow-x-auto">
+<span class="text-error font-bold">dGhpcyBpcyBhIHNlY3JldA</span>.tunnel.attacker-domain.com
+            </div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<span class="font-label-mono-md text-label-mono-md text-tertiary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">dataset</span> Downstream Payloads in TXT / NULL Records
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Authoritative servers respond with high-capacity TXT records carrying encrypted shellcode or command scripts, routinely ignored by endpoint DLP agents.
+            </p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<span class="font-label-mono-md text-label-mono-md text-primary-fixed-dim flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">tune</span> Header Micro-Channeling &amp; EDNS0
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Concealing binary data within Transaction IDs (16-bit), unused DNS Header flags (Z-bits), or extended client subnet pseudo-records (RFC 6891).
+            </p>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-label-mono-sm text-label-mono-sm text-outline">
+<span>Channel Modulation: Syntactic &amp; Lexical</span>
+<span class="text-primary font-bold">Zero Flag Mutation</span>
+</div>
+</section>
+<!-- Module 3: What is a Covert Channel? -->
+<section class="rounded-xl bg-surface-container-low p-space-lg flex flex-col justify-between shadow-md scroll-mt-20" id="covert-channels">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded bg-surface-container-high text-error flex items-center justify-center font-label-mono-sm text-label-mono-sm font-bold">03</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Covert Storage Channels</h3>
+</div>
+<span class="px-space-sm py-0.5 rounded bg-error/10 font-label-mono-sm text-label-mono-sm text-error">Security Policy Breach</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Originally formulated by Butler Lampson (1973), a <strong class="text-on-surface">covert channel</strong> is any communication path that transfers signals between systems in a manner violating access control rules, using standard protocols never conceived for data transport.
+        </p>
+<!-- Visual Contrast: Overt vs Covert -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mt-space-xs">
+<!-- Overt Column -->
+<div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-label-mono-md text-label-mono-md font-bold">
+<span class="material-symbols-outlined text-[16px]">public</span> Overt Channel (Legit)
+            </div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1">
+<li class="flex items-center gap-1">• Standard DNS protocol intent</li>
+<li class="flex items-center gap-1">• Small canonical payloads (&lt; 64B)</li>
+<li class="flex items-center gap-1">• Expected distribution of dictionary words</li>
+<li class="flex items-center gap-1">• Transparent inspection across proxies</li>
+</ul>
+</div>
+<!-- Covert Column -->
+<div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-error font-label-mono-md text-label-mono-md font-bold">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span> Covert Channel (Tunnel)
+            </div>
+<ul class="font-body-sm text-body-sm text-on-surface-variant flex flex-col gap-1">
+<li class="flex items-center gap-1">• Subverts perimeter policy via UDP/53</li>
+<li class="flex items-center gap-1">• High query volume &amp; long label sequences</li>
+<li class="flex items-center gap-1">• Encrypted entropy matching random noise</li>
+<li class="flex items-center gap-1">• Undetected exfiltration past DLP</li>
+</ul>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest mt-space-xs">
+<div class="flex items-center justify-between text-on-surface font-label-mono-sm text-label-mono-sm mb-1">
+<span>Tunneling Classification</span>
+<span class="text-error font-bold">Lampson Criteria</span>
+</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">
+            Can operate as a <em>Covert Storage Channel</em> (modifying header bits or payload data) or a <em>Covert Timing Channel</em> (modulating inter-arrival packet packet spacing).
+          </div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-label-mono-sm text-label-mono-sm text-outline">
+<span>Firewall Status: Bypassed (UDP 53 Inbound/Outbound)</span>
+<span class="text-error font-bold">C2 Exfiltration</span>
+</div>
+</section>
+</div>
+<!-- Module 4: DNS Packet Structure (RFC 1035 Wire Format) -->
+<section class="flex flex-col gap-space-md mb-space-xl scroll-mt-20" id="wire-format">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded bg-surface-container-high text-primary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-bold">04</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">DNS Packet Structure (RFC 1035 Wire Format)</h3>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-bold">Hex / Wire Breakdown</span>
+</div>
+<!-- Wire Specification Container -->
+<div class="rounded-xl bg-surface-container-low p-space-lg shadow-md flex flex-col gap-space-md">
+<p class="font-body-md text-body-md text-on-surface-variant">
+        A raw RFC 1035 DNS datagram is split into exactly 5 logical segments over wire. The 12-byte fixed header is followed by 4 variable-length descriptor sections containing query labels and Resource Records (RRs):
+      </p>
+<!-- 5 Core Sections Grid -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-sm">
+<!-- 1. Header -->
+<div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold">1. Header</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-on-surface-variant">12 Bytes</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Fixed structure. Contains Query ID, Opcode, Flags (QR, AA, TC, RD, RA, RCODE), and record section counters.
+          </p>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary bg-surface-container-lowest p-1 rounded mt-auto">ID, Flags, QDCOUNT</span>
+</div>
+<!-- 2. Question -->
+<div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-md text-label-mono-md text-tertiary font-bold">2. Question</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-on-surface-variant">Variable</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Specifies target domain labels in length-octet format, followed by Query Type (A, TXT, CNAME) and Class (IN).
+          </p>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary bg-surface-container-lowest p-1 rounded mt-auto">QNAME, QTYPE, QCLASS</span>
+</div>
+<!-- 3. Answer -->
+<div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-md text-label-mono-md text-primary font-bold">3. Answer</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-on-surface-variant">Variable</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Resource records satisfying the query (e.g., IPv4 octets in type A, or raw string data in TXT records).
+          </p>
+<span class="font-label-mono-sm text-label-mono-sm text-primary bg-surface-container-lowest p-1 rounded mt-auto">NAME, TYPE, TTL, RDATA</span>
+</div>
+<!-- 4. Authority -->
+<div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-md text-label-mono-md text-secondary font-bold">4. Authority</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-on-surface-variant">Variable</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Nameservers holding authoritative authority for the requested namespace (SOA or NS pointer records).
+          </p>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary bg-surface-container-lowest p-1 rounded mt-auto">NS Records (NSCOUNT)</span>
+</div>
+<!-- 5. Additional -->
+<div class="rounded-lg bg-surface-container p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-mono-md text-label-mono-md text-error font-bold">5. Additional</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-mono-sm text-label-mono-sm text-on-surface-variant">Variable</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Holds resolver glue records and RFC 6891 EDNS0 pseudo-records (often exploited for payload stuffing).
+          </p>
+<span class="font-label-mono-sm text-label-mono-sm text-error bg-surface-container-lowest p-1 rounded mt-auto">OPT, EDNS0, Glue IP</span>
+</div>
+</div>
+<!-- Deep Interactive Bitfield of the 12-byte Header -->
+<div class="rounded-lg bg-surface-container-lowest p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase font-bold">12-Byte Header Bit Allocation Matrix</span>
+<span class="text-outline text-[12px]">• RFC 1035 §4.1.1</span>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">16 Bits per Row</span>
+</div>
+<div class="overflow-x-auto">
+<div class="min-w-[620px] flex flex-col gap-1 font-label-mono-sm text-label-mono-sm">
+<!-- Row 1 -->
+<div class="grid grid-cols-16 gap-1 text-center">
+<div class="col-span-16 bg-surface-container-high py-1.5 rounded text-primary font-bold">
+                Transaction Identifier (16 bits) • Client-generated request correlation ID
+              </div>
+</div>
+<!-- Row 2: Flags Breakdown -->
+<div class="grid grid-cols-16 gap-1 text-center text-[10px]">
+<div class="col-span-1 bg-surface-container py-1.5 rounded text-tertiary" title="0: Query, 1: Response">QR</div>
+<div class="col-span-4 bg-surface-container py-1.5 rounded text-on-surface" title="Opcode: 0 standard, 1 inverse, 2 status">OPCODE (4)</div>
+<div class="col-span-1 bg-surface-container py-1.5 rounded text-on-surface-variant" title="Authoritative Answer">AA</div>
+<div class="col-span-1 bg-surface-container py-1.5 rounded text-on-surface-variant" title="Truncation">TC</div>
+<div class="col-span-1 bg-surface-container py-1.5 rounded text-primary" title="Recursion Desired">RD</div>
+<div class="col-span-1 bg-surface-container py-1.5 rounded text-primary" title="Recursion Available">RA</div>
+<div class="col-span-3 bg-error/20 text-error py-1.5 rounded font-bold" title="Reserved Z-bits - Frequent Stego Vector">Z (3b RESERVED)</div>
+<div class="col-span-4 bg-surface-container py-1.5 rounded text-on-surface" title="Response Code">RCODE (4)</div>
+</div>
+<!-- Row 3 & 4 -->
+<div class="grid grid-cols-2 gap-1 text-center">
+<div class="bg-surface-container py-1 rounded text-on-surface-variant">QDCOUNT: Question Count (16b)</div>
+<div class="bg-surface-container py-1 rounded text-on-surface-variant">ANCOUNT: Answer Count (16b)</div>
+</div>
+<div class="grid grid-cols-2 gap-1 text-center">
+<div class="bg-surface-container py-1 rounded text-on-surface-variant">NSCOUNT: Authority Record Count (16b)</div>
+<div class="bg-surface-container py-1 rounded text-on-surface-variant">ARCOUNT: Additional Record Count (16b)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Module 5 & Module 6 Split Section -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- Module 5: Network Protocol Stack Mapping -->
+<section class="xl:col-span-5 rounded-xl bg-surface-container-low p-space-lg flex flex-col justify-between shadow-md scroll-mt-20" id="protocol-stack">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded bg-surface-container-high text-primary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-bold">05</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Network Protocol Stack</h3>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-tertiary">OSI / TCP/IP Layering</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          DNS sits at Layer 7 (Application Layer) but encapsulates down through the 4-layer TCP/IP architectural stack. Egress packet filtering often operates at Layer 4 without checking Layer 7 semantics.
+        </p>
+<!-- Vertical Stack Representation -->
+<div class="flex flex-col gap-space-xs mt-space-xs font-label-mono-sm text-label-mono-sm">
+<!-- Layer 4 / 7: Application -->
+<div class="p-space-sm rounded-lg bg-surface-container-highest border-l-4 border-l-primary flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-primary font-bold">APPLICATION LAYER (L7)</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">DNS • Stego Payloads injected in FQDN / TXT</span>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-primary font-bold">Port 53 / UDP</span>
+</div>
+<!-- Layer 3 / 4: Transport -->
+<div class="p-space-sm rounded-lg bg-surface-container border-l-4 border-l-secondary flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-secondary font-bold">TRANSPORT LAYER (L4)</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">UDP (RFC 768) / TCP Fallback (RFC 793)</span>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface-variant">Checksum, Ports</span>
+</div>
+<!-- Layer 2 / 3: Internet -->
+<div class="p-space-sm rounded-lg bg-surface-container border-l-4 border-l-tertiary flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-tertiary font-bold">INTERNET LAYER (L3)</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">IPv4 (32-bit) / IPv6 (128-bit) Datagrams</span>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface-variant">TTL, SRC/DST IP</span>
+</div>
+<!-- Layer 1 / 2: Link -->
+<div class="p-space-sm rounded-lg bg-surface-container border-l-4 border-l-outline flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-outline font-bold">NETWORK ACCESS LAYER (L2)</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">Ethernet 802.3 Frame / Wi-Fi 802.11</span>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-lowest text-on-surface-variant">MAC Framing</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+<span>Encapsulation: L7 &gt; L4 &gt; L3 &gt; L2</span>
+<span class="text-primary font-bold">MTU 1500 / DNS 512B</span>
+</div>
+</section>
+<!-- Module 6: Shannon Information Entropy in Cryptanalysis -->
+<section class="xl:col-span-7 rounded-xl bg-surface-container-low p-space-lg flex flex-col justify-between shadow-md scroll-mt-20" id="shannon-entropy">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded bg-surface-container-high text-primary flex items-center justify-center font-label-mono-sm text-label-mono-sm font-bold">06</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Shannon Information Entropy</h3>
+</div>
+<span class="px-space-sm py-0.5 rounded bg-primary-container/20 text-primary-container font-label-mono-sm text-label-mono-sm font-bold">H(X) Metric</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Formulated by Claude Shannon (1948), <strong class="text-on-surface">Information Entropy</strong> quantifies the expected unpredictability, surprise, or randomness contained within a signal's discrete probability distribution.
+        </p>
+<!-- Mathematical Formula Callout -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sans-caps text-label-sans-caps text-primary uppercase">Shannon Formulation</span>
+<div class="font-label-mono-lg text-label-mono-lg text-on-surface font-bold">
+              H(X) = - ∑<sub>i=1</sub><sup>n</sup> P(x<sub>i</sub>) × log<sub>2</sub> P(x<sub>i</sub>)
+            </div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Where P(x<sub>i</sub>) is the frequency ratio of each byte character across the domain label.</span>
+</div>
+<div class="px-space-md py-space-sm rounded bg-surface-container text-center flex-shrink-0">
+<span class="block font-display-lg text-display-lg text-primary font-bold">8.0</span>
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Max Theoretical (Byte)</span>
+</div>
+</div>
+<!-- Comparative Scale: Normal vs Tunneled -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-wider">Entropy Heuristic Thresholds</span>
+<!-- Scale 1: Natural English -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm">
+<span class="text-on-surface font-bold">Standard Human Domain (e.g. login.acme-corp.com)</span>
+<span class="text-secondary font-bold">H(X) ≈ 2.14</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-lowest overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 27%;"></div>
+</div>
+<div class="flex justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant text-[10px]">
+<span>Predictable vowels/consonants</span>
+<span>Low Entropy (Benign)</span>
+</div>
+</div>
+<!-- Scale 2: Stego / Base64 Encrypted Tunnel -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm">
+<span class="text-error font-bold">Covert Channel Subdomain (e.g. 7q8z9x2a1m4k8c3.ns.io)</span>
+<span class="text-error font-bold">H(X) ≈ 4.62 (ANOMALOUS)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-lowest overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 58%;"></div>
+</div>
+<div class="flex justify-between font-label-mono-sm text-label-mono-sm text-on-surface-variant text-[10px]">
+<span>Uniform distribution of alphanumeric symbols</span>
+<span>High Entropy (Stego Alert)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-label-mono-sm text-label-mono-sm text-outline">
+<span>Classifier Model: Decision Tree / Random Forest</span>
+<span class="text-primary font-bold">Trigger Cutoff: &gt; 3.85 H(X)</span>
+</div>
+</section>
+</div>
+<!-- Interactive Sandbox: Shannon Entropy Calculator Mini-Tool -->
+<div class="mt-space-lg rounded-xl bg-surface-container-low p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">calculate</span>
+<h4 class="font-headline-md text-headline-md text-on-surface">Interactive Entropy Verification Sandbox</h4>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Live Client-side Computation</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<div class="md:col-span-8 flex flex-col gap-space-xs">
+<label class="font-label-mono-sm text-label-mono-sm text-on-surface-variant" for="entropy-input">TEST SUBDOMAIN / PAYLOAD STRING:</label>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-lowest text-on-surface font-label-mono-md text-label-mono-md px-space-md py-space-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" id="entropy-input" type="text" value="3bf8c992d90ef011ac89b2ff9801"/>
+<button class="absolute right-2 px-space-sm py-1 bg-surface-container-high hover:bg-surface-bright rounded text-primary font-label-mono-sm text-label-mono-sm transition-all" id="calc-sample-btn" type="button">
+            Load Legitimate Sample
+          </button>
+</div>
+</div>
+<div class="md:col-span-4 rounded-lg bg-surface-container p-space-sm flex items-center justify-around">
+<div class="flex flex-col text-center">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Computed H(X)</span>
+<span class="font-headline-lg text-headline-lg text-error font-bold" id="entropy-metric-value">4.28</span>
+</div>
+<div class="flex flex-col text-center">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Classification</span>
+<span class="px-space-sm py-0.5 rounded bg-error/20 text-error font-label-mono-sm text-label-mono-sm font-bold mt-1" id="entropy-metric-badge">SUSPICIOUS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive client-side Shannon Entropy Calculator
+  (function() {
+    const input = document.getElementById('entropy-input');
+    const metricValue = document.getElementById('entropy-metric-value');
+    const metricBadge = document.getElementById('entropy-metric-badge');
+    const sampleBtn = document.getElementById('calc-sample-btn');
+
+    let isSampleLegit = false;
+
+    function calculateEntropy(str) {
+      if (!str || str.length === 0) return 0;
+      const freq = {};
+      for (let char of str) {
+        freq[char] = (freq[char] || 0) + 1;
+      }
+      let entropy = 0;
+      const len = str.length;
+      for (let char in freq) {
+        const p = freq[char] / len;
+        entropy -= p * Math.log2(p);
+      }
+      return entropy;
+    }
+
+    function updateView() {
+      const text = input.value.trim();
+      const h = calculateEntropy(text);
+      metricValue.textContent = h.toFixed(2);
+
+      if (h > 3.8) {
+        metricValue.className = "font-headline-lg text-headline-lg text-error font-bold";
+        metricBadge.className = "px-space-sm py-0.5 rounded bg-error/20 text-error font-label-mono-sm text-label-mono-sm font-bold mt-1";
+        metricBadge.textContent = "SUSPICIOUS";
+      } else if (h >= 2.8) {
+        metricValue.className = "font-headline-lg text-headline-lg text-secondary font-bold";
+        metricBadge.className = "px-space-sm py-0.5 rounded bg-secondary/20 text-secondary font-label-mono-sm text-label-mono-sm font-bold mt-1";
+        metricBadge.textContent = "ELEVATED";
+      } else {
+        metricValue.className = "font-headline-lg text-headline-lg text-primary font-bold";
+        metricBadge.className = "px-space-sm py-0.5 rounded bg-primary/20 text-primary font-label-mono-sm text-label-mono-sm font-bold mt-1";
+        metricBadge.textContent = "BENIGN";
+      }
+    }
+
+    input.addEventListener('input', updateView);
+
+    sampleBtn.addEventListener('click', function() {
+      if (!isSampleLegit) {
+        input.value = "api-gateway.internal.production";
+        sampleBtn.textContent = "Load Covert Tunnel Sample";
+        isSampleLegit = true;
+      } else {
+        input.value = "3bf8c992d90ef011ac89b2ff9801";
+        sampleBtn.textContent = "Load Legitimate Sample";
+        isSampleLegit = false;
+      }
+      updateView();
+    });
+
+    // SVG Node Interactivity
+    const nodeDetail = document.getElementById('resolution-interactive-detail');
+    const nodes = {
+      'svg-node-client': '<strong>Client (Stub Resolver):</strong> Generates recursive query UDP/53 and hands off to designated DNS servers.',
+      'svg-node-resolver': '<strong>Recursive Resolver:</strong> Caches responses, queries authoritative tree recursively on cache miss.',
+      'svg-node-root': '<strong>Root Nameserver (.):</strong> Returns referrals to relevant Top-Level Domain (.com, .net, etc.) nameservers.',
+      'svg-node-tld': '<strong>TLD Nameserver (.com):</strong> Points the resolver to the authoritative nameservers for the apex domain.',
+      'svg-node-auth': '<strong>Authoritative Server:</strong> Zone owner. In covert channels, this is operated by the attacker to intercept and decode subdomains.'
+    };
+
+    Object.keys(nodes).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('click', () => {
+          nodeDetail.innerHTML = `<div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-primary">info</span><span>${nodes[id]}</span></div><span class="font-label-mono-sm text-label-mono-sm text-primary">Active Inspection</span>`;
+        });
+      }
+    });
+
+    updateView();
+  })();
+</script></main></div></body></html>

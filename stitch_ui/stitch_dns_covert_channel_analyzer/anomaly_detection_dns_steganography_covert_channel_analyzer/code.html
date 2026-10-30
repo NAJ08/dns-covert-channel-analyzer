@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#001f28", "secondary-fixed": "#d8e2ff", "surface-container": "#1a1f2e", "inverse-on-surface": "#2b303f", "outline-variant": "#3c494e", "error": "#ffb4ab", "on-error-container": "#ffdad6", "inverse-surface": "#dee2f6", "on-background": "#dee2f6", "tertiary-container": "#6bccff", "tertiary-fixed": "#c4e7ff", "surface-bright": "#343948", "on-primary-fixed-variant": "#004e60", "tertiary-fixed-dim": "#7bd0ff", "secondary": "#aec6ff", "surface-container-lowest": "#090e1c", "on-tertiary": "#00354a", "on-tertiary-fixed-variant": "#004c69", "background": "#0e1321", "surface-container-low": "#161b2a", "on-tertiary-fixed": "#001e2c", "primary-fixed": "#b6ebff", "surface-variant": "#303444", "surface-container-highest": "#303444", "tertiary": "#b8e3ff", "on-secondary-container": "#00275e", "surface-container-high": "#252a39", "on-primary-container": "#00566a", "on-error": "#690005", "secondary-container": "#508eff", "on-surface": "#dee2f6", "primary-container": "#00d2ff", "inverse-primary": "#00677f", "on-tertiary-container": "#005575", "on-secondary-fixed": "#001a43", "secondary-fixed-dim": "#aec6ff", "on-secondary": "#002e6b", "primary-fixed-dim": "#47d6ff", "on-secondary-fixed-variant": "#004397", "on-surface-variant": "#bbc9cf", "surface": "#0e1321", "on-primary": "#003543", "error-container": "#93000a", "surface-tint": "#47d6ff", "outline": "#859399", "surface-dim": "#0e1321", "primary": "#a5e7ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-desktop": "1.5rem", "space-xl": "1.5rem", "space-md": "0.75rem", "space-lg": "1rem", "gutter-desktop": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "0.75rem", "margin": "0.75rem" }, "fontFamily": { "label-sans-caps": [ "Inter" ], "body-sm": [ "Inter" ], "label-mono-sm": [ "JetBrains Mono" ], "headline-lg": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-lg": [ "Inter" ], "body-md": [ "Inter" ], "label-mono-lg": [ "JetBrains Mono" ], "label-mono-md": [ "JetBrains Mono" ] }, "fontSize": { "label-sans-caps": [ "10px", { "lineHeight": "12px", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-mono-sm": [ "10px", { "lineHeight": "14px", "fontWeight": "400" } ], "headline-lg": [ "24px", { "lineHeight": "32px", "fontWeight": "600" } ], "headline-lg-mobile": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "display-lg": [ "36px", { "lineHeight": "44px", "fontWeight": "700" } ], "headline-md": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "headline-sm": [ "15px", { "lineHeight": "20px", "fontWeight": "600" } ], "body-lg": [ "15px", { "lineHeight": "22px", "fontWeight": "400" } ], "body-md": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "label-mono-lg": [ "13px", { "lineHeight": "18px", "fontWeight": "500" } ], "label-mono-md": [ "11px", { "lineHeight": "16px", "fontWeight": "500" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest/60 backdrop-blur-xl"><img alt="DNS COVERT Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQiuCo1Ac-ZWJhhAfvIoXn2NCz_-Kwpwd2zla3PBYvDF7EcTdaYl0xuIECtGEebuHpxDM_Y9HLB6lZl5ZsXHQfvbRfwL2hNwwROxw4zxLevA7s326cPvfvJqKxLUo582XJPVYhT7BHY6W5Unl0_uP7jNxN1CRKRzfs8VnBiHfALukBgqffanQ1Ubh9hPvp5lScwsCWouQlEkLHuv7RYGMyusumB5frFrYReYxB"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-wider uppercase leading-none">DNS COVERT</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant leading-tight tracking-tight">Channel Analyzer</span></div></div><div class="px-space-md pt-space-md pb-space-xs"><span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-widest">Forensic Modules</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="stego-simulator" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="font-body-md text-body-md">Stego Simulator</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="packet-inspector" href="#"><span class="material-symbols-outlined text-[18px]">manage_search</span><span class="font-body-md text-body-md">Packet Inspector</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm transition-all bg-primary-container text-on-primary-container font-bold rounded-lg" data-path="anomaly-detection" href="#"><span class="material-symbols-outlined text-[18px]">warning</span><span class="font-body-md text-body-md">Anomaly Detection</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="traffic-comparison" href="#"><span class="material-symbols-outlined text-[18px]">compare_arrows</span><span class="font-body-md text-body-md">Traffic Comparison</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="packet-log" href="#"><span class="material-symbols-outlined text-[18px]">history</span><span class="font-body-md text-body-md">Packet Log</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="education" href="#"><span class="material-symbols-outlined text-[18px]">school</span><span class="font-body-md text-body-md">Education</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="architecture" href="#"><span class="material-symbols-outlined text-[18px]">account_tree</span><span class="font-body-md text-body-md">Architecture</span></a></nav></div><div class="p-space-sm m-space-sm bg-surface-container-lowest rounded-lg flex flex-col gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-mono-sm text-label-mono-sm text-primary uppercase font-bold">Simulation Mode</span></div><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">v2.4</span></div><div class="flex items-center justify-between text-on-surface-variant pt-space-xs"><span class="font-label-mono-sm text-label-mono-sm flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-primary">dns</span> UDP:53 Bound</span><button class="text-on-surface-variant hover:text-primary transition-colors" title="Reset telemetry socket" type="button"><span class="material-symbols-outlined text-[14px]">restart_alt</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[20px]">radar</span><div class="flex items-center gap-space-xs font-label-mono-md text-label-mono-md"><span class="text-on-surface-variant">NET_OPS</span><span class="text-outline">/</span><span class="text-primary font-bold tracking-wide uppercase">LIVE TELEMETRY STREAM</span></div></div><div class="hidden xl:flex items-center gap-space-md px-space-md py-space-xs bg-surface-container-high rounded-full font-label-mono-sm text-label-mono-sm"><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Target:</span><span class="text-primary font-bold">google.com</span></div><span class="text-outline">•</span><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Buffer:</span><span class="text-secondary font-bold">1,248 pkts</span></div><span class="text-outline">•</span><div class="flex items-center gap-space-xs"><span class="text-on-surface-variant">Engine:</span><span class="text-tertiary">Node.js / Express</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container rounded-lg font-label-mono-sm text-label-mono-sm"><span class="text-outline">LATENCY</span><span class="text-primary font-bold">0.4ms</span></div><div class="hidden sm:flex flex-col items-end"><span class="font-label-sans-caps text-label-sans-caps text-primary uppercase">Simulation Only</span><span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Academic Defense Demo</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-lg"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Forensic Banner / Telemetry Metadata -->
+<div class="relative overflow-hidden bg-surface-container-low rounded-xl p-space-lg mb-space-lg shadow-md">
+<div class="absolute -right-16 -top-16 w-80 h-80 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 -bottom-20 w-64 h-64 bg-error/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-mono-sm text-label-mono-sm uppercase tracking-wider">FORENSIC_ENGINE_V2.4</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">•</span>
+<span class="text-secondary font-label-mono-sm text-label-mono-sm flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span> ACTIVE HEURISTIC PIPELINE
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Anomaly &amp; Covert Channel Detection</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Heuristic &amp; Statistical Traffic Classification Engine (RFC 1035 Compliance vs Exfiltration Vectors)
+        </p>
+</div>
+<!-- Engine Node Specs -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-space-sm">
+<div class="bg-surface-container-highest/60 backdrop-blur-md px-space-md py-space-sm rounded-lg flex flex-col gap-0.5">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-wider">Engine Model</span>
+<div class="flex items-center gap-1.5 text-on-surface font-label-mono-md text-label-mono-md">
+<span class="material-symbols-outlined text-[16px] text-primary">psychology</span>
+<span>Statistical Rule-Based (Shannon + Length)</span>
+</div>
+</div>
+<div class="bg-surface-container-highest/60 backdrop-blur-md px-space-md py-space-sm rounded-lg flex flex-col gap-0.5">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-wider">Telemetry Endpoint</span>
+<div class="flex items-center gap-1.5 font-label-mono-md text-label-mono-md text-primary">
+<span class="material-symbols-outlined text-[16px] text-secondary">api</span>
+<span>/api/analyze</span>
+</div>
+</div>
+<button class="bg-gradient-to-br from-primary-container to-secondary-container text-on-primary-fixed font-label-mono-sm text-label-mono-sm font-bold px-space-md py-space-sm rounded-lg flex items-center gap-space-xs shadow-lg hover:opacity-95 transition-all" id="reanalyze-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>RE-ANALYZE</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Center Tactical Score Display -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Main Threat Dial Card -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-xl relative overflow-hidden shadow-xl flex flex-col md:flex-row items-center gap-space-xl">
+<div class="absolute inset-0 bg-gradient-to-r from-error/5 via-transparent to-primary/5 pointer-events-none"></div>
+<!-- Circular Radial Indicator (SVG gauge) -->
+<div class="relative w-56 h-56 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 160 160">
+<!-- Background track -->
+<circle class="text-surface-container-highest" cx="80" cy="80" fill="none" r="68" stroke="currentColor" stroke-width="12"></circle>
+<!-- Calibrated breach arcs -->
+<circle class="text-error transition-all duration-1000 ease-out" cx="80" cy="80" fill="none" r="68" stroke="currentColor" stroke-dasharray="427" stroke-dashoffset="94" stroke-linecap="round" stroke-width="12" style="filter: drop-shadow(0 0 10px rgba(255, 180, 171, 0.4));"></circle>
+</svg>
+<!-- Center Score Metric -->
+<div class="absolute flex flex-col items-center justify-center text-center">
+<div class="flex items-baseline leading-none">
+<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tighter" id="score-counter">78</span>
+<span class="font-label-mono-md text-label-mono-md text-on-surface-variant ml-1 font-semibold">/100</span>
+</div>
+<span class="font-label-sans-caps text-label-sans-caps text-error uppercase tracking-widest mt-1">THREAT INDEX</span>
+<div class="mt-1 flex items-center gap-1 font-label-mono-sm text-label-mono-sm text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+            CONFIDENCE 94.2%
+          </div>
+</div>
+</div>
+<!-- Verdict Narrative -->
+<div class="flex flex-col gap-space-sm z-10">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-space-xs rounded bg-error-container text-on-error-container font-label-sans-caps text-label-sans-caps tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span>POTENTIALLY SUSPICIOUS (COVERT INJECTION)</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">
+          Anomalous Tunneling Pattern Detected
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Elevated Shannon entropy combined with out-of-distribution subdomain length characteristic of low-throughput DNS tunneling/steganography payloads. RFC 1035 labels exceed normal recursion profiles.
+        </p>
+<!-- Signature Quick Stats -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-xs font-label-mono-sm text-label-mono-sm">
+<div class="bg-surface-container px-space-sm py-space-xs rounded">
+<div class="text-outline uppercase text-[9px]">Query Class</div>
+<div class="text-primary font-bold">IN (0x0001)</div>
+</div>
+<div class="bg-surface-container px-space-sm py-space-xs rounded">
+<div class="text-outline uppercase text-[9px]">Target Record</div>
+<div class="text-secondary font-bold">TXT / NULL</div>
+</div>
+<div class="bg-surface-container px-space-sm py-space-xs rounded">
+<div class="text-outline uppercase text-[9px]">Heuristic Weight</div>
+<div class="text-error font-bold">CRITICAL (+78)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Forensic Threat Spectrum & Contextual Visual -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase tracking-wider">SURVEILLANCE SPECTRUM</span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary">RECORD: a9b4.exfil-stream.v4.cloud</span>
+</div>
+<!-- Abstracted visual packet envelope & tunnel graphic -->
+<div class="relative h-36 w-full rounded-lg overflow-hidden bg-surface-container-lowest p-space-sm flex flex-col justify-between">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-error/10 pointer-events-none"></div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-sm text-label-mono-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]">dns</span>
+<span>UDP Client: 192.168.4.112:54210</span>
+</div>
+<span class="text-error font-bold tracking-wider">TUNNEL PROBABILITY: 88.6%</span>
+</div>
+<!-- Synthetic Wire Waveform -->
+<div class="w-full flex items-end justify-between h-14 px-2 gap-1">
+<span class="w-1.5 bg-primary/40 rounded-t h-4"></span>
+<span class="w-1.5 bg-primary/60 rounded-t h-6"></span>
+<span class="w-1.5 bg-primary rounded-t h-8"></span>
+<span class="w-1.5 bg-secondary rounded-t h-12"></span>
+<span class="w-1.5 bg-secondary-container rounded-t h-7"></span>
+<span class="w-1.5 bg-error/50 rounded-t h-9"></span>
+<span class="w-1.5 bg-error rounded-t h-14 animate-pulse"></span>
+<span class="w-1.5 bg-error rounded-t h-12"></span>
+<span class="w-1.5 bg-error rounded-t h-13"></span>
+<span class="w-1.5 bg-secondary rounded-t h-9"></span>
+<span class="w-1.5 bg-primary rounded-t h-7"></span>
+<span class="w-1.5 bg-error rounded-t h-11"></span>
+<span class="w-1.5 bg-error rounded-t h-14"></span>
+<span class="w-1.5 bg-error/80 rounded-t h-10"></span>
+<span class="w-1.5 bg-primary rounded-t h-5"></span>
+</div>
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm text-outline">
+<span>RFC Compliance: Non-Standard Payload</span>
+<span>Entropy Peak: 4.21 bits/byte</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Bar -->
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-surface-container-high/40 p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+<span>Baseline computed over 14,280 standard corporate queries</span>
+</div>
+<a class="font-label-mono-sm text-label-mono-sm text-primary font-bold hover:underline" href="#">EXPORT RFC AUDIT</a>
+</div>
+</div>
+</div>
+<!-- Detection Features Grid (6 Core Heuristic Dimensions) -->
+<div class="mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Heuristic Feature Contributions &amp; Threshold Vectors</h3>
+</div>
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">Aggregated Risk Factor: <span class="text-error font-bold">+78 PTS</span></span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-md">
+<!-- Feature 1: Shannon Entropy -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Shannon Entropy</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Information density H(X)</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-mono-sm text-label-mono-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> BREACHED
+          </span>
+</div>
+<div class="flex items-baseline justify-between my-space-sm">
+<div>
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Observed</span>
+<div class="font-headline-md text-headline-md font-bold text-error font-label-mono-lg">4.21 <span class="text-xs font-normal text-on-surface-variant">H(X)</span></div>
+</div>
+<div class="text-right">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Threshold</span>
+<div class="font-label-mono-md text-label-mono-md text-on-surface-variant font-semibold">3.80 H(X)</div>
+</div>
+</div>
+<!-- Progress bar with multi-zone marker -->
+<div class="relative w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden mb-space-xs">
+<!-- Baseline safe zone (greenish-cyan) -->
+<div class="absolute left-0 top-0 bottom-0 w-[47%] bg-primary/40"></div>
+<!-- Current value bar -->
+<div class="absolute left-0 top-0 bottom-0 w-[84%] bg-error rounded-full"></div>
+<!-- Threshold pointer indicator -->
+<div class="absolute left-[76%] top-0 bottom-0 w-0.5 bg-on-surface z-10" title="Threshold: 3.80"></div>
+</div>
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm pt-space-xs">
+<span class="text-outline">Baseline Zone: 1.5 - 3.0</span>
+<span class="text-error font-bold">+20 pts</span>
+</div>
+</div>
+<!-- Feature 2: Query Length -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Query Length</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Total FQDN payload octets</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-mono-sm text-label-mono-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> BREACHED
+          </span>
+</div>
+<div class="flex items-baseline justify-between my-space-sm">
+<div>
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Observed</span>
+<div class="font-headline-md text-headline-md font-bold text-error font-label-mono-lg">58 <span class="text-xs font-normal text-on-surface-variant">chars</span></div>
+</div>
+<div class="text-right">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Threshold</span>
+<div class="font-label-mono-md text-label-mono-md text-on-surface-variant font-semibold">35 chars</div>
+</div>
+</div>
+<div class="relative w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden mb-space-xs">
+<div class="absolute left-0 top-0 bottom-0 w-[35%] bg-primary/40"></div>
+<div class="absolute left-0 top-0 bottom-0 w-[78%] bg-error rounded-full"></div>
+<div class="absolute left-[47%] top-0 bottom-0 w-0.5 bg-on-surface z-10" title="Threshold: 35"></div>
+</div>
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm pt-space-xs">
+<span class="text-outline">Max RFC Label: 63 chars</span>
+<span class="text-error font-bold">+18 pts</span>
+</div>
+</div>
+<!-- Feature 3: Subdomain Length -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Subdomain Length</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Target extraction payload label</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-mono-sm text-label-mono-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> BREACHED
+          </span>
+</div>
+<div class="flex items-baseline justify-between my-space-sm">
+<div>
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Observed</span>
+<div class="font-headline-md text-headline-md font-bold text-error font-label-mono-lg">42 <span class="text-xs font-normal text-on-surface-variant">chars</span></div>
+</div>
+<div class="text-right">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Threshold</span>
+<div class="font-label-mono-md text-label-mono-md text-on-surface-variant font-semibold">20 chars</div>
+</div>
+</div>
+<div class="relative w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden mb-space-xs">
+<div class="absolute left-0 top-0 bottom-0 w-[30%] bg-primary/40"></div>
+<div class="absolute left-0 top-0 bottom-0 w-[70%] bg-error rounded-full"></div>
+<div class="absolute left-[33%] top-0 bottom-0 w-0.5 bg-on-surface z-10" title="Threshold: 20"></div>
+</div>
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm pt-space-xs">
+<span class="text-outline">Normal Mean: 7.2 chars</span>
+<span class="text-error font-bold">+15 pts</span>
+</div>
+</div>
+<!-- Feature 4: Character Ratio -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Character Ratio</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Alpha-numeric / Special byte distribution</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-secondary-container font-label-mono-sm text-label-mono-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> ELEVATED
+          </span>
+</div>
+<div class="flex items-baseline justify-between my-space-sm">
+<div>
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Observed</span>
+<div class="font-headline-md text-headline-md font-bold text-secondary-container font-label-mono-lg">0.94 <span class="text-xs font-normal text-on-surface-variant">(Dense B64)</span></div>
+</div>
+<div class="text-right">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Threshold</span>
+<div class="font-label-mono-md text-label-mono-md text-on-surface-variant font-semibold">0.65</div>
+</div>
+</div>
+<div class="relative w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden mb-space-xs">
+<div class="absolute left-0 top-0 bottom-0 w-[55%] bg-primary/40"></div>
+<div class="absolute left-0 top-0 bottom-0 w-[94%] bg-secondary-container rounded-full"></div>
+<div class="absolute left-[65%] top-0 bottom-0 w-0.5 bg-on-surface z-10" title="Threshold: 0.65"></div>
+</div>
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm pt-space-xs">
+<span class="text-outline">Low English bigram affinity</span>
+<span class="text-secondary-container font-bold">+12 pts</span>
+</div>
+</div>
+<!-- Feature 5: Query Frequency -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Query Frequency</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Temporal recursion burst rate</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-secondary-container font-label-mono-sm text-label-mono-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> ELEVATED
+          </span>
+</div>
+<div class="flex items-baseline justify-between my-space-sm">
+<div>
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Observed</span>
+<div class="font-headline-md text-headline-md font-bold text-secondary-container font-label-mono-lg">12 <span class="text-xs font-normal text-on-surface-variant">req/sec</span></div>
+</div>
+<div class="text-right">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Threshold</span>
+<div class="font-label-mono-md text-label-mono-md text-on-surface-variant font-semibold">5 req/sec</div>
+</div>
+</div>
+<div class="relative w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden mb-space-xs">
+<div class="absolute left-0 top-0 bottom-0 w-[25%] bg-primary/40"></div>
+<div class="absolute left-0 top-0 bottom-0 w-[60%] bg-secondary-container rounded-full"></div>
+<div class="absolute left-[25%] top-0 bottom-0 w-0.5 bg-on-surface z-10" title="Threshold: 5"></div>
+</div>
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm pt-space-xs">
+<span class="text-outline">Burst Window: 250ms</span>
+<span class="text-secondary-container font-bold">+8 pts</span>
+</div>
+</div>
+<!-- Feature 6: Payload-to-Domain Ratio -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:bg-surface-container transition-all">
+<div class="flex items-start justify-between mb-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Payload-to-Domain Ratio</span>
+<span class="font-label-mono-sm text-label-mono-sm text-outline">Overhead efficiency coefficient</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-secondary-container font-label-mono-sm text-label-mono-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> ELEVATED
+          </span>
+</div>
+<div class="flex items-baseline justify-between my-space-sm">
+<div>
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Observed</span>
+<div class="font-headline-md text-headline-md font-bold text-secondary-container font-label-mono-lg">72% <span class="text-xs font-normal text-on-surface-variant">payload</span></div>
+</div>
+<div class="text-right">
+<span class="font-label-sans-caps text-label-sans-caps text-outline uppercase">Threshold</span>
+<div class="font-label-mono-md text-label-mono-md text-on-surface-variant font-semibold">40%</div>
+</div>
+</div>
+<div class="relative w-full h-2.5 bg-surface-container-highest rounded-full overflow-hidden mb-space-xs">
+<div class="absolute left-0 top-0 bottom-0 w-[40%] bg-primary/40"></div>
+<div class="absolute left-0 top-0 bottom-0 w-[72%] bg-secondary-container rounded-full"></div>
+<div class="absolute left-[40%] top-0 bottom-0 w-0.5 bg-on-surface z-10" title="Threshold: 40%"></div>
+</div>
+<div class="flex items-center justify-between font-label-mono-sm text-label-mono-sm pt-space-xs">
+<span class="text-outline">Base Domain: cloud.internal</span>
+<span class="text-secondary-container font-bold">+5 pts</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Explainable Detection Panel & Action Matrix -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Why Flagged List -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">fact_check</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-wide">WHY WAS THIS FLAGGED?</h3>
+</div>
+<span class="px-space-sm py-0.5 rounded bg-surface-container font-label-mono-sm text-label-mono-sm text-on-surface-variant">
+            4 OF 4 HEURISTIC TRIGGERS
+          </span>
+</div>
+<div class="space-y-space-sm">
+<!-- Item 1 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest/60 hover:bg-surface-container transition-colors">
+<div class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[16px] font-bold">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-on-surface">High character entropy</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Query contains uniform byte distribution typical of Base64 or AES-encrypted covert ciphertext instead of phonetically balanced hostnames.
+              </p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest/60 hover:bg-surface-container transition-colors">
+<div class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[16px] font-bold">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-on-surface">Long subdomain label</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Subdomain label (42 chars) exceeds standard CDN prefixes and enterprise host naming conventions (&gt;99th percentile).
+              </p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest/60 hover:bg-surface-container transition-colors">
+<div class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[16px] font-bold">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-on-surface">High query frequency</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Burst of sequential queries targeting distinct subdomains in &lt;200ms intervals indicating an automated multi-part chunk tunneling protocol.
+              </p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest/60 hover:bg-surface-container transition-colors">
+<div class="w-6 h-6 rounded bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[16px] font-bold">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-on-surface">Unusual character distribution</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Severely low vowel-to-consonant ratio (0.11) compared to standard localized internet domain structures.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-outline font-label-mono-sm text-label-mono-sm">
+<span>CLASSIFIER: RFC1035-EXFIL-v2</span>
+<span class="text-primary cursor-pointer hover:underline">VIEW RAW JSON EVALUATION</span>
+</div>
+</div>
+<!-- Remediation & Defense Recommendations -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[20px]">shield</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-wide">REMEDIATION &amp; DEFENSE</h3>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-sans-caps text-label-sans-caps uppercase">URGENT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Automated countermeasures generated for egress firewalls, recursive resolvers (BIND/Unbound), and SIEM integration.
+        </p>
+<div class="space-y-space-sm">
+<!-- Action 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-highest/70 flex items-center justify-between group">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">block</span>
+<div class="flex flex-col">
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-semibold">Sinkhole Authoritative Domain</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Route *.cloud to 127.0.0.1 null router</span>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container text-primary font-label-mono-sm text-label-mono-sm hover:bg-primary hover:text-on-primary transition-colors" type="button">
+              EXECUTE
+            </button>
+</div>
+<!-- Action 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-highest/70 flex items-center justify-between group">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">filter_alt</span>
+<div class="flex flex-col">
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-semibold">Apply TXT Length Throttling</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Drop incoming replies with TXT &gt; 120 bytes</span>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container text-primary font-label-mono-sm text-label-mono-sm hover:bg-primary hover:text-on-primary transition-colors" type="button">
+              APPLY
+            </button>
+</div>
+<!-- Action 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container-highest/70 flex items-center justify-between group">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">lock_clock</span>
+<div class="flex flex-col">
+<span class="font-label-mono-md text-label-mono-md text-on-surface font-semibold">Rate-Limit UDP:53 Client</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cap source 192.168.4.112 at 2 req/sec</span>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container text-primary font-label-mono-sm text-label-mono-sm hover:bg-primary hover:text-on-primary transition-colors" type="button">
+              LIMIT
+            </button>
+</div>
+</div>
+</div>
+<!-- Quick Command Shell Preview -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-lowest font-label-mono-sm text-label-mono-sm text-outline-variant">
+<div class="flex items-center justify-between text-outline text-[10px] pb-1 border-none mb-1">
+<span>SURICATA / SNORT RULE STUB</span>
+<span class="text-primary cursor-pointer hover:text-primary-fixed">COPY</span>
+</div>
+<div class="text-secondary truncate">
+          alert dns $HOME_NET any -&gt; any 53 (msg:"DNS_COVERT_EXFIL"; content:"|00 10|"; threshold:type both, track by_src, count 10, seconds 2; sid:900210;)
+        </div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic refresh animation micro-interaction
+  const reanalyzeBtn = document.getElementById('reanalyze-btn');
+  const scoreCounter = document.getElementById('score-counter');
+
+  if (reanalyzeBtn && scoreCounter) {
+    reanalyzeBtn.addEventListener('click', () => {
+      const originalText = scoreCounter.innerText;
+      scoreCounter.innerText = '--';
+      reanalyzeBtn.classList.add('opacity-75');
+
+      setTimeout(() => {
+        scoreCounter.innerText = '78';
+        reanalyzeBtn.classList.remove('opacity-75');
+      }, 400);
+    });
+  }
+</script></main></div></body></html>
